@@ -49,18 +49,11 @@
             --shadow-hover: 0 0 25px rgba(56, 189, 248, 0.3);
         }
 
-        /* --- NOUVEAU : Animation de mélange doux --- */
-        /* Cette animation déplace le fond très large d'un coin à l'autre */
+        /* --- Animation de mélange doux (Logo) --- */
         @keyframes gentle-mix {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -102,17 +95,13 @@
 
         .brand-container { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.5rem; color: var(--text-main); }
         
-        /* --- MODIFICATION ICI POUR LE LOGO QUI SE MELANGE --- */
         .sz-icon { 
             width: 45px; 
             height: 45px; 
             border-radius: 12px;
-            /* 1. Dégradé de 3 couleurs : Bleu du thème, Violet du thème, et un Turquoise pour le contraste.
-               On répète le premier bleu à la fin pour que la boucle soit fluide. */
+            /* Animation couleurs mélangées */
             background: linear-gradient(-45deg, #3b82f6, #8b5cf6, #2dd4bf, #3b82f6);
-            /* 2. On rend le background TRES large pour créer l'effet de mélange lent */
             background-size: 400% 400%;
-            /* 3. Animation lente (6s) avec un effet d'accélération/décélération (ease) */
             animation: gentle-mix 6s ease infinite;
         }
 
@@ -245,6 +234,7 @@
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#bts">BTS SIO</a></li>
                 <li><a href="#entreprise">Entreprise</a></li>
+                <li><a href="#ecole">École</a></li>
                 <li><a href="#projets">Projets</a></li>
                 <li><a href="#veille">Veille technologique</a></li>
                 <li><a href="#certifs">Certifications</a></li>
@@ -296,8 +286,10 @@
         <div class="container reveal">
             <div style="text-align: center; margin-bottom: 50px;">
                 <h3><img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Banque_de_France_2022_logo.svg" alt="Logo Banque de France" style="max-height: 150px; width: auto; display: inline-block;"></h3>
-                <p style="font-size: 1.1rem; opacity: 0.8; margin-top: 20px;">Garante de la stabilité monétaire & financière.</p>
-                <div style="margin-top: 15px;">
+                <p style="font-size: 1.1rem; opacity: 0.9; margin-top: 25px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.8;">
+                    La Banque de France est la banque centrale nationale française. Elle contribue à la stabilité monétaire, à la supervision du système financier et au service de l’économie (statistiques, inclusion bancaire, cotations d’entreprises, etc.).
+                </p>
+                <div style="margin-top: 20px;">
                     <span class="tag">Secteur Public</span><span class="tag">Haute Sécurité</span><span class="tag">Finance</span>
                 </div>
             </div>
@@ -329,6 +321,29 @@
         </div>
     </section>
 
+    <section id="ecole">
+        <div class="container reveal">
+            <h2 class="section-title">Mon École</h2>
+            <div style="display: flex; justify-content: center;">
+                <div class="card" style="text-align: center; max-width: 600px; width: 100%;">
+                    <div class="icon-box" style="margin: 0 auto 20px; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h3 style="font-size: 2rem; margin-bottom: 10px;">Ingétis</h3>
+                    <p style="font-size: 1.1rem; opacity: 0.8; margin-bottom: 20px;">École d'ingénierie informatique appliquée</p>
+                    <p style="margin-bottom: 20px;">
+                        Une formation professionnalisante au cœur des technologies actuelles, alliant théorie rigoureuse et pratique intensive en entreprise.
+                    </p>
+                    <div>
+                        <span class="tag">BTS SIO</span>
+                        <span class="tag">Alternance</span>
+                        <span class="tag">Paris</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="projets">
         <div class="container reveal">
             <h2 class="section-title">Projets E4</h2>
@@ -351,16 +366,7 @@
                         <a href="#" style="display:block; margin-top:20px; font-weight:bold; color:var(--primary-color);">Voir détails →</a>
                     </div>
                 </article>
-                <article class="project-card">
-                    <div class="project-header" style="background: linear-gradient(135deg, #f59e0b, #ef4444);"><i class="fas fa-network-wired"></i></div>
-                    <div class="project-content">
-                        <h3>Monitoring Zabbix</h3>
-                        <p>Supervision proactive des équipements critiques et alertes temps réel.</p>
-                        <div style="margin-top: 15px;"><span class="tag">SNMP</span><span class="tag">Métrologie</span></div>
-                        <a href="#" style="display:block; margin-top:20px; font-weight:bold; color:var(--primary-color);">Voir détails →</a>
-                    </div>
-                </article>
-            </div>
+                </div>
         </div>
     </section>
 
