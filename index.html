@@ -572,7 +572,7 @@
     </div>
 </section>
 
-    <section id="contact">
+   <section id="contact">
         <div class="container reveal">
             <h2 class="section-title">Contact</h2>
             <div class="card">
@@ -605,12 +605,33 @@
                             <input type="email" name="email" class="form-input" placeholder="Votre adresse email" required>
                             <textarea name="message" class="form-textarea" placeholder="Votre message..." required></textarea>
                             
-                            <button type="submit" class="btn-submit-beige" style="width: 100%;">Envoyer le message</button>
+                            <button type="submit" class="btn-submit" style="
+                                background: var(--gradient-main); 
+                                color: white; 
+                                border: none; 
+                                padding: 15px 35px;
+                                font-weight: 700; 
+                                font-size: 1rem; 
+                                cursor: pointer; 
+                                border-radius: 8px; 
+                                margin-top: 10px;
+                                transition: 0.3s; 
+                                width: 100%;
+                                box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+                            " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(139, 92, 246, 0.4)'; this.style.filter='brightness(1.1)'" 
+                              onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(59, 130, 246, 0.3)'; this.style.filter='brightness(1)'">
+                                Envoyer le message
+                            </button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <div class="copyright-footer">
+            &copy; 2024 Soufiane ZOUGAGH - Portfolio BTS SIO SISR. Tous droits réservés.
+        </div>
+    </section>
         
         <div class="copyright-footer">
             &copy; 2024 Soufiane ZOUGAGH - Portfolio BTS SIO SISR. Tous droits réservés.
