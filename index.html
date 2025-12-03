@@ -16,6 +16,7 @@
             --text-main: #1a202c;
             --text-secondary: #4a5568;
             --card-bg: rgba(255, 255, 255, 0.85);
+            --input-bg: rgba(255, 255, 255, 0.5);
             
             /* Couleurs */
             --primary-color: #3b82f6;
@@ -38,6 +39,7 @@
             --text-main: #f1f5f9;
             --text-secondary: #94a3b8;
             --card-bg: rgba(30, 41, 59, 0.7);
+            --input-bg: rgba(15, 23, 42, 0.6);
             
             --primary-color: #38bdf8;
             --secondary-color: #c084fc;
@@ -157,51 +159,42 @@
         .tag { background: rgba(59, 130, 246, 0.1); color: var(--primary-color); padding: 6px 14px; border-radius: 30px; font-weight: 700; font-size: 0.8rem; display: inline-block; margin: 5px 2px; }
         .tag.secu { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
 
-        /* --- FOOTER & CONTACT DESIGN --- */
-        #contact { padding: 0; width: 100%; }
-        
-        footer {
-            background: #000; color: #fff; position: relative; width: 100%; padding: 80px 20px;
-        }
-        footer::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: var(--gradient-text);
-        }
-
-        .footer-grid {
+        /* --- CONTACT SECTION REDESIGN --- */
+        .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
-            gap: 60px;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: left;
+            gap: 50px;
+            align-items: start;
         }
-
-        .footer-info h2 { font-size: 3.5rem; font-weight: 700; line-height: 1.1; margin-bottom: 40px; color: #fff; }
-        .footer-info p { color: #ccc; font-size: 1rem; margin-bottom: 5px; line-height: 1.6; }
         
-        .footer-socials { margin-top: 30px; display: flex; gap: 20px; }
-        .social-icon { font-size: 1.5rem; color: #fff; transition: 0.3s; }
-        .social-icon:hover { color: var(--primary-color); transform: translateY(-3px); }
-
-        .footer-form h3 { font-size: 1rem; font-weight: 400; color: #eee; margin-bottom: 30px; line-height: 1.5; }
-
-        .footer-input, .footer-textarea {
-            width: 100%; background: transparent; border: 1px solid #333; padding: 15px; margin-bottom: 15px;
-            color: #fff; font-family: 'Poppins', sans-serif; font-size: 0.95rem; border-radius: 4px; transition: 0.3s;
+        .contact-info h3 { font-size: 1.8rem; margin-bottom: 20px; color: var(--text-main); }
+        .contact-info p { color: var(--text-secondary); margin-bottom: 10px; }
+        
+        .contact-socials { margin-top: 30px; display: flex; gap: 15px; }
+        .contact-social-btn {
+            width: 50px; height: 50px; border-radius: 12px; background: var(--input-bg);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; color: var(--text-main); border: 1px solid var(--border-color);
+            transition: 0.3s;
         }
-        .footer-input:focus, .footer-textarea:focus { border-color: #666; outline: none; background: rgba(255,255,255,0.02); }
-        .footer-textarea { resize: vertical; min-height: 120px; }
+        .contact-social-btn:hover { background: var(--primary-color); color: white; transform: translateY(-3px); border-color: var(--primary-color); }
 
-        .btn-submit-beige {
-            background-color: var(--btn-beige); color: #222; border: none; padding: 12px 35px;
-            font-weight: 600; font-size: 1rem; cursor: pointer; border-radius: 2px; margin-top: 10px;
-            transition: 0.3s; letter-spacing: 0.5px;
+        .form-input, .form-textarea {
+            width: 100%; padding: 15px; margin-bottom: 15px;
+            background: var(--input-bg); border: 1px solid var(--border-color);
+            border-radius: 8px; color: var(--text-main); font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem; transition: 0.3s;
         }
-        .btn-submit-beige:hover { background-color: var(--btn-beige-hover); transform: translateY(-2px); }
+        .form-input:focus, .form-textarea:focus { border-color: var(--primary-color); outline: none; background: rgba(59, 130, 246, 0.05); }
+        .form-textarea { resize: vertical; min-height: 140px; }
+
+        /* Petit footer de copyright */
+        .copyright-footer {
+            text-align: center; padding: 30px; font-size: 0.9rem; opacity: 0.7; border-top: 1px solid var(--border-color); margin-top: 50px;
+        }
 
         @media (max-width: 900px) {
-            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
-            .footer-info h2 { font-size: 2.5rem; }
+            .contact-grid { grid-template-columns: 1fr; gap: 40px; }
         }
 
         /* --- MODAL (Lightbox) --- */
@@ -366,7 +359,7 @@
                         <a href="#" style="display:block; margin-top:20px; font-weight:bold; color:var(--primary-color);">Voir détails →</a>
                     </div>
                 </article>
-                </div>
+            </div>
         </div>
     </section>
 
@@ -516,34 +509,48 @@
     </section>
 
     <section id="contact">
-        <footer>
-            <div class="reveal footer-grid">
-                <div class="footer-info">
-                    <h2>Me contacter</h2>
-                    <p>Paris, France</p>
-                    <p>Étudiant Alternant SISR</p>
-                    <p>Soufiane ZOUGAGH</p>
-                    
-                    <div class="footer-socials">
-                        <a href="https://www.linkedin.com/in/soufianezghpro/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.github.com/zsoufiane" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-                        <a href="mailto:soufianezougaghpro@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+        <div class="container reveal">
+            <h2 class="section-title">Contact</h2>
+            <div class="card">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Restons en contact</h3>
+                        <p>Une question sur mon parcours, une opportunité d'alternance ou simplement envie d'échanger sur la cybersécurité ?</p>
+                        <p>N'hésitez pas à m'envoyer un message.</p>
+                        
+                        <div style="margin-top: 40px;">
+                            <div style="display:flex; align-items:center; gap:15px; margin-bottom: 15px;">
+                                <i class="fas fa-map-marker-alt" style="color:var(--primary-color); font-size: 1.2rem;"></i>
+                                <span>Paris, France</span>
+                            </div>
+                            <div style="display:flex; align-items:center; gap:15px;">
+                                <i class="fas fa-envelope" style="color:var(--primary-color); font-size: 1.2rem;"></i>
+                                <a href="mailto:soufianezougaghpro@gmail.com">soufianezougaghpro@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-socials">
+                            <a href="https://www.linkedin.com/in/soufianezghpro/" target="_blank" class="contact-social-btn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.github.com/zsoufiane" target="_blank" class="contact-social-btn"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <form action="https://formspree.io/f/VOTRE_ID_ICI" method="POST">
+                            <input type="text" name="name" class="form-input" placeholder="Votre nom" required>
+                            <input type="email" name="email" class="form-input" placeholder="Votre adresse email" required>
+                            <textarea name="message" class="form-textarea" placeholder="Votre message..." required></textarea>
+                            
+                            <button type="submit" class="btn-submit-beige" style="width: 100%;">Envoyer le message</button>
+                        </form>
                     </div>
                 </div>
-
-                <div class="footer-form">
-                    <h3>Une opportunité, un projet ou simplement envie d'échanger ?<br>Travaillons ensemble.</h3>
-                    
-                    <form action="https://formspree.io/f/VOTRE_ID_ICI" method="POST">
-                        <input type="text" name="name" class="footer-input" placeholder="Votre nom" required>
-                        <input type="email" name="email" class="footer-input" placeholder="Votre adresse email" required>
-                        <textarea name="message" class="footer-textarea" placeholder="Votre message" required></textarea>
-                        
-                        <button type="submit" class="btn-submit-beige">Envoyer</button>
-                    </form>
-                </div>
             </div>
-        </footer>
+        </div>
+        
+        <div class="copyright-footer">
+            &copy; 2024 Soufiane ZOUGAGH - Portfolio BTS SIO SISR. Tous droits réservés.
+        </div>
     </section>
 
     <div id="imageModal" class="modal">
