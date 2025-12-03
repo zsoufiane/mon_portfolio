@@ -16,7 +16,7 @@
             --text-main: #1a202c;
             --text-secondary: #4a5568;
             --card-bg: rgba(255, 255, 255, 0.85);
-            --input-bg: rgba(255, 255, 255, 0.6);
+            --input-bg: rgba(255, 255, 255, 0.5);
             
             /* Couleurs */
             --primary-color: #3b82f6;
@@ -24,6 +24,10 @@
             --gradient-main: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
             --gradient-text: linear-gradient(to right, #2563eb, #9333ea);
             
+            /* Bouton Beige (Style demandé) */
+            --btn-beige: #d4c09d;
+            --btn-beige-hover: #c2af8d;
+
             --border-color: rgba(0,0,0,0.08);
             --shadow-card: 0 10px 30px -5px rgba(59, 130, 246, 0.15);
             --shadow-hover: 0 20px 40px -5px rgba(139, 92, 246, 0.25);
@@ -33,17 +37,16 @@
         [data-theme="dark"] {
             --bg-body: #0f172a;
             --text-main: #f1f5f9;
-            --text-secondary: #cbd5e1;
+            --text-secondary: #94a3b8;
             --card-bg: rgba(30, 41, 59, 0.7);
-            /* Fond des inputs plus foncé pour le contraste */
-            --input-bg: rgba(15, 23, 42, 0.8);
+            --input-bg: rgba(15, 23, 42, 0.6);
             
             --primary-color: #38bdf8;
             --secondary-color: #c084fc;
             --gradient-main: linear-gradient(135deg, #0ea5e9 0%, #d946ef 100%);
             --gradient-text: linear-gradient(to right, #38bdf8, #e879f9);
             
-            --border-color: rgba(255,255,255,0.15);
+            --border-color: rgba(255,255,255,0.1);
             --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
             --shadow-hover: 0 0 25px rgba(56, 189, 248, 0.3);
         }
@@ -185,27 +188,6 @@
         .form-input:focus, .form-textarea:focus { border-color: var(--primary-color); outline: none; background: rgba(59, 130, 246, 0.05); }
         .form-textarea { resize: vertical; min-height: 140px; }
 
-        /* --- NOUVEAU BOUTON ENVOYER --- */
-        .btn-submit {
-            background: var(--gradient-main); 
-            color: white; 
-            border: none; 
-            padding: 15px 35px;
-            font-weight: 700; 
-            font-size: 1rem; 
-            cursor: pointer; 
-            border-radius: 8px; 
-            margin-top: 10px;
-            transition: 0.3s; 
-            width: 100%;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-        }
-        .btn-submit:hover { 
-            transform: translateY(-2px); 
-            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
-            filter: brightness(1.1);
-        }
-
         /* Petit footer de copyright */
         .copyright-footer {
             text-align: center; padding: 30px; font-size: 0.9rem; opacity: 0.7; border-top: 1px solid var(--border-color); margin-top: 50px;
@@ -257,15 +239,16 @@
 
     <section id="accueil" class="hero">
         <div class="hero-content">
+
             <h1>Soufiane ZOUGAGH</h1>
             <h2 style="font-size: 1.5rem; line-height: 1.6; color: rgba(255,255,255,0.9);">
                 Étudiant en deuxième année de BTS SIO SISR à Ingétis.<br>
                 En alternance à la Banque de France en tant que Correspondant Informatique.
             </h2>
             <div class="hero-btns">
-                <a href="#bts" class="btn">À propos</a>
+                <a href="#bts" class="btn">À propos de moi</a>
                 <a href="./documents/cv_soufiane_zougagh_portfolio.pdf" class="btn btn-outline" target="_blank" rel="noopener noreferrer">CV <i class="fas fa-eye"></i></a>
-                <a href="./documents/synthese_soufiane_zougagh.pdf" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Synthèse <i class="fas fa-table"></i></a>
+                <a href="./documents/synthese_soufiane_zougagh.pdf" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Fiche synthèse <i class="fas fa-table"></i></a>
             </div>
         </div>
     </section>
@@ -332,7 +315,7 @@
         </div>
     </section>
 
-    <section id="ecole">
+<section id="ecole">
         <div class="container reveal">
             <h2 class="section-title">Mon École</h2>
             
@@ -431,7 +414,7 @@
                         <a href="#" style="display:block; margin-top:20px; font-weight:bold; color:var(--primary-color);">Voir détails →</a>
                     </div>
                 </article>
-                </div>
+            </div>
         </div>
     </section>
 
@@ -548,18 +531,14 @@
         </div>
     </section>
 
-   <section id="certifs">
+    <section id="certifs">
         <div class="container reveal">
             <h2 class="section-title">Certifications</h2>
             <div class="grid-2">
-                
                 <div class="card">
                     <div style="display:flex; justify-content:space-between; align-items:start;">
                         <div class="icon-box" style="background: linear-gradient(135deg, #2ecc71, #27ae60);"><i class="fas fa-shield-alt"></i></div>
-                        <img src="https://www.auditsi.eu/wp-content/uploads/2018/06/anssi_visuel_square500.png" 
-                             alt="ANSSI SecNum" 
-                             class="zoomable" 
-                             style="height: 50px; width: 50px; object-fit: contain; opacity: 0.9;">
+                        <img src="./documents/secnum.png" alt="ANSSI SecNum" class="zoomable" style="height: 40px; opacity: 0.8;">
                     </div>
                     <h3>SecNum Académie</h3>
                     <p style="font-weight: 600; opacity: 0.7; margin-bottom: 15px;">ANSSI | <span style="color: #2ecc71;">Validé (Mars 2025)</span></p>
@@ -568,14 +547,10 @@
                         <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #2ecc71;"></i> Sécurisation des postes</li>
                     </ul>
                 </div>
-
                 <div class="card">
                     <div style="display:flex; justify-content:space-between; align-items:start;">
                         <div class="icon-box" style="background: linear-gradient(135deg, #00b4db, #0083b0);"><i class="fas fa-network-wired"></i></div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Cisco_academy_logo.svg/1200px-Cisco_academy_logo.svg.png" 
-                             alt="Cisco Cyber" 
-                             class="zoomable" 
-                             style="height: 50px; width: auto; object-fit: contain; opacity: 0.9;">
+                        <img src="./documents/cisco_cyber.jpg" alt="Cisco Cyber" class="zoomable" style="height: 40px; opacity: 0.8; border-radius: 5px;">
                     </div>
                     <h3>Introduction à la cybersécurité</h3>
                     <p style="font-weight: 600; opacity: 0.7; margin-bottom: 15px;">Cisco Academy | <span style="color: #00b4db;">Validé (Oct 2025)</span></p>
@@ -584,7 +559,6 @@
                         <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #00b4db;"></i> Protection des données</li>
                     </ul>
                 </div>
-
             </div>
         </div>
     </section>
@@ -622,7 +596,7 @@
                             <input type="email" name="email" class="form-input" placeholder="Votre adresse email" required>
                             <textarea name="message" class="form-textarea" placeholder="Votre message..." required></textarea>
                             
-                            <button type="submit" class="btn-submit">Envoyer le message</button>
+                            <button type="submit" class="btn-submit-beige" style="width: 100%;">Envoyer le message</button>
                         </form>
                     </div>
                 </div>
