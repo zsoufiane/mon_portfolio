@@ -24,9 +24,6 @@
             --gradient-main: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
             --gradient-text: linear-gradient(to right, #2563eb, #9333ea);
             
-            --btn-beige: #d4c09d;
-            --btn-beige-hover: #c2af8d;
-
             --border-color: rgba(0,0,0,0.08);
             --shadow-card: 0 10px 30px -5px rgba(59, 130, 246, 0.15);
             --shadow-hover: 0 20px 40px -5px rgba(139, 92, 246, 0.25);
@@ -221,7 +218,6 @@
                 <li><a href="#contact" data-lang="nav_contact">Contact</a></li>
                 
                 <li><button id="lang-toggle" class="lang-toggle">EN</button></li>
-                
                 <li><button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button></li>
             </ul>
         </nav>
@@ -458,11 +454,38 @@
                                         <i class="fas fa-file-alt" style="color:var(--primary-color); margin-top:4px;"></i>
                                         <div>
                                             <strong>Solutions Numériques :</strong><br>
-                                            <span style="font-size:0.9rem;" data-lang="src_1">Dossier complet pour un futur sans mot de passe.</span>
+                                            <span style="font-size:0.9rem;" data-lang="src_solnum">Dossier complet pour un futur sans mot de passe.</span>
                                         </div>
                                     </a>
                                 </li>
-                                </ul>
+                                <li style="margin-bottom: 12px;">
+                                    <a href="https://www.journaldunet.com/cybersecurite/1536369-passwordless-et-cles-fido2-une-nouvelle-ere-de-securite-made-in-france/" target="_blank" style="color:var(--text-secondary); display:flex; gap:10px;">
+                                        <i class="fas fa-key" style="color:var(--primary-color); margin-top:4px;"></i>
+                                        <div>
+                                            <strong>JDN :</strong><br>
+                                            <span style="font-size:0.9rem;" data-lang="src_jdn">Clés FIDO2, une sécurité Made in France.</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li style="margin-bottom: 12px;">
+                                    <a href="https://www.zdnet.fr/pratique/cybersecurite-comment-preparer-votre-entreprise-a-un-avenir-passwordless-484485.htm" target="_blank" style="color:var(--text-secondary); display:flex; gap:10px;">
+                                        <i class="fas fa-building" style="color:var(--primary-color); margin-top:4px;"></i>
+                                        <div>
+                                            <strong>ZDNet :</strong><br>
+                                            <span style="font-size:0.9rem;" data-lang="src_zdnet">Préparer son entreprise à la transition.</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.silicon.fr/Thematique/cybersecurite-1371/Breves/Passwordless-une-approche-innovante-pour-securiser-les-acces-459294.htm" target="_blank" style="color:var(--text-secondary); display:flex; gap:10px;">
+                                        <i class="fas fa-lightbulb" style="color:var(--primary-color); margin-top:4px;"></i>
+                                        <div>
+                                            <strong>Silicon.fr :</strong><br>
+                                            <span style="font-size:0.9rem;" data-lang="src_silicon">Approche innovante des accès sécurisés.</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
 
                         <div>
@@ -476,6 +499,34 @@
                                         <div>
                                             <strong>BankInfoSecurity :</strong><br>
                                             <span style="font-size:0.9rem;">Smart Verification for Fraud Prevention.</span>
+                                            <span class="tag" style="font-size:0.7rem; padding: 2px 8px; margin-left: 5px;">Banking</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li style="margin-bottom: 12px;">
+                                    <a href="https://www.cnbc.com/2025/11/23/passwords-corporate-cybersecurity-employee-authentication.html" target="_blank" style="color:var(--text-secondary); display:flex; gap:10px;">
+                                        <i class="fas fa-chart-line" style="color:var(--secondary-color); margin-top:4px;"></i>
+                                        <div>
+                                            <strong>CNBC (Nov 2025) :</strong><br>
+                                            <span style="font-size:0.9rem;">Corporate Cybersecurity & Employee Auth.</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li style="margin-bottom: 12px;">
+                                    <a href="https://www.techtimes.com/articles/313064/20251201/passwordless-authentication-biometric-login-security-tech-really-safer.htm" target="_blank" style="color:var(--text-secondary); display:flex; gap:10px;">
+                                        <i class="fas fa-shield-virus" style="color:var(--secondary-color); margin-top:4px;"></i>
+                                        <div>
+                                            <strong>TechTimes (Dec 2025) :</strong><br>
+                                            <span style="font-size:0.9rem;">Is Biometric Tech Really Safer?</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.precedenceresearch.com/passwordless-authentication-market" target="_blank" style="color:var(--text-secondary); display:flex; gap:10px;">
+                                        <i class="fas fa-search-dollar" style="color:var(--secondary-color); margin-top:4px;"></i>
+                                        <div>
+                                            <strong>Precedence Research :</strong><br>
+                                            <span style="font-size:0.9rem;">Global Market Size & Trends.</span>
                                         </div>
                                     </a>
                                 </li>
@@ -583,7 +634,6 @@
         <div class="copyright-footer">
             &copy; 2024 Soufiane ZOUGAGH - <span data-lang="footer_rights">Portfolio BTS SIO SISR. Tous droits réservés.</span>
         </div>
-    </section>
 
     <div id="imageModal" class="modal">
         <span class="close">&times;</span>
@@ -658,7 +708,10 @@
                 title_veille: "Veille technologique",
                 veille_intro: "Analyse de la transition mondiale vers l'authentification sans mot de passe, l'impact de la biométrie et les enjeux spécifiques au secteur bancaire.",
                 src_fr: "Sources Francophones",
-                src_1: "Dossier complet pour un futur sans mot de passe.",
+                src_solnum: "Dossier complet pour un futur sans mot de passe.",
+                src_jdn: "Clés FIDO2, une sécurité Made in France.",
+                src_zdnet: "Préparer son entreprise à la transition.",
+                src_silicon: "Approche innovante des accès sécurisés.",
                 src_intl: "Sources internationales",
                 title_certifs: "Certifications",
                 valid_mars: "Validé (Mars 2025)",
@@ -725,7 +778,10 @@
                 title_veille: "Tech Watch",
                 veille_intro: "Analysis of the global transition to passwordless authentication, the impact of biometrics, and banking sector specifics.",
                 src_fr: "French Sources",
-                src_1: "Complete dossier for a passwordless future.",
+                src_solnum: "Complete dossier for a passwordless future.",
+                src_jdn: "FIDO2 keys, Made in France security.",
+                src_zdnet: "Preparing your company for the transition.",
+                src_silicon: "Innovative approach to secure access.",
                 src_intl: "International Sources",
                 title_certifs: "Certifications",
                 valid_mars: "Validated (March 2025)",
@@ -750,15 +806,13 @@
         let currentLang = localStorage.getItem('lang') || 'fr';
 
         function updateLanguage(lang) {
-            // Mise à jour des textes
             document.querySelectorAll('[data-lang]').forEach(element => {
                 const key = element.getAttribute('data-lang');
                 if (translations[lang][key]) {
-                    element.innerHTML = translations[lang][key]; // innerHTML pour garder les balises <strong> ou <br>
+                    element.innerHTML = translations[lang][key]; 
                 }
             });
 
-            // Mise à jour des placeholders (champs de formulaire)
             document.querySelectorAll('[data-placeholder]').forEach(element => {
                 const key = element.getAttribute('data-placeholder');
                 if (translations[lang][key]) {
@@ -766,26 +820,18 @@
                 }
             });
 
-            // Mise à jour du bouton
             langToggle.textContent = lang === 'fr' ? 'EN' : 'FR';
-            
-            // Mise à jour de l'attribut lang du html
             document.documentElement.lang = lang;
-            
-            // Sauvegarde
             localStorage.setItem('lang', lang);
             currentLang = lang;
         }
 
-        // Initialisation
         updateLanguage(currentLang);
 
-        // Event listener
         langToggle.addEventListener('click', () => {
             const newLang = currentLang === 'fr' ? 'en' : 'fr';
             updateLanguage(newLang);
         });
-
 
         // --- SCROLL ANIMATION ---
         window.addEventListener('scroll', () => {
