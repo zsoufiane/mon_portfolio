@@ -24,13 +24,13 @@
             --gradient-main: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
             --gradient-text: linear-gradient(to right, #2563eb, #9333ea);
             
-            /* Bouton Beige (Style demandé) */
             --btn-beige: #d4c09d;
             --btn-beige-hover: #c2af8d;
 
             --border-color: rgba(0,0,0,0.08);
             --shadow-card: 0 10px 30px -5px rgba(59, 130, 246, 0.15);
             --shadow-hover: 0 20px 40px -5px rgba(139, 92, 246, 0.25);
+            --white: #ffffff;
         }
 
         /* --- THEME SOMBRE --- */
@@ -49,6 +49,7 @@
             --border-color: rgba(255,255,255,0.1);
             --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
             --shadow-hover: 0 0 25px rgba(56, 189, 248, 0.3);
+            --white: #1e293b;
         }
 
         /* --- Animation de mélange doux (Logo) --- */
@@ -98,24 +99,23 @@
         .brand-container { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.5rem; color: var(--text-main); }
         
         .sz-icon { 
-            width: 45px; 
-            height: 45px; 
-            border-radius: 12px;
-            /* Animation couleurs mélangées */
+            width: 45px; height: 45px; border-radius: 12px;
             background: linear-gradient(-45deg, #3b82f6, #8b5cf6, #2dd4bf, #3b82f6);
-            background-size: 400% 400%;
-            animation: gentle-mix 6s ease infinite;
+            background-size: 400% 400%; animation: gentle-mix 6s ease infinite;
         }
 
         .nav-links { display: flex; gap: 20px; align-items: center; }
         .nav-links a { font-weight: 600; font-size: 0.95rem; }
         .nav-links a:hover { color: var(--primary-color); }
 
-        .theme-toggle {
+        .theme-toggle, .lang-toggle {
             cursor: pointer; width: 45px; height: 45px; border-radius: 50%;
             border: 2px solid var(--border-color); background: transparent;
             color: var(--text-main); font-size: 1.2rem; display: flex; align-items: center; justify-content: center;
+            transition: 0.3s;
         }
+        .lang-toggle { font-size: 0.9rem; font-weight: 800; }
+        .lang-toggle:hover, .theme-toggle:hover { border-color: var(--primary-color); color: var(--primary-color); }
 
         /* --- HERO --- */
         .hero {
@@ -159,17 +159,10 @@
         .tag { background: rgba(59, 130, 246, 0.1); color: var(--primary-color); padding: 6px 14px; border-radius: 30px; font-weight: 700; font-size: 0.8rem; display: inline-block; margin: 5px 2px; }
         .tag.secu { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
 
-        /* --- CONTACT SECTION REDESIGN --- */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 50px;
-            align-items: start;
-        }
-        
+        /* --- CONTACT SECTION --- */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; align-items: start; }
         .contact-info h3 { font-size: 1.8rem; margin-bottom: 20px; color: var(--text-main); }
         .contact-info p { color: var(--text-secondary); margin-bottom: 10px; }
-        
         .contact-socials { margin-top: 30px; display: flex; gap: 15px; }
         .contact-social-btn {
             width: 50px; height: 50px; border-radius: 12px; background: var(--input-bg);
@@ -178,7 +171,6 @@
             transition: 0.3s;
         }
         .contact-social-btn:hover { background: var(--primary-color); color: white; transform: translateY(-3px); border-color: var(--primary-color); }
-
         .form-input, .form-textarea {
             width: 100%; padding: 15px; margin-bottom: 15px;
             background: var(--input-bg); border: 1px solid var(--border-color);
@@ -187,17 +179,12 @@
         }
         .form-input:focus, .form-textarea:focus { border-color: var(--primary-color); outline: none; background: rgba(59, 130, 246, 0.05); }
         .form-textarea { resize: vertical; min-height: 140px; }
+        
+        .copyright-footer { text-align: center; padding: 30px; font-size: 0.9rem; opacity: 0.7; border-top: 1px solid var(--border-color); margin-top: 50px; }
 
-        /* Petit footer de copyright */
-        .copyright-footer {
-            text-align: center; padding: 30px; font-size: 0.9rem; opacity: 0.7; border-top: 1px solid var(--border-color); margin-top: 50px;
-        }
+        @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
 
-        @media (max-width: 900px) {
-            .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-        }
-
-        /* --- MODAL (Lightbox) --- */
+        /* --- MODAL --- */
         .modal { display: none; position: fixed; z-index: 2000; padding-top: 100px; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); }
         .modal-content { margin: auto; display: block; width: 80%; max-width: 700px; animation: zoomIn 0.4s; }
         .close { position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer; }
@@ -224,14 +211,17 @@
                 <span>SZ</span>
             </a>
             <ul class="nav-links">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#bts">BTS SIO</a></li>
-                <li><a href="#entreprise">Entreprise</a></li>
-                <li><a href="#ecole">École</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#veille">Veille technologique</a></li>
-                <li><a href="#certifs">Certifications</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#accueil" data-lang="nav_accueil">Accueil</a></li>
+                <li><a href="#bts" data-lang="nav_bts">BTS SIO</a></li>
+                <li><a href="#entreprise" data-lang="nav_ent">Entreprise</a></li>
+                <li><a href="#ecole" data-lang="nav_ecole">École</a></li>
+                <li><a href="#projets" data-lang="nav_projets">Projets</a></li>
+                <li><a href="#veille" data-lang="nav_veille">Veille</a></li>
+                <li><a href="#certifs" data-lang="nav_certifs">Certifications</a></li>
+                <li><a href="#contact" data-lang="nav_contact">Contact</a></li>
+                
+                <li><button id="lang-toggle" class="lang-toggle">EN</button></li>
+                
                 <li><button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button></li>
             </ul>
         </nav>
@@ -241,36 +231,36 @@
         <div class="hero-content">
 
             <h1>Soufiane ZOUGAGH</h1>
-            <h2 style="font-size: 1.5rem; line-height: 1.6; color: rgba(255,255,255,0.9);">
+            <h2 style="font-size: 1.5rem; line-height: 1.6; color: rgba(255,255,255,0.9);" data-lang="hero_desc">
                 Étudiant en deuxième année de BTS SIO SISR à Ingétis.<br>
                 En alternance à la Banque de France en tant que Correspondant Informatique.
             </h2>
             <div class="hero-btns">
-                <a href="#bts" class="btn">À propos de moi</a>
+                <a href="#bts" class="btn" data-lang="btn_about">À propos de moi</a>
                 <a href="./documents/cv_soufiane_zougagh_portfolio.pdf" class="btn btn-outline" target="_blank" rel="noopener noreferrer">CV <i class="fas fa-eye"></i></a>
-                <a href="./documents/synthese_soufiane_zougagh.pdf" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Fiche synthèse <i class="fas fa-table"></i></a>
+                <a href="./documents/synthese_soufiane_zougagh.pdf" class="btn btn-outline" target="_blank" rel="noopener noreferrer"><span data-lang="btn_synthese">Fiche synthèse</span> <i class="fas fa-table"></i></a>
             </div>
         </div>
     </section>
 
     <section id="bts">
         <div class="container reveal">
-            <h2 class="section-title">Parcours BTS SIO</h2>
+            <h2 class="section-title" data-lang="title_bts">Parcours BTS SIO</h2>
             <div class="grid-3">
                 <div class="card">
                     <div class="icon-box"><i class="fas fa-graduation-cap"></i></div>
-                    <h3>Le Diplôme</h3>
-                    <p>Le BTS Services Informatiques aux Organisations est un diplôme d'État formant aux métiers du numérique. Un socle solide pour l'avenir.</p>
+                    <h3 data-lang="bts_dip_title">Le Diplôme</h3>
+                    <p data-lang="bts_dip_desc">Le BTS Services Informatiques aux Organisations est un diplôme d'État formant aux métiers du numérique. Un socle solide pour l'avenir.</p>
                 </div>
                 <div class="card">
                     <div class="icon-box"><i class="fas fa-code"></i></div>
                     <h3>Option SLAM</h3>
-                    <p>Développement d'applications, bases de données, et solutions logicielles. Comprendre le code pour mieux gérer l'infra.</p>
+                    <p data-lang="bts_slam_desc">Développement d'applications, bases de données, et solutions logicielles. Comprendre le code pour mieux gérer l'infra.</p>
                 </div>
                 <div class="card" style="border-color: var(--primary-color); border-width: 2px;">
                     <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
-                    <h3 style="color:var(--primary-color)">Option SISR (Ma spécialisation)</h3>
-                    <p>Administration systèmes et réseaux, cybersécurité, virtualisation. La colonne vertébrale du SI.</p>
+                    <h3 style="color:var(--primary-color)" data-lang="bts_sisr_title">Option SISR (Ma spécialisation)</h3>
+                    <p data-lang="bts_sisr_desc">Administration systèmes et réseaux, cybersécurité, virtualisation. La colonne vertébrale du SI.</p>
                 </div>
             </div>
         </div>
@@ -290,12 +280,12 @@
                          style="max-height: 100px; width: auto;">
                 </h3>
 
-                <p style="font-size: 1.1rem; opacity: 0.9; margin-top: 25px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.8;">
-                    La Banque de France est la banque centrale nationale française. Elle contribue à la stabilité monétaire, à la supervision du système financier et au service de l’économie (statistiques, inclusion bancaire, cotations d’entreprises, etc.).
+                <p style="font-size: 1.1rem; opacity: 0.9; margin-top: 25px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.8;" data-lang="ent_desc">
+                    La Banque de France est la banque centrale nationale française. Elle contribue à la stabilité monétaire, à la supervision du système financier et au service de l’économie.
                 </p>
                 
                 <div style="margin-top: 20px;">
-                    <span class="tag">Secteur Public</span><span class="tag">Haute Sécurité</span><span class="tag">Finance</span>
+                    <span class="tag" data-lang="tag_public">Secteur Public</span><span class="tag" data-lang="tag_secu">Haute Sécurité</span><span class="tag">Finance</span>
                 </div>
             </div>
 
@@ -305,47 +295,43 @@
                     <div style="display:flex; align-items:center; gap:15px; margin-bottom:20px;">
                         <i class="fas fa-id-badge" style="font-size: 2.5rem; color: var(--secondary-color);"></i>
                         <div>
-                            <h4 style="font-size: 1.3rem;">Correspondant Informatique</h4>
-                            <span style="font-size: 0.9rem; opacity: 0.7;">2024 - 2026 | Alternance</span>
+                            <h4 style="font-size: 1.3rem;" data-lang="job_title">Correspondant Informatique</h4>
+                            <span style="font-size: 0.9rem; opacity: 0.7;" data-lang="job_period">2024 - 2026 | Alternance</span>
                         </div>
                     </div>
                     
                     <ul style="list-style: none; padding: 0;">
                         <li style="margin-bottom: 15px; display:flex; gap:10px; align-items: flex-start;">
                             <i class="fas fa-check-circle" style="color:var(--primary-color); margin-top: 5px; flex-shrink: 0;"></i> 
-                            <span>Installer et déployer les machines clientes et les périphériques d’un parc informatique sous l’autorité du responsable.</span>
+                            <span data-lang="task_1">Installer et déployer les machines clientes et les périphériques d’un parc informatique sous l’autorité du responsable.</span>
                         </li>
                         <li style="margin-bottom: 15px; display:flex; gap:10px; align-items: flex-start;">
                             <i class="fas fa-check-circle" style="color:var(--primary-color); margin-top: 5px; flex-shrink: 0;"></i> 
-                            <span>Permettre l’accès aux ressources informatiques et numériques ainsi qu'aux services réseaux.</span>
+                            <span data-lang="task_2">Permettre l’accès aux ressources informatiques et numériques ainsi qu'aux services réseaux.</span>
                         </li>
                         <li style="margin-bottom: 15px; display:flex; gap:10px; align-items: flex-start;">
                             <i class="fas fa-check-circle" style="color:var(--primary-color); margin-top: 5px; flex-shrink: 0;"></i> 
-                            <span>Assurer la maintenance du parc informatique, téléphonique et numérique de l’entreprise.</span>
+                            <span data-lang="task_3">Assurer la maintenance du parc informatique, téléphonique et numérique de l’entreprise.</span>
                         </li>
                         <li style="margin-bottom: 15px; display:flex; gap:10px; align-items: flex-start;">
                             <i class="fas fa-check-circle" style="color:var(--primary-color); margin-top: 5px; flex-shrink: 0;"></i> 
-                            <span>Assurer le support technique et accompagner les utilisateurs dans l’utilisation des outils numériques.</span>
-                        </li>
-                        <li style="margin-bottom: 15px; display:flex; gap:10px; align-items: flex-start;">
-                            <i class="fas fa-check-circle" style="color:var(--primary-color); margin-top: 5px; flex-shrink: 0;"></i> 
-                            <span>Participer à l’évolution du parc informatique et numérique.</span>
+                            <span data-lang="task_4">Assurer le support technique et accompagner les utilisateurs dans l’utilisation des outils numériques.</span>
                         </li>
                     </ul>
                 </div>
 
                 <div class="card" style="height: auto;">
-                    <h4 style="margin-bottom: 20px;"><i class="fas fa-rocket"></i> Environnement & Réalisations</h4>
+                    <h4 style="margin-bottom: 20px;"><i class="fas fa-rocket"></i> <span data-lang="env_real">Environnement & Réalisations</span></h4>
                     
                     <div style="margin-bottom: 25px;">
                         <span class="tag" style="background: rgba(0, 120, 215, 0.1); color: #0078D7;">Windows 10/11</span>
                         <span class="tag" style="background: rgba(71, 85, 105, 0.1); color: #475569;">Server 2019</span>
                         <span class="tag" style="background: rgba(30, 41, 59, 0.1); color: #1e293b;">PowerShell</span>
-                        <span class="tag secu">Cyberdéfense</span>
+                        <span class="tag secu" data-lang="tag_cyber">Cyberdéfense</span>
                     </div>
 
                     <div style="padding: 15px; background: rgba(59, 130, 246, 0.1); border-radius: 10px; border-left: 4px solid var(--primary-color);">
-                        <strong>Projet Phare :</strong> Automatisation de l'onboarding utilisateurs via script PowerShell.
+                        <strong data-lang="proj_flag">Projet Phare :</strong> <span data-lang="proj_desc">Automatisation de l'onboarding utilisateurs via script PowerShell.</span>
                     </div>
                 </div>
             </div>
@@ -354,7 +340,7 @@
     
 <section id="ecole">
         <div class="container reveal">
-            <h2 class="section-title">Mon École</h2>
+            <h2 class="section-title" data-lang="title_ecole">Mon École</h2>
             
             <div class="card">
                 <div class="grid-2" style="align-items: center;">
@@ -362,12 +348,12 @@
                     <div>
                         <div style="display:flex; align-items:center; gap:15px; margin-bottom: 20px;">
                             <img src="https://media.licdn.com/dms/image/v2/D4E0BAQFMzC-QRuzMfQ/company-logo_200_200/B4EZoVbjI1J0AM-/0/1761296135095/cfa_ingetis_logo?e=1766620800&v=beta&t=3GUaA_dKhsfUacCveuZrGGhf6F8DHrkfXrE0JnFBRxg" 
-                                 alt="Logo Ingétis" 
-                                 style="width: 65px; height: 65px; border-radius: 12px; object-fit: cover; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                                     alt="Logo Ingétis" 
+                                     style="width: 65px; height: 65px; border-radius: 12px; object-fit: cover; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
                             
                             <div>
                                 <h3 style="font-size: 2rem; line-height: 1.1;">
-                                    <a href="https://ingetis.com/" target="_blank" style="text-decoration: none; color: inherit; transition: 0.3s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
+                                    <a href="https://ingetis.com/" target="_blank" style="text-decoration: none; color: inherit; transition: 0.3s;">
                                         Ingétis <i class="fas fa-external-link-alt" style="font-size: 1rem; opacity: 0.5; vertical-align: middle;"></i>
                                     </a>
                                 </h3>
@@ -375,53 +361,42 @@
                             </div>
                         </div>
                         
-                        <p style="margin-bottom: 20px; text-align: justify;">
+                        <p style="margin-bottom: 20px; text-align: justify;" data-lang="ecole_desc1">
                             École d'ingénierie informatique appliquée située au cœur de Paris. 
-                            <strong>Ingétis</strong> se distingue par une approche pédagogique à taille humaine, favorisant un suivi individualisé et une insertion professionnelle rapide.
+                            <strong>Ingétis</strong> se distingue par une approche pédagogique à taille humaine, favorisant un suivi individualisé.
                         </p>
                         
-                        <p style="margin-bottom: 25px;">
-                            Membre du <strong>Campus Cyber</strong> et certifiée <strong>Qualiopi</strong>, l'école propose un cursus complet du Bac au Bac+5, reconnu par l'État.
+                        <p style="margin-bottom: 25px;" data-lang="ecole_desc2">
+                            Membre du <strong>Campus Cyber</strong> et certifiée <strong>Qualiopi</strong>, l'école propose un cursus complet du Bac au Bac+5.
                         </p>
 
                         <div style="display:flex; gap:10px; flex-wrap:wrap;">
                             <span class="tag">BTS SIO</span>
-                            <span class="tag">Alternance</span>
+                            <span class="tag" data-lang="tag_alt">Alternance</span>
                             <span class="tag">Bac+5</span>
-                            <span class="tag">Cybersécurité</span>
+                            <span class="tag" data-lang="tag_secu">Cybersécurité</span>
                         </div>
                     </div>
 
                     <div style="background: rgba(0,0,0,0.03); padding: 25px; border-radius: 15px; border: 1px solid var(--border-color);">
-                        <h4 style="margin-bottom: 15px; color: var(--primary-color);"><i class="fas fa-check-circle"></i> Pourquoi Ingétis ?</h4>
+                        <h4 style="margin-bottom: 15px; color: var(--primary-color);"><i class="fas fa-check-circle"></i> <span data-lang="why_ingetis">Pourquoi Ingétis ?</span></h4>
                         
                         <ul style="list-style: none; padding: 0; margin-bottom: 25px;">
                             <li style="margin-bottom: 10px; display: flex; gap: 10px;">
                                 <i class="fas fa-user-graduate" style="color: var(--secondary-color); margin-top: 4px;"></i>
                                 <div>
-                                    <strong>Pédagogie par projet :</strong><br>
-                                    <span style="font-size: 0.9rem; opacity: 0.8;">Apprentissage concret via des infrastructures dédiées et des équipements de dernière génération.</span>
+                                    <strong data-lang="pedago_title">Pédagogie par projet :</strong><br>
+                                    <span style="font-size: 0.9rem; opacity: 0.8;" data-lang="pedago_desc">Apprentissage concret via des infrastructures dédiées et des équipements de dernière génération.</span>
                                 </div>
                             </li>
                             <li style="margin-bottom: 10px; display: flex; gap: 10px;">
                                 <i class="fas fa-briefcase" style="color: var(--secondary-color); margin-top: 4px;"></i>
                                 <div>
-                                    <strong>L'Alternance au cœur :</strong><br>
-                                    <span style="font-size: 0.9rem; opacity: 0.8;">70% des étudiants en alternance dès la 1ère année, avec un fort réseau d'entreprises partenaires.</span>
+                                    <strong data-lang="alt_title">L'Alternance au cœur :</strong><br>
+                                    <span style="font-size: 0.9rem; opacity: 0.8;" data-lang="alt_desc">70% des étudiants en alternance dès la 1ère année, avec un fort réseau d'entreprises partenaires.</span>
                                 </div>
                             </li>
                         </ul>
-
-                        <div style="border-top: 1px solid var(--border-color); padding-top: 15px;">
-                            <h4 style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; opacity: 0.7;">Parcours</h4>
-                            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; font-weight: 600;">
-                                <span>BTS SIO</span>
-                                <i class="fas fa-arrow-right" style="font-size: 0.8rem; opacity: 0.5;"></i>
-                                <span>Bachelor</span>
-                                <i class="fas fa-arrow-right" style="font-size: 0.8rem; opacity: 0.5;"></i>
-                                <span style="color: var(--primary-color);">Cycle Expert (Bac+5)</span>
-                            </div>
-                        </div>
                     </div>
 
                 </div>
@@ -431,24 +406,24 @@
 
     <section id="projets">
         <div class="container reveal">
-            <h2 class="section-title">Projets E4</h2>
+            <h2 class="section-title" data-lang="title_projets">Projets E4</h2>
             <div class="grid-3">
                 <article class="project-card">
                     <div class="project-header"><i class="fab fa-linux"></i></div>
                     <div class="project-content">
                         <h3>Serveur GLPI</h3>
-                        <p>Mise en place d'une solution de gestion de parc et helpdesk sur Debian.</p>
+                        <p data-lang="glpi_desc">Mise en place d'une solution de gestion de parc et helpdesk sur Debian.</p>
                         <div style="margin-top: 15px;"><span class="tag">Linux</span><span class="tag">Apache</span></div>
-                        <a href="#" style="display:block; margin-top:20px; font-weight:bold; color:var(--primary-color);">Voir détails →</a>
+                        <a href="#" style="display:block; margin-top:20px; font-weight:bold; color:var(--primary-color);"><span data-lang="see_details">Voir détails</span> →</a>
                     </div>
                 </article>
                 <article class="project-card">
                     <div class="project-header" style="background: linear-gradient(135deg, #2563eb, #22d3ee);"><i class="fab fa-windows"></i></div>
                     <div class="project-content">
                         <h3>Active Directory</h3>
-                        <p>Architecture complète : Forêt, GPO de sécurité et scripts d'automatisation.</p>
-                        <div style="margin-top: 15px;"><span class="tag">Windows Server</span><span class="tag secu">Securité</span></div>
-                        <a href="#" style="display:block; margin-top:20px; font-weight:bold; color:var(--primary-color);">Voir détails →</a>
+                        <p data-lang="ad_desc">Architecture complète : Forêt, GPO de sécurité et scripts d'automatisation.</p>
+                        <div style="margin-top: 15px;"><span class="tag">Windows Server</span><span class="tag secu" data-lang="tag_secu_short">Securité</span></div>
+                        <a href="#" style="display:block; margin-top:20px; font-weight:bold; color:var(--primary-color);"><span data-lang="see_details">Voir détails</span> →</a>
                     </div>
                 </article>
             </div>
@@ -457,7 +432,7 @@
 
     <section id="veille">
         <div class="container reveal">
-            <h2 class="section-title">Veille technologique</h2>
+            <h2 class="section-title" data-lang="title_veille">Veille technologique</h2>
             
             <div style="display: flex; justify-content: center;">
                 <div class="card" style="max-width: 1000px; width: 100%; border-left: 3px solid var(--secondary-color);">
@@ -466,7 +441,7 @@
                         <h3 style="color:var(--secondary-color); font-size: 1.8rem; margin-bottom:10px;">
                             <i class="fas fa-fingerprint"></i> Passwordless & FIDO2
                         </h3>
-                        <p style="max-width: 700px; margin: 0 auto; opacity: 0.8;">
+                        <p style="max-width: 700px; margin: 0 auto; opacity: 0.8;" data-lang="veille_intro">
                             Analyse de la transition mondiale vers l'authentification sans mot de passe, l'impact de la biométrie et les enjeux spécifiques au secteur bancaire.
                         </p>
                     </div>
@@ -475,7 +450,7 @@
                         
                         <div>
                             <h4 style="border-bottom: 2px solid #ddd; padding-bottom: 10px; margin-bottom: 15px; color: var(--text-main);">
-                                <i class="fas fa-flag" style="color: #3b82f6;"></i> Sources Francophones
+                                <i class="fas fa-flag" style="color: #3b82f6;"></i> <span data-lang="src_fr">Sources Francophones</span>
                             </h4>
                             <ul style="list-style: none; padding-left: 0;">
                                 <li style="margin-bottom: 12px;">
@@ -483,43 +458,16 @@
                                         <i class="fas fa-file-alt" style="color:var(--primary-color); margin-top:4px;"></i>
                                         <div>
                                             <strong>Solutions Numériques :</strong><br>
-                                            <span style="font-size:0.9rem;">Dossier complet pour un futur sans mot de passe.</span>
+                                            <span style="font-size:0.9rem;" data-lang="src_1">Dossier complet pour un futur sans mot de passe.</span>
                                         </div>
                                     </a>
                                 </li>
-                                <li style="margin-bottom: 12px;">
-                                    <a href="https://www.journaldunet.com/cybersecurite/1536369-passwordless-et-cles-fido2-une-nouvelle-ere-de-securite-made-in-france/" target="_blank" style="color:var(--text-secondary); display:flex; gap:10px;">
-                                        <i class="fas fa-key" style="color:var(--primary-color); margin-top:4px;"></i>
-                                        <div>
-                                            <strong>JDN :</strong><br>
-                                            <span style="font-size:0.9rem;">Clés FIDO2, une sécurité Made in France.</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li style="margin-bottom: 12px;">
-                                    <a href="https://www.zdnet.fr/pratique/cybersecurite-comment-preparer-votre-entreprise-a-un-avenir-passwordless-484485.htm" target="_blank" style="color:var(--text-secondary); display:flex; gap:10px;">
-                                        <i class="fas fa-building" style="color:var(--primary-color); margin-top:4px;"></i>
-                                        <div>
-                                            <strong>ZDNet :</strong><br>
-                                            <span style="font-size:0.9rem;">Préparer son entreprise à la transition.</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.silicon.fr/Thematique/cybersecurite-1371/Breves/Passwordless-une-approche-innovante-pour-securiser-les-acces-459294.htm" target="_blank" style="color:var(--text-secondary); display:flex; gap:10px;">
-                                        <i class="fas fa-lightbulb" style="color:var(--primary-color); margin-top:4px;"></i>
-                                        <div>
-                                            <strong>Silicon.fr :</strong><br>
-                                            <span style="font-size:0.9rem;">Approche innovante des accès sécurisés.</span>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
+                                </ul>
                         </div>
 
                         <div>
                             <h4 style="border-bottom: 2px solid #ddd; padding-bottom: 10px; margin-bottom: 15px; color: var(--text-main);">
-                                <i class="fas fa-globe-americas" style="color: #8b5cf6;"></i> Sources internationales
+                                <i class="fas fa-globe-americas" style="color: #8b5cf6;"></i> <span data-lang="src_intl">Sources internationales</span>
                             </h4>
                             <ul style="list-style: none; padding-left: 0;">
                                 <li style="margin-bottom: 12px;">
@@ -528,34 +476,6 @@
                                         <div>
                                             <strong>BankInfoSecurity :</strong><br>
                                             <span style="font-size:0.9rem;">Smart Verification for Fraud Prevention.</span>
-                                            <span class="tag" style="font-size:0.7rem; padding: 2px 8px; margin-left: 5px;">Banking</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li style="margin-bottom: 12px;">
-                                    <a href="https://www.cnbc.com/2025/11/23/passwords-corporate-cybersecurity-employee-authentication.html" target="_blank" style="color:var(--text-secondary); display:flex; gap:10px;">
-                                        <i class="fas fa-chart-line" style="color:var(--secondary-color); margin-top:4px;"></i>
-                                        <div>
-                                            <strong>CNBC (Nov 2025) :</strong><br>
-                                            <span style="font-size:0.9rem;">Corporate Cybersecurity & Employee Auth.</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li style="margin-bottom: 12px;">
-                                    <a href="https://www.techtimes.com/articles/313064/20251201/passwordless-authentication-biometric-login-security-tech-really-safer.htm" target="_blank" style="color:var(--text-secondary); display:flex; gap:10px;">
-                                        <i class="fas fa-shield-virus" style="color:var(--secondary-color); margin-top:4px;"></i>
-                                        <div>
-                                            <strong>TechTimes (Dec 2025) :</strong><br>
-                                            <span style="font-size:0.9rem;">Is Biometric Tech Really Safer?</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.precedenceresearch.com/passwordless-authentication-market" target="_blank" style="color:var(--text-secondary); display:flex; gap:10px;">
-                                        <i class="fas fa-search-dollar" style="color:var(--secondary-color); margin-top:4px;"></i>
-                                        <div>
-                                            <strong>Precedence Research :</strong><br>
-                                            <span style="font-size:0.9rem;">Global Market Size & Trends.</span>
                                         </div>
                                     </a>
                                 </li>
@@ -570,38 +490,32 @@
 
    <section id="certifs">
     <div class="container reveal">
-        <h2 class="section-title">Certifications</h2>
+        <h2 class="section-title" data-lang="title_certifs">Certifications</h2>
         <div class="grid-2">
             
             <div class="card">
                 <div style="display:flex; justify-content:space-between; align-items:start; margin-bottom: 20px;">
-                    <img src="https://www.auditsi.eu/wp-content/uploads/2018/06/anssi_visuel_square500.png" 
-                         alt="Logo ANSSI Officiel" 
-                         style="height: 55px; width: auto;">
-                    
+                    <img src="https://www.auditsi.eu/wp-content/uploads/2018/06/anssi_visuel_square500.png" alt="Logo ANSSI Officiel" style="height: 55px; width: auto;">
                     <img src="./documents/secnum.png" alt="Badge SecNum" class="zoomable" style="height: 40px; opacity: 0.8;">
                 </div>
                 <h3>SecNum Académie</h3>
-                <p style="font-weight: 600; opacity: 0.7; margin-bottom: 15px;">ANSSI | <span style="color: #2ecc71;">Validé (Mars 2025)</span></p>
+                <p style="font-weight: 600; opacity: 0.7; margin-bottom: 15px;">ANSSI | <span style="color: #2ecc71;" data-lang="valid_mars">Validé (Mars 2025)</span></p>
                 <ul style="list-style: none; margin-top: 10px;">
-                    <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #2ecc71;"></i> Hygiène informatique</li>
-                    <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #2ecc71;"></i> Sécurisation des postes</li>
+                    <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #2ecc71;"></i> <span data-lang="secnum_1">Hygiène informatique</span></li>
+                    <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #2ecc71;"></i> <span data-lang="secnum_2">Sécurisation des postes</span></li>
                 </ul>
             </div>
 
             <div class="card">
                 <div style="display:flex; justify-content:space-between; align-items:start; margin-bottom: 20px;">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Cisco_academy_logo.svg/1200px-Cisco_academy_logo.svg.png" 
-                         alt="Logo Cisco NetAcad Officiel" 
-                         style="height: 50px; width: auto;">
-                         
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Cisco_academy_logo.svg/1200px-Cisco_academy_logo.svg.png" alt="Logo Cisco NetAcad Officiel" style="height: 50px; width: auto;">
                     <img src="./documents/cisco_cyber.jpg" alt="Badge Cisco" class="zoomable" style="height: 40px; opacity: 0.8; border-radius: 5px;">
                 </div>
-                <h3>Introduction à la cybersécurité</h3>
-                <p style="font-weight: 600; opacity: 0.7; margin-bottom: 15px;">Cisco Academy | <span style="color: #00b4db;">Validé (Oct 2025)</span></p>
+                <h3 data-lang="cisco_title">Introduction à la cybersécurité</h3>
+                <p style="font-weight: 600; opacity: 0.7; margin-bottom: 15px;">Cisco Academy | <span style="color: #00b4db;" data-lang="valid_oct">Validé (Oct 2025)</span></p>
                 <ul style="list-style: none; margin-top: 10px;">
-                    <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #00b4db;"></i> Concepts de base sécurité</li>
-                    <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #00b4db;"></i> Protection des données</li>
+                    <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #00b4db;"></i> <span data-lang="cisco_1">Concepts de base sécurité</span></li>
+                    <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #00b4db;"></i> <span data-lang="cisco_2">Protection des données</span></li>
                 </ul>
             </div>
 
@@ -615,9 +529,9 @@
             <div class="card">
                 <div class="contact-grid">
                     <div class="contact-info">
-                        <h3>Restons en contact</h3>
-                        <p>Une question sur mon parcours, une opportunité d'alternance ou simplement envie d'échanger sur la cybersécurité ?</p>
-                        <p>N'hésitez pas à m'envoyer un message.</p>
+                        <h3 data-lang="contact_title">Restons en contact</h3>
+                        <p data-lang="contact_desc1">Une question sur mon parcours, une opportunité d'alternance ou simplement envie d'échanger sur la cybersécurité ?</p>
+                        <p data-lang="contact_desc2">N'hésitez pas à m'envoyer un message.</p>
                         
                         <div style="margin-top: 40px;">
                             <div style="display:flex; align-items:center; gap:15px; margin-bottom: 15px;">
@@ -638,9 +552,9 @@
 
                     <div class="contact-form">
                         <form action="https://formspree.io/f/VOTRE_ID_ICI" method="POST">
-                            <input type="text" name="name" class="form-input" placeholder="Votre nom" required>
-                            <input type="email" name="email" class="form-input" placeholder="Votre adresse email" required>
-                            <textarea name="message" class="form-textarea" placeholder="Votre message..." required></textarea>
+                            <input type="text" name="name" class="form-input" data-placeholder="ph_name" placeholder="Votre nom" required>
+                            <input type="email" name="email" class="form-input" data-placeholder="ph_email" placeholder="Votre adresse email" required>
+                            <textarea name="message" class="form-textarea" data-placeholder="ph_msg" placeholder="Votre message..." required></textarea>
                             
                             <button type="submit" class="btn-submit" style="
                                 background: var(--gradient-main); 
@@ -657,7 +571,7 @@
                                 box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
                             " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(139, 92, 246, 0.4)'; this.style.filter='brightness(1.1)'" 
                               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(59, 130, 246, 0.3)'; this.style.filter='brightness(1)'">
-                                Envoyer le message
+                                <span data-lang="btn_send">Envoyer le message</span>
                             </button>
                         </form>
                     </div>
@@ -667,7 +581,7 @@
     </section>
         
         <div class="copyright-footer">
-            &copy; 2024 Soufiane ZOUGAGH - Portfolio BTS SIO SISR. Tous droits réservés.
+            &copy; 2024 Soufiane ZOUGAGH - <span data-lang="footer_rights">Portfolio BTS SIO SISR. Tous droits réservés.</span>
         </div>
     </section>
 
@@ -678,6 +592,7 @@
     </div>
 
     <script>
+        // --- GESTION DU THEME ---
         const toggleBtn = document.getElementById('theme-toggle');
         const icon = toggleBtn.querySelector('i');
         const html = document.documentElement;
@@ -693,13 +608,193 @@
             updateIcon(newTheme);
         });
 
+        // --- GESTION DE LA LANGUE (TRADUCTIONS) ---
+        const translations = {
+            fr: {
+                nav_accueil: "Accueil",
+                nav_bts: "BTS SIO",
+                nav_ent: "Entreprise",
+                nav_ecole: "École",
+                nav_projets: "Projets",
+                nav_veille: "Veille",
+                nav_certifs: "Certifications",
+                nav_contact: "Contact",
+                hero_desc: "Étudiant en deuxième année de BTS SIO SISR à Ingétis.<br>En alternance à la Banque de France en tant que Correspondant Informatique.",
+                btn_about: "À propos de moi",
+                btn_synthese: "Fiche synthèse",
+                title_bts: "Parcours BTS SIO",
+                bts_dip_title: "Le Diplôme",
+                bts_dip_desc: "Le BTS Services Informatiques aux Organisations est un diplôme d'État formant aux métiers du numérique. Un socle solide pour l'avenir.",
+                bts_slam_desc: "Développement d'applications, bases de données, et solutions logicielles. Comprendre le code pour mieux gérer l'infra.",
+                bts_sisr_title: "Option SISR (Ma spécialisation)",
+                bts_sisr_desc: "Administration systèmes et réseaux, cybersécurité, virtualisation. La colonne vertébrale du SI.",
+                ent_desc: "La Banque de France est la banque centrale nationale française. Elle contribue à la stabilité monétaire, à la supervision du système financier et au service de l’économie.",
+                tag_public: "Secteur Public",
+                tag_secu: "Haute Sécurité",
+                tag_secu_short: "Sécurité",
+                tag_cyber: "Cyberdéfense",
+                job_title: "Correspondant Informatique",
+                job_period: "2024 - 2026 | Alternance",
+                task_1: "Installer et déployer les machines clientes et les périphériques d’un parc informatique sous l’autorité du responsable.",
+                task_2: "Permettre l’accès aux ressources informatiques et numériques ainsi qu'aux services réseaux.",
+                task_3: "Assurer la maintenance du parc informatique, téléphonique et numérique de l’entreprise.",
+                task_4: "Assurer le support technique et accompagner les utilisateurs dans l’utilisation des outils numériques.",
+                env_real: "Environnement & Réalisations",
+                proj_flag: "Projet Phare :",
+                proj_desc: "Automatisation de l'onboarding utilisateurs via script PowerShell.",
+                title_ecole: "Mon École",
+                ecole_desc1: "École d'ingénierie informatique appliquée située au cœur de Paris. <strong>Ingétis</strong> se distingue par une approche pédagogique à taille humaine, favorisant un suivi individualisé.",
+                ecole_desc2: "Membre du <strong>Campus Cyber</strong> et certifiée <strong>Qualiopi</strong>, l'école propose un cursus complet du Bac au Bac+5.",
+                tag_alt: "Alternance",
+                why_ingetis: "Pourquoi Ingétis ?",
+                pedago_title: "Pédagogie par projet :",
+                pedago_desc: "Apprentissage concret via des infrastructures dédiées et des équipements de dernière génération.",
+                alt_title: "L'Alternance au cœur :",
+                alt_desc: "70% des étudiants en alternance dès la 1ère année, avec un fort réseau d'entreprises partenaires.",
+                title_projets: "Projets E4",
+                glpi_desc: "Mise en place d'une solution de gestion de parc et helpdesk sur Debian.",
+                see_details: "Voir détails",
+                ad_desc: "Architecture complète : Forêt, GPO de sécurité et scripts d'automatisation.",
+                title_veille: "Veille technologique",
+                veille_intro: "Analyse de la transition mondiale vers l'authentification sans mot de passe, l'impact de la biométrie et les enjeux spécifiques au secteur bancaire.",
+                src_fr: "Sources Francophones",
+                src_1: "Dossier complet pour un futur sans mot de passe.",
+                src_intl: "Sources internationales",
+                title_certifs: "Certifications",
+                valid_mars: "Validé (Mars 2025)",
+                secnum_1: "Hygiène informatique",
+                secnum_2: "Sécurisation des postes",
+                cisco_title: "Introduction à la cybersécurité",
+                valid_oct: "Validé (Oct 2025)",
+                cisco_1: "Concepts de base sécurité",
+                cisco_2: "Protection des données",
+                contact_title: "Restons en contact",
+                contact_desc1: "Une question sur mon parcours, une opportunité d'alternance ou simplement envie d'échanger sur la cybersécurité ?",
+                contact_desc2: "N'hésitez pas à m'envoyer un message.",
+                ph_name: "Votre nom",
+                ph_email: "Votre adresse email",
+                ph_msg: "Votre message...",
+                btn_send: "Envoyer le message",
+                footer_rights: "Portfolio BTS SIO SISR. Tous droits réservés."
+            },
+            en: {
+                nav_accueil: "Home",
+                nav_bts: "BTS SIO",
+                nav_ent: "Company",
+                nav_ecole: "School",
+                nav_projets: "Projects",
+                nav_veille: "Tech Watch",
+                nav_certifs: "Certifications",
+                nav_contact: "Contact",
+                hero_desc: "2nd year student in BTS SIO SISR at Ingétis.<br>Work-study at Banque de France as an IT Support Specialist.",
+                btn_about: "About me",
+                btn_synthese: "Summary Sheet",
+                title_bts: "BTS SIO Path",
+                bts_dip_title: "The Diploma",
+                bts_dip_desc: "The BTS SIO is a State Diploma training for digital professions. A solid foundation for the future.",
+                bts_slam_desc: "App development, databases, and software solutions. Understanding code to better manage infrastructure.",
+                bts_sisr_title: "SISR Option (My Specialization)",
+                bts_sisr_desc: "System & network administration, cybersecurity, virtualization. The backbone of IT systems.",
+                ent_desc: "The Banque de France is the French national central bank. It contributes to monetary stability, financial system supervision, and service to the economy.",
+                tag_public: "Public Sector",
+                tag_secu: "High Security",
+                tag_secu_short: "Security",
+                tag_cyber: "Cyberdefense",
+                job_title: "IT Support Specialist",
+                job_period: "2024 - 2026 | Apprenticeship",
+                task_1: "Install and deploy client machines and peripherals within an IT fleet under supervision.",
+                task_2: "Enable access to IT/digital resources and network services.",
+                task_3: "Ensure maintenance of the company's computer, telephone, and digital equipment.",
+                task_4: "Provide technical support and guide users in using digital tools.",
+                env_real: "Environment & Achievements",
+                proj_flag: "Flagship Project:",
+                proj_desc: "Automation of user onboarding via PowerShell script.",
+                title_ecole: "My School",
+                ecole_desc1: "Applied computer engineering school located in the heart of Paris. <strong>Ingétis</strong> stands out for its human-sized pedagogical approach, favoring individualized follow-up.",
+                ecole_desc2: "Member of <strong>Campus Cyber</strong> and <strong>Qualiopi</strong> certified, the school offers a complete curriculum from Bachelor to Master's degree.",
+                tag_alt: "Work-study",
+                why_ingetis: "Why Ingétis?",
+                pedago_title: "Project-based learning:",
+                pedago_desc: "Concrete learning via dedicated infrastructures and latest generation equipment.",
+                alt_title: "Work-study at the core:",
+                alt_desc: "70% of students in apprenticeship from the 1st year, with a strong network of partner companies.",
+                title_projets: "E4 Projects",
+                glpi_desc: "Implementation of an IT asset management and helpdesk solution on Debian.",
+                see_details: "See details",
+                ad_desc: "Complete architecture: Forest, security GPOs, and automation scripts.",
+                title_veille: "Tech Watch",
+                veille_intro: "Analysis of the global transition to passwordless authentication, the impact of biometrics, and banking sector specifics.",
+                src_fr: "French Sources",
+                src_1: "Complete dossier for a passwordless future.",
+                src_intl: "International Sources",
+                title_certifs: "Certifications",
+                valid_mars: "Validated (March 2025)",
+                secnum_1: "IT Hygiene",
+                secnum_2: "Workstation Security",
+                cisco_title: "Introduction to Cybersecurity",
+                valid_oct: "Validated (Oct 2025)",
+                cisco_1: "Basic Security Concepts",
+                cisco_2: "Data Protection",
+                contact_title: "Let's keep in touch",
+                contact_desc1: "A question about my path, a work-study opportunity, or just want to discuss cybersecurity?",
+                contact_desc2: "Feel free to send me a message.",
+                ph_name: "Your name",
+                ph_email: "Your email address",
+                ph_msg: "Your message...",
+                btn_send: "Send message",
+                footer_rights: "BTS SIO SISR Portfolio. All rights reserved."
+            }
+        };
+
+        const langToggle = document.getElementById('lang-toggle');
+        let currentLang = localStorage.getItem('lang') || 'fr';
+
+        function updateLanguage(lang) {
+            // Mise à jour des textes
+            document.querySelectorAll('[data-lang]').forEach(element => {
+                const key = element.getAttribute('data-lang');
+                if (translations[lang][key]) {
+                    element.innerHTML = translations[lang][key]; // innerHTML pour garder les balises <strong> ou <br>
+                }
+            });
+
+            // Mise à jour des placeholders (champs de formulaire)
+            document.querySelectorAll('[data-placeholder]').forEach(element => {
+                const key = element.getAttribute('data-placeholder');
+                if (translations[lang][key]) {
+                    element.setAttribute('placeholder', translations[lang][key]);
+                }
+            });
+
+            // Mise à jour du bouton
+            langToggle.textContent = lang === 'fr' ? 'EN' : 'FR';
+            
+            // Mise à jour de l'attribut lang du html
+            document.documentElement.lang = lang;
+            
+            // Sauvegarde
+            localStorage.setItem('lang', lang);
+            currentLang = lang;
+        }
+
+        // Initialisation
+        updateLanguage(currentLang);
+
+        // Event listener
+        langToggle.addEventListener('click', () => {
+            const newLang = currentLang === 'fr' ? 'en' : 'fr';
+            updateLanguage(newLang);
+        });
+
+
+        // --- SCROLL ANIMATION ---
         window.addEventListener('scroll', () => {
             document.querySelectorAll('.reveal').forEach(reveal => {
                 if(reveal.getBoundingClientRect().top < window.innerHeight - 150) reveal.classList.add('active');
             });
         });
 
-        // Lightbox
+        // --- LIGHTBOX ---
         const modal = document.getElementById("imageModal");
         const modalImg = document.getElementById("img01");
         document.querySelectorAll(".zoomable").forEach(img => {
