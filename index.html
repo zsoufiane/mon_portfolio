@@ -110,8 +110,9 @@
             border: 2px solid var(--border-color); background: transparent;
             color: var(--text-main); font-size: 1.2rem; display: flex; align-items: center; justify-content: center;
             transition: 0.3s;
+            /* MODIF POUR DRAPEAU */
+            padding: 0; overflow: hidden;
         }
-        .lang-toggle { font-size: 0.9rem; font-weight: 800; }
         .lang-toggle:hover, .theme-toggle:hover { border-color: var(--primary-color); color: var(--primary-color); }
 
         /* --- HERO --- */
@@ -217,7 +218,11 @@
                 <li><a href="#certifs" data-lang="nav_certifs">Certifications</a></li>
                 <li><a href="#contact" data-lang="nav_contact">Contact</a></li>
                 
-                <li><button id="lang-toggle" class="lang-toggle">EN</button></li>
+                <li>
+                    <button id="lang-toggle" class="lang-toggle" aria-label="Changer de langue">
+                        <img id="lang-flag" src="https://flagcdn.com/w80/gb.png" alt="Drapeau" style="width: 100%; height: 100%; object-fit: cover;">
+                    </button>
+                </li>
                 <li><button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button></li>
             </ul>
         </nav>
@@ -802,10 +807,12 @@
             }
         };
 
+        const langFlag = document.getElementById('lang-flag');
         const langToggle = document.getElementById('lang-toggle');
         let currentLang = localStorage.getItem('lang') || 'fr';
 
         function updateLanguage(lang) {
+            // 1. Mise à jour des textes
             document.querySelectorAll('[data-lang]').forEach(element => {
                 const key = element.getAttribute('data-lang');
                 if (translations[lang][key]) {
@@ -813,6 +820,7 @@
                 }
             });
 
+            // 2. Mise à jour des placeholders
             document.querySelectorAll('[data-placeholder]').forEach(element => {
                 const key = element.getAttribute('data-placeholder');
                 if (translations[lang][key]) {
@@ -820,14 +828,26 @@
                 }
             });
 
-            langToggle.textContent = lang === 'fr' ? 'EN' : 'FR';
+            // 3. Mise à jour du DRAPEAU
+            // Si on est en FR, on affiche le drapeau UK (pour passer en anglais)
+            // Si on est en EN, on affiche le drapeau FR (pour passer en français)
+            if (lang === 'fr') {
+                langFlag.src = "https://flagcdn.com/w80/gb.png"; // Drapeau Royaume-Uni
+                langFlag.alt = "Switch to English";
+            } else {
+                langFlag.src = "https://flagcdn.com/w80/fr.png"; // Drapeau France
+                langFlag.alt = "Passer en Français";
+            }
+
             document.documentElement.lang = lang;
             localStorage.setItem('lang', lang);
             currentLang = lang;
         }
 
+        // Initialisation
         updateLanguage(currentLang);
 
+        // Click event
         langToggle.addEventListener('click', () => {
             const newLang = currentLang === 'fr' ? 'en' : 'fr';
             updateLanguage(newLang);
