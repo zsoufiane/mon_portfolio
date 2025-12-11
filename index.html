@@ -459,7 +459,7 @@
     </div>
 </section>
 
-    <section id="veille">
+<section id="veille">
     <div class="container reveal">
         <h2 class="section-title" data-lang="title_veille">Veille technologique</h2>
         
@@ -475,40 +475,46 @@
                     </p>
                 </div>
                 
-                <h4 style="border-bottom: 2px solid var(--secondary-color); padding-bottom: 10px; margin-bottom: 25px; color: var(--text-main); text-align: center;">
-                    <i class="fas fa-rss" style="color: var(--secondary-color);"></i> Derniers articles sur l'authentification sans mot de passe
-                </h4>
+                <div style="padding: 20px;">
+                    <h4 style="border-bottom: 2px solid var(--secondary-color); padding-bottom: 10px; margin-bottom: 25px; color: var(--text-main);">
+                        <i class="fas fa-rss" style="color: var(--secondary-color);"></i> Synthèse de l'actualité : L'essor des Passkeys
+                    </h4>
 
-                <div id="rss-feed-container" style="min-height: 400px; padding: 20px; background: rgba(0, 0, 0, 0.1); border-radius: 8px; overflow-y: auto;">
-                    <p style="text-align: center; opacity: 0.7;">Chargement des articles de veille en cours...</p>
-                </div>
+                    <p style="margin-bottom: 20px;">
+                        Les mots de passe sont de plus en plus considérés comme le **maillon faible** de la sécurité (81% des intrusions par piratage). L'authentification sans mot de passe s'impose comme la solution d'avenir.
+                    </p>
 
-                <script>
-                    /*
-                    // Exemple de fonction (non fonctionnelle sans API ou librairie dédiée)
-                    function loadRssFeed() {
-                        const container = document.getElementById('rss-feed-container');
-                        const RSS_URL = 'VOTRE_URL_DE_FLUX_RSS_ICI'; 
-                        
-                        // En environnement réel, vous utiliseriez fetch() ou une librairie pour éviter les problèmes de CORS.
-                        // Exemple de contenu qui serait généré :
-                        container.innerHTML = `
-                            <article style="border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 15px;">
-                                <h5><a href="#">Article 1 : L'adoption massive de FIDO2</a></h5>
-                                <p style="font-size: 0.85rem; opacity: 0.8;">Un résumé de l'article sur l'utilisation des Passkeys...</p>
-                                <span class="tag" style="font-size: 0.7rem;">CyberSecu</span> <span style="font-size: 0.7rem; opacity: 0.6;">Publié le JJ/MM/AAAA</span>
-                            </article>
-                            <article style="border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 15px;">
-                                <h5><a href="#">Article 2 : Enjeux réglementaires pour le Passwordless</a></h5>
-                                <p style="font-size: 0.85rem; opacity: 0.8;">Focus sur les normes PSD2 et la biométrie...</p>
-                                <span class="tag" style="font-size: 0.7rem;">Réglementation</span> <span style="font-size: 0.7rem; opacity: 0.6;">Publié le JJ/MM/AAAA</span>
-                            </article>
-                        `;
-                    }
-                    // loadRssFeed(); 
-                    */
-                </script>
+                    <h5 style="color: var(--primary-color); margin-top: 30px; margin-bottom: 10px;"><i class="fas fa-key"></i> Adoption de FIDO2 et Passkeys</h5>
+                    <ul style="list-style-type: none; padding-left: 15px;">
+                        <li style="margin-bottom: 8px;">
+                            <i class="fas fa-check-circle" style="color: var(--primary-color);"></i> Les protocoles FIDO2 (WebAuthn/CTAP) sont la norme pour l'authentification asymétrique et sont résistants au phishing.
+                        </li>
+                        <li style="margin-bottom: 8px;">
+                            <i class="fas fa-check-circle" style="color: var(--primary-color);"></i> Les **Passkeys (Clés Secrètes)** améliorent l'expérience utilisateur et offrent un taux de succès de connexion supérieur de 20% par rapport aux mots de passe traditionnels.
+                        </li>
+                        <li style="margin-bottom: 8px;">
+                            <i class="fas fa-check-circle" style="color: var(--primary-color);"></i> Gartner prévoit que plus de 25% des transactions MFA utiliseront FIDO d'ici 2025.
+                        </li>
+                    </ul>
+
+                    <h5 style="color: var(--primary-color); margin-top: 30px; margin-bottom: 10px;"><i class="fas fa-building"></i> Impact Stratégique pour l'Entreprise</h5>
+                    <ul style="list-style-type: none; padding-left: 15px;">
+                        <li style="margin-bottom: 8px;">
+                            <i class="fas fa-chart-line" style="color: var(--primary-color);"></i> **Réduction des coûts informatiques :** Moins de tickets de support liés à la gestion des mots de passe.
+                        </li>
+                        <li style="margin-bottom: 8px;">
+                            <i class="fas fa-lock" style="color: var(--primary-color);"></i> **Sécurité renforcée :** Les passkeys éliminent les mots de passe, rendant les attaques par *phishing* beaucoup plus difficiles.
+                        </li>
+                        <li style="margin-bottom: 8px;">
+                            <i class="fas fa-wrench" style="color: var(--primary-color);"></i> **Déploiement :** Des plateformes comme Microsoft Entra ID intègrent FIDO2 pour simplifier le déploiement de la MFA sans mot de passe à l'échelle de l'entreprise.
+                        </li>
+                    </ul>
+                    <div style="text-align: center; margin-top: 40px; border-top: 1px solid #444; padding-top: 20px;">
+                        <span style="font-size: 0.8rem; opacity: 0.6;">(Veille basée sur des articles publiés entre Octobre et Décembre 2025)</span>
+                    </div>
+
                 </div>
+            </div>
         </div>
     </div>
 </section>
