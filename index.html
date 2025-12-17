@@ -846,166 +846,238 @@
     <section id="veille">
         <div class="container reveal">
             <h2 class="section-title" data-lang="title_veille">Veille technologique</h2>
-
-            <div style="display: flex; justify-content: center;">
-                <div class="card"
-                    style="max-width: 1000px; width: 100%; border-left: 3px solid var(--secondary-color);">
-
-                    <div style="text-align: center; margin-bottom: 30px;">
-                        <h3 style="color:var(--secondary-color); font-size: 1.8rem; margin-bottom:10px;">
-                            <i class="fas fa-fingerprint"></i> Passwordless & FIDO2
-                        </h3>
-                        <p style="max-width: 700px; margin: 0 auto; opacity: 0.8;" data-lang="veille_intro">
-                            Analyse de la transition mondiale vers l'authentification sans mot de passe, l'impact de la
-                            biométrie et les enjeux spécifiques au secteur bancaire.
+    
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h3 style="color:var(--secondary-color); font-size: 1.8rem; margin-bottom:10px;">
+                    <i class="fas fa-fingerprint"></i> Passwordless & FIDO2
+                </h3>
+                <p style="max-width: 700px; margin: 0 auto; opacity: 0.8;" data-lang="veille_intro">
+                    Analyse de la transition mondiale vers l'authentification sans mot de passe, l'impact de la
+                    biométrie et les enjeux spécifiques au secteur bancaire.
+                </p>
+            </div>
+    
+            <div class="carousel-wrapper">
+                <div class="carousel-track">
+    
+                    <article class="carousel-card">
+                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
+                            <i class="fas fa-chart-line"></i> Adoption Massive
+                        </h5>
+                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
+                            Gartner prévoit que plus de 25% des transactions MFA utiliseront FIDO d'ici 2025. Les Passkeys
+                            dominent le marché.
                         </p>
-                    </div>
-
-                    <h4
-                        style="border-bottom: 2px solid var(--secondary-color); padding-bottom: 10px; margin-bottom: 25px; color: var(--text-main); text-align: center;">
-                        <i class="fas fa-newspaper" style="color: var(--secondary-color);"></i> Actualités : Septembre
-                        2024 – Décembre 2025
-                    </h4>
-
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-
-                        <article class="article-case"
-                            style="border: 1px solid #444; padding: 15px; border-radius: 8px; transition: 0.2s;">
-                            <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
-                                <i class="fas fa-chart-line"></i> Adoption Massive des Passkeys
-                            </h5>
-                            <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 10px;">
-                                Gartner prévoit que plus de 25% des transactions MFA utiliseront FIDO d'ici 2025. Les
-                                Passkeys sont la forme d'implémentation la plus visible.
-                            </p>
-                            <div
-                                style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between;">
-                                <span><span class="tag">Prévisions</span> <span class="tag">FIDO</span></span>
-                                <span>Déc. 2025</span>
-                            </div>
-                        </article>
-
-                        <article class="article-case"
-                            style="border: 1px solid #444; padding: 15px; border-radius: 8px; transition: 0.2s;">
-                            <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
-                                <i class="fas fa-shield-alt"></i> Immunité contre le Phishing
-                            </h5>
-                            <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 10px;">
-                                Le Passwordless basé sur FIDO2 élimine le mot de passe comme vecteur d'attaque. Ceci
-                                renforce la stratégie Zero Trust de l'entreprise.
-                            </p>
-                            <div
-                                style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between;">
-                                <span><span class="tag">Sécurité</span> <span class="tag">Zero Trust</span></span>
-                                <span>Oct. 2025</span>
-                            </div>
-                        </article>
-
-                        <article class="article-case"
-                            style="border: 1px solid #444; padding: 15px; border-radius: 8px; transition: 0.2s;">
-                            <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
-                                <i class="fas fa-desktop"></i> Microsoft Entra ID et FIDO2
-                            </h5>
-                            <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 10px;">
-                                Les solutions d'entreprise comme Entra ID intègrent nativement FIDO2, simplifiant le
-                                déploiement de l'authentification sans mot de passe à grande échelle.
-                            </p>
-                            <div
-                                style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between;">
-                                <span><span class="tag">Cloud</span> <span class="tag">Déploiement</span></span>
-                                <span>Sept. 2024</span>
-                            </div>
-                        </article>
-
-                        <article class="article-case"
-                            style="border: 1px solid #444; padding: 15px; border-radius: 8px; transition: 0.2s;">
-                            <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
-                                <i class="fas fa-user-check"></i> UX et Réduction des Coûts
-                            </h5>
-                            <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 10px;">
-                                L'utilisation des Passkeys améliore le taux de réussite de connexion de 20% et réduit
-                                les tickets de support liés aux mots de passe oubliés.
-                            </p>
-                            <div
-                                style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between;">
-                                <span><span class="tag">ROI</span> <span class="tag">Support IT</span></span>
-                                <span>Nov. 2025</span>
-                            </div>
-                        </article>
-
-                        <article class="article-case"
-                            style="border: 1px solid #444; padding: 15px; border-radius: 8px; transition: 0.2s;">
-                            <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
-                                <i class="fas fa-university"></i> Enjeux du secteur Bancaire
-                            </h5>
-                            <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 10px;">
-                                Focus sur l'application de la vérification intelligente (Smart Verification) pour la
-                                prévention de la fraude dans le secteur de la finance.
-                            </p>
-                            <div
-                                style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between;">
-                                <span><span class="tag">Réglementation</span> <span class="tag">Finance</span></span>
-                                <span>Juil. 2025</span>
-                            </div>
-                        </article>
-
-                        <article class="article-case"
-                            style="border: 1px solid #444; padding: 15px; border-radius: 8px; transition: 0.2s;">
-                            <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
-                                <i class="fas fa-cloud-upload-alt"></i> Stockage et Synchronisation
-                            </h5>
-                            <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 10px;">
-                                L'évolution du stockage des Passkeys : passage des clés physiques aux clés synchronisées
-                                dans le cloud pour la gestion inter-appareils.
-                            </p>
-                            <div
-                                style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between;">
-                                <span><span class="tag">Cloud</span> <span class="tag">Mobile</span></span>
-                                <span>Avril 2025</span>
-                            </div>
-                        </article>
-
-                        <article class="article-case"
-                            style="border: 1px solid #444; padding: 15px; border-radius: 8px; transition: 0.2s;">
-                            <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
-                                <i class="fas fa-hand-pointer"></i> Biométrie : Est-ce vraiment plus sûr ?
-                            </h5>
-                            <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 10px;">
-                                Analyse critique des technologies biométriques utilisées avec les Passkeys et leur
-                                sécurité face aux fausses détections et aux menaces avancées.
-                            </p>
-                            <div
-                                style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between;">
-                                <span><span class="tag">Biométrie</span> <span class="tag">Sécurité</span></span>
-                                <span>Mars 2025</span>
-                            </div>
-                        </article>
-
-                        <article class="article-case"
-                            style="border: 1px solid #444; padding: 15px; border-radius: 8px; transition: 0.2s;">
-                            <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
-                                <i class="fas fa-lock-open"></i> Le Passwordless, pas seulement pour l'externe
-                            </h5>
-                            <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 10px;">
-                                Analyse de l'application du Passwordless pour l'authentification des employés et l'accès
-                                aux ressources internes de l'entreprise.
-                            </p>
-                            <div
-                                style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between;">
-                                <span><span class="tag">Corporate</span> <span class="tag">MFA</span></span>
-                                <span>Janv. 2025</span>
-                            </div>
-                        </article>
-
-                    </div>
-                    <div style="text-align: center; margin-top: 40px; border-top: 1px solid #444; padding-top: 20px;">
-                        <a href="URL_DU_FLUX_RSS_COMPLET" target="_blank"
-                            style="font-weight: bold; color: var(--secondary-color);">
-                            <i class="fas fa-external-link-alt"></i> Voir toutes les sources et articles de veille →
-                        </a>
-                    </div>
-
+                        <div
+                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
+                            <span><span class="tag">Prévisions</span> <span class="tag">FIDO</span></span>
+                            <span>Déc. 2025</span>
+                        </div>
+                    </article>
+    
+                    <article class="carousel-card">
+                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
+                            <i class="fas fa-shield-alt"></i> Anti-Phishing
+                        </h5>
+                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
+                            Le Passwordless basé sur FIDO2 élimine le mot de passe comme vecteur d'attaque. Renforce le Zero
+                            Trust.
+                        </p>
+                        <div
+                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
+                            <span><span class="tag">Sécurité</span> <span class="tag">Zero Trust</span></span>
+                            <span>Oct. 2025</span>
+                        </div>
+                    </article>
+    
+                    <article class="carousel-card">
+                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
+                            <i class="fas fa-desktop"></i> Microsoft Entra ID
+                        </h5>
+                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
+                            Intégration native de FIDO2 dans Entra ID (Azure AD), simplifiant le déploiement sans mot de
+                            passe à grande échelle.
+                        </p>
+                        <div
+                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
+                            <span><span class="tag">Cloud</span> <span class="tag">Azure</span></span>
+                            <span>Sept. 2024</span>
+                        </div>
+                    </article>
+    
+                    <article class="carousel-card">
+                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
+                            <i class="fas fa-user-check"></i> UX & ROI
+                        </h5>
+                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
+                            Les Passkeys améliorent le taux de connexion de 20% et réduisent drastiquement les tickets
+                            support "mot de passe oublié".
+                        </p>
+                        <div
+                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
+                            <span><span class="tag">ROI</span> <span class="tag">Support</span></span>
+                            <span>Nov. 2025</span>
+                        </div>
+                    </article>
+    
+                    <article class="carousel-card">
+                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
+                            <i class="fas fa-university"></i> Secteur Bancaire
+                        </h5>
+                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
+                            Application de la "Smart Verification" pour la prévention de la fraude et la conformité DSP2
+                            dans la finance.
+                        </p>
+                        <div
+                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
+                            <span><span class="tag">Finance</span> <span class="tag">DSP2</span></span>
+                            <span>Juil. 2025</span>
+                        </div>
+                    </article>
+    
+                    <article class="carousel-card">
+                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
+                            <i class="fas fa-cloud-upload-alt"></i> Synchro Cloud
+                        </h5>
+                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
+                            Évolution : passage des clés physiques (YubiKey) aux clés synchronisées dans le cloud (Apple
+                            Keychain, Google).
+                        </p>
+                        <div
+                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
+                            <span><span class="tag">Mobile</span> <span class="tag">Cloud</span></span>
+                            <span>Avril 2025</span>
+                        </div>
+                    </article>
+    
+                    <article class="carousel-card">
+                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
+                            <i class="fas fa-hand-pointer"></i> Biométrie
+                        </h5>
+                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
+                            Analyse critique des failles potentielles (Deepfakes) face à l'authentification biométrique des
+                            Passkeys.
+                        </p>
+                        <div
+                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
+                            <span><span class="tag">IA</span> <span class="tag">Biométrie</span></span>
+                            <span>Mars 2025</span>
+                        </div>
+                    </article>
+    
+    
+                    <article class="carousel-card">
+                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
+                            <i class="fas fa-chart-line"></i> Adoption Massive
+                        </h5>
+                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
+                            Gartner prévoit que plus de 25% des transactions MFA utiliseront FIDO d'ici 2025. Les Passkeys
+                            dominent le marché.
+                        </p>
+                        <div
+                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
+                            <span><span class="tag">Prévisions</span> <span class="tag">FIDO</span></span>
+                            <span>Déc. 2025</span>
+                        </div>
+                    </article>
+    
+                    <article class="carousel-card">
+                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
+                            <i class="fas fa-shield-alt"></i> Anti-Phishing
+                        </h5>
+                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
+                            Le Passwordless basé sur FIDO2 élimine le mot de passe comme vecteur d'attaque. Renforce le Zero
+                            Trust.
+                        </p>
+                        <div
+                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
+                            <span><span class="tag">Sécurité</span> <span class="tag">Zero Trust</span></span>
+                            <span>Oct. 2025</span>
+                        </div>
+                    </article>
+    
+                    <article class="carousel-card">
+                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
+                            <i class="fas fa-desktop"></i> Microsoft Entra ID
+                        </h5>
+                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
+                            Intégration native de FIDO2 dans Entra ID (Azure AD), simplifiant le déploiement sans mot de
+                            passe à grande échelle.
+                        </p>
+                        <div
+                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
+                            <span><span class="tag">Cloud</span> <span class="tag">Azure</span></span>
+                            <span>Sept. 2024</span>
+                        </div>
+                    </article>
+    
+                    <article class="carousel-card">
+                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
+                            <i class="fas fa-user-check"></i> UX & ROI
+                        </h5>
+                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
+                            Les Passkeys améliorent le taux de connexion de 20% et réduisent drastiquement les tickets
+                            support "mot de passe oublié".
+                        </p>
+                        <div
+                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
+                            <span><span class="tag">ROI</span> <span class="tag">Support</span></span>
+                            <span>Nov. 2025</span>
+                        </div>
+                    </article>
+    
+                    <article class="carousel-card">
+                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
+                            <i class="fas fa-university"></i> Secteur Bancaire
+                        </h5>
+                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
+                            Application de la "Smart Verification" pour la prévention de la fraude et la conformité DSP2
+                            dans la finance.
+                        </p>
+                        <div
+                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
+                            <span><span class="tag">Finance</span> <span class="tag">DSP2</span></span>
+                            <span>Juil. 2025</span>
+                        </div>
+                    </article>
+    
+                    <article class="carousel-card">
+                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
+                            <i class="fas fa-cloud-upload-alt"></i> Synchro Cloud
+                        </h5>
+                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
+                            Évolution : passage des clés physiques (YubiKey) aux clés synchronisées dans le cloud (Apple
+                            Keychain, Google).
+                        </p>
+                        <div
+                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
+                            <span><span class="tag">Mobile</span> <span class="tag">Cloud</span></span>
+                            <span>Avril 2025</span>
+                        </div>
+                    </article>
+    
+                    <article class="carousel-card">
+                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
+                            <i class="fas fa-hand-pointer"></i> Biométrie
+                        </h5>
+                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
+                            Analyse critique des failles potentielles (Deepfakes) face à l'authentification biométrique des
+                            Passkeys.
+                        </p>
+                        <div
+                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
+                            <span><span class="tag">IA</span> <span class="tag">Biométrie</span></span>
+                            <span>Mars 2025</span>
+                        </div>
+                    </article>
+    
                 </div>
+            </div>
+    
+            <div style="text-align: center; margin-top: 10px;">
+                <a href="#" style="font-weight: bold; color: var(--secondary-color); font-size: 0.9rem;">
+                    <i class="fas fa-rss"></i> Voir toutes les sources RSS
+                </a>
             </div>
         </div>
     </section>
