@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio BTS SIO SISR - Soufiane ZOUGAGH</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -17,14 +19,14 @@
             --text-secondary: #4a5568;
             --card-bg: rgba(255, 255, 255, 0.85);
             --input-bg: rgba(255, 255, 255, 0.5);
-            
+
             /* Couleurs */
             --primary-color: #3b82f6;
             --secondary-color: #8b5cf6;
             --gradient-main: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
             --gradient-text: linear-gradient(to right, #2563eb, #9333ea);
-            
-            --border-color: rgba(0,0,0,0.08);
+
+            --border-color: rgba(0, 0, 0, 0.08);
             --shadow-card: 0 10px 30px -5px rgba(59, 130, 246, 0.15);
             --shadow-hover: 0 20px 40px -5px rgba(139, 92, 246, 0.25);
             --white: #ffffff;
@@ -37,13 +39,13 @@
             --text-secondary: #94a3b8;
             --card-bg: rgba(30, 41, 59, 0.7);
             --input-bg: rgba(15, 23, 42, 0.6);
-            
+
             --primary-color: #38bdf8;
             --secondary-color: #c084fc;
             --gradient-main: linear-gradient(135deg, #0ea5e9 0%, #d946ef 100%);
             --gradient-text: linear-gradient(to right, #38bdf8, #e879f9);
-            
-            --border-color: rgba(255,255,255,0.1);
+
+            --border-color: rgba(255, 255, 255, 0.1);
             --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
             --shadow-hover: 0 0 25px rgba(56, 189, 248, 0.3);
             --white: #1e293b;
@@ -51,12 +53,24 @@
 
         /* --- Animation de mélange doux (Logo) --- */
         @keyframes gentle-mix {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: 'Poppins', sans-serif;
@@ -69,134 +83,451 @@
 
         /* ORBS ANIMATION */
         .bg-orb {
-            position: fixed; border-radius: 50%; filter: blur(80px); z-index: -1; opacity: 0.4;
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
             animation: floatOrb 10s infinite alternate;
         }
-        .orb-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: var(--primary-color); }
-        .orb-2 { bottom: -10%; right: -10%; width: 40vw; height: 40vw; background: var(--secondary-color); animation-delay: -5s; }
-        @keyframes floatOrb {
-            0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(50px, 50px) scale(1.1); }
+
+        .orb-1 {
+            top: -10%;
+            left: -10%;
+            width: 50vw;
+            height: 50vw;
+            background: var(--primary-color);
         }
 
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        ul { list-style: none; }
+        .orb-2 {
+            bottom: -10%;
+            right: -10%;
+            width: 40vw;
+            height: 40vw;
+            background: var(--secondary-color);
+            animation-delay: -5s;
+        }
+
+        @keyframes floatOrb {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(50px, 50px) scale(1.1);
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
 
         /* --- HEADER --- */
         header {
-            background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px);
-            padding: 1rem 0; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
         }
-        [data-theme="dark"] header { background: rgba(15, 23, 42, 0.8); }
+
+        [data-theme="dark"] header {
+            background: rgba(15, 23, 42, 0.8);
+        }
 
         nav {
-            display: flex; justify-content: space-between; align-items: center;
-            max-width: 1200px; margin: 0 auto; padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        .brand-container { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.5rem; color: var(--text-main); }
-        
-        .sz-icon { 
-            width: 45px; height: 45px; border-radius: 12px;
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .sz-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
             background: linear-gradient(-45deg, #3b82f6, #8b5cf6, #2dd4bf, #3b82f6);
-            background-size: 400% 400%; animation: gentle-mix 6s ease infinite;
+            background-size: 400% 400%;
+            animation: gentle-mix 6s ease infinite;
         }
 
-        .nav-links { display: flex; gap: 20px; align-items: center; }
-        .nav-links a { font-weight: 600; font-size: 0.95rem; }
-        .nav-links a:hover { color: var(--primary-color); }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
 
-        .theme-toggle, .lang-toggle {
-            cursor: pointer; width: 45px; height: 45px; border-radius: 50%;
-            border: 2px solid var(--border-color); background: transparent;
-            color: var(--text-main); font-size: 1.2rem; display: flex; align-items: center; justify-content: center;
+        .nav-links a {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .theme-toggle,
+        .lang-toggle {
+            cursor: pointer;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid var(--border-color);
+            background: transparent;
+            color: var(--text-main);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: 0.3s;
-            /* MODIF POUR DRAPEAU */
-            padding: 0; overflow: hidden;
+            padding: 0;
+            overflow: hidden;
         }
-        .lang-toggle:hover, .theme-toggle:hover { border-color: var(--primary-color); color: var(--primary-color); }
+
+        .lang-toggle:hover,
+        .theme-toggle:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
 
         /* --- HERO --- */
         .hero {
-            min-height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center;
-            background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.8) 100%),
-                        url('https://www.shutterstock.com/image-illustration/2d-illustration-abstract-futuristic-electronic-600nw-1705287682.jpg');
-            background-size: cover; background-position: center; background-attachment: fixed; color: white;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%),
+                url('https://www.shutterstock.com/image-illustration/2d-illustration-abstract-futuristic-electronic-600nw-1705287682.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
             clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
         }
-        .hero-content h1 { font-size: 4.5rem; font-weight: 800; margin-bottom: 10px; }
-        .hero-content h2 { font-size: 1.8rem; font-weight: 300; margin-bottom: 20px; }
-        .hero-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .hero-content h2 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
         .btn {
-            padding: 15px 35px; border-radius: 50px; font-weight: 700; background: var(--white); color: #2563eb;
-            display: inline-flex; align-items: center; gap: 10px;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            background: var(--white);
+            color: #2563eb;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
-        .btn-outline { background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.5); color: white; }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            color: white;
+        }
 
         /* --- SECTIONS GENERAL --- */
-        section { padding: 100px 20px; }
-        .container { max-width: 1200px; margin: 0 auto; }
-        .section-title { font-size: 2.8rem; text-align: center; margin-bottom: 60px; font-weight: 800; }
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        section {
+            padding: 100px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 60px;
+            font-weight: 800;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         /* --- CARDS --- */
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 40px; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-
-        .card, .project-card {
-            background: var(--card-bg); backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color); border-radius: 20px; padding: 40px;
-            box-shadow: var(--shadow-card); transition: 0.4s; height: 100%;
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 40px;
         }
-        .card:hover, .project-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); border-color: var(--primary-color); }
-        .project-card { padding: 0; display: flex; flex-direction: column; overflow: hidden; }
-        .project-header { height: 160px; background: var(--gradient-main); display: flex; align-items: center; justify-content: center; color: white; font-size: 3.5rem; }
-        .project-content { padding: 25px; }
-        .icon-box { width: 70px; height: 70px; border-radius: 18px; background: var(--gradient-main); color: white; font-size: 2rem; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; }
-        .tag { background: rgba(59, 130, 246, 0.1); color: var(--primary-color); padding: 6px 14px; border-radius: 30px; font-weight: 700; font-size: 0.8rem; display: inline-block; margin: 5px 2px; }
-        .tag.secu { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card,
+        .project-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow-card);
+            transition: 0.4s;
+            height: 100%;
+        }
+
+        .card:hover,
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary-color);
+        }
+
+        .project-card {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .project-header {
+            height: 160px;
+            background: var(--gradient-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3.5rem;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            background: var(--gradient-main);
+            color: white;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .tag {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin: 5px 2px;
+        }
+
+        .tag.secu {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+        }
 
         /* --- CONTACT SECTION --- */
-        .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; align-items: start; }
-        .contact-info h3 { font-size: 1.8rem; margin-bottom: 20px; color: var(--text-main); }
-        .contact-info p { color: var(--text-secondary); margin-bottom: 10px; }
-        .contact-socials { margin-top: 30px; display: flex; gap: 15px; }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .contact-info p {
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .contact-socials {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
         .contact-social-btn {
-            width: 50px; height: 50px; border-radius: 12px; background: var(--input-bg);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.2rem; color: var(--text-main); border: 1px solid var(--border-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: var(--input-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
             transition: 0.3s;
         }
-        .contact-social-btn:hover { background: var(--primary-color); color: white; transform: translateY(-3px); border-color: var(--primary-color); }
-        .form-input, .form-textarea {
-            width: 100%; padding: 15px; margin-bottom: 15px;
-            background: var(--input-bg); border: 1px solid var(--border-color);
-            border-radius: 8px; color: var(--text-main); font-family: 'Poppins', sans-serif;
-            font-size: 0.95rem; transition: 0.3s;
-        }
-        .form-input:focus, .form-textarea:focus { border-color: var(--primary-color); outline: none; background: rgba(59, 130, 246, 0.05); }
-        .form-textarea { resize: vertical; min-height: 140px; }
-        
-        .copyright-footer { text-align: center; padding: 30px; font-size: 0.9rem; opacity: 0.7; border-top: 1px solid var(--border-color); margin-top: 50px; }
 
-        @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
+        .contact-social-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+            border-color: var(--primary-color);
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: var(--input-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-main);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .copyright-footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            border-top: 1px solid var(--border-color);
+            margin-top: 50px;
+        }
+
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
 
         /* --- MODAL --- */
-        .modal { display: none; position: fixed; z-index: 2000; padding-top: 100px; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); }
-        .modal-content { margin: auto; display: block; width: 80%; max-width: 700px; animation: zoomIn 0.4s; }
-        .close { position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer; }
-        .zoomable { cursor: pointer; transition: 0.3s; border-radius: 5px; }
-        .zoomable:hover { opacity: 0.7; transform: scale(1.05); }
-        @keyframes zoomIn { from {transform:scale(0)} to {transform:scale(1)} }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            animation: zoomIn 0.4s;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .zoomable {
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 5px;
+        }
+
+        .zoomable:hover {
+            opacity: 0.7;
+            transform: scale(1.05);
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero-content h1 { font-size: 2.8rem; }
-            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <div class="bg-orb orb-1"></div>
@@ -217,10 +548,11 @@
                 <li><a href="#veille" data-lang="nav_veille">Veille</a></li>
                 <li><a href="#certifs" data-lang="nav_certifs">Certifications</a></li>
                 <li><a href="#contact" data-lang="nav_contact">Contact</a></li>
-                
+
                 <li>
                     <button id="lang-toggle" class="lang-toggle" aria-label="Changer de langue">
-                        <img id="lang-flag" src="https://flagcdn.com/w80/gb.png" alt="Drapeau" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img id="lang-flag" src="https://flagcdn.com/w80/gb.png" alt="Drapeau"
+                            style="width: 100%; height: 100%; object-fit: cover;">
                     </button>
                 </li>
                 <li><button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button></li>
@@ -238,8 +570,11 @@
             </h2>
             <div class="hero-btns">
                 <a href="#bts" class="btn" data-lang="btn_about">À propos de moi</a>
-                <a href="./documents/cv_soufiane_zougagh_portfolio.pdf" class="btn btn-outline" target="_blank" rel="noopener noreferrer">CV <i class="fas fa-eye"></i></a>
-                <a href="./documents/synthese_soufiane_zougagh.pdf" class="btn btn-outline" target="_blank" rel="noopener noreferrer"><span data-lang="btn_synthese">Fiche synthèse</span> <i class="fas fa-table"></i></a>
+                <a href="./documents/cv_soufiane_zougagh_portfolio.pdf" class="btn btn-outline" target="_blank"
+                    rel="noopener noreferrer">CV <i class="fas fa-eye"></i></a>
+                <a href="./documents/synthese_soufiane_zougagh.pdf" class="btn btn-outline" target="_blank"
+                    rel="noopener noreferrer"><span data-lang="btn_synthese">Fiche synthèse</span> <i
+                        class="fas fa-table"></i></a>
             </div>
         </div>
     </section>
@@ -251,124 +586,146 @@
                 <div class="card">
                     <div class="icon-box"><i class="fas fa-graduation-cap"></i></div>
                     <h3 data-lang="bts_dip_title">Le Diplôme</h3>
-                    <p data-lang="bts_dip_desc">Le BTS Services Informatiques aux Organisations est un diplôme d'État formant aux métiers du numérique. Un socle solide pour l'avenir.</p>
+                    <p data-lang="bts_dip_desc">Le BTS Services Informatiques aux Organisations est un diplôme d'État
+                        formant aux métiers du numérique. Un socle solide pour l'avenir.</p>
                 </div>
                 <div class="card">
                     <div class="icon-box"><i class="fas fa-code"></i></div>
                     <h3>Option SLAM</h3>
-                    <p data-lang="bts_slam_desc">Développement d'applications, bases de données, et solutions logicielles. Comprendre le code pour mieux gérer l'infra.</p>
+                    <p data-lang="bts_slam_desc">Développement d'applications, bases de données, et solutions
+                        logicielles. Comprendre le code pour mieux gérer l'infra.</p>
                 </div>
                 <div class="card" style="border-color: var(--primary-color); border-width: 2px;">
                     <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
-                    <h3 style="color:var(--primary-color)" data-lang="bts_sisr_title">Option SISR (Ma spécialisation)</h3>
-                    <p data-lang="bts_sisr_desc">Administration systèmes et réseaux, cybersécurité, virtualisation. La colonne vertébrale du SI.</p>
+                    <h3 style="color:var(--primary-color)" data-lang="bts_sisr_title">Option SISR (Ma spécialisation)
+                    </h3>
+                    <p data-lang="bts_sisr_desc">Administration systèmes et réseaux, cybersécurité, virtualisation. La
+                        colonne vertébrale du SI.</p>
                 </div>
             </div>
         </div>
     </section>
 
-<section id="entreprise">
+    <section id="entreprise">
         <div class="container reveal">
             <div style="text-align: center; margin-bottom: 50px;">
-                
+
                 <h3 style="display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap;">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Banque_de_France_2022_logo.svg" 
-                         alt="Logo Banque de France" 
-                         style="max-height: 150px; width: auto;">
-                    
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Logo_ACPR.png" 
-                         alt="Logo ACPR" 
-                         style="max-height: 100px; width: auto;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Banque_de_France_2022_logo.svg"
+                        alt="Logo Banque de France" style="max-height: 150px; width: auto;">
+
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Logo_ACPR.png" alt="Logo ACPR"
+                        style="max-height: 100px; width: auto;">
                 </h3>
 
-                <p style="font-size: 1.1rem; opacity: 0.9; margin-top: 25px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.8;" data-lang="ent_desc">
-                    La Banque de France est la banque centrale nationale française. Elle contribue à la stabilité monétaire, à la supervision du système financier et au service de l’économie.
+                <p style="font-size: 1.1rem; opacity: 0.9; margin-top: 25px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.8;"
+                    data-lang="ent_desc">
+                    La Banque de France est la banque centrale nationale française. Elle contribue à la stabilité
+                    monétaire, à la supervision du système financier et au service de l’économie.
                 </p>
-                
+
                 <div style="margin-top: 20px;">
-                    <span class="tag" data-lang="tag_public">Secteur Public</span><span class="tag" data-lang="tag_secu">Haute Sécurité</span><span class="tag">Finance</span>
+                    <span class="tag" data-lang="tag_public">Secteur Public</span><span class="tag"
+                        data-lang="tag_secu">Haute Sécurité</span><span class="tag">Finance</span>
                 </div>
             </div>
 
             <div class="grid-2" style="align-items: start;">
-                
+
                 <div class="card">
                     <div style="display:flex; align-items:center; gap:15px; margin-bottom:20px;">
                         <i class="fas fa-id-badge" style="font-size: 2.5rem; color: var(--secondary-color);"></i>
                         <div>
                             <h4 style="font-size: 1.3rem;" data-lang="job_title">Correspondant Informatique</h4>
-                            <span style="font-size: 0.9rem; opacity: 0.7;" data-lang="job_period">2024 - 2026 | Alternance</span>
+                            <span style="font-size: 0.9rem; opacity: 0.7;" data-lang="job_period">2024 - 2026 |
+                                Alternance</span>
                         </div>
                     </div>
-                    
+
                     <ul style="list-style: none; padding: 0;">
                         <li style="margin-bottom: 15px; display:flex; gap:10px; align-items: flex-start;">
-                            <i class="fas fa-check-circle" style="color:var(--primary-color); margin-top: 5px; flex-shrink: 0;"></i> 
-                            <span data-lang="task_1">Installer et déployer les machines clientes et les périphériques d’un parc informatique sous l’autorité du responsable.</span>
+                            <i class="fas fa-check-circle"
+                                style="color:var(--primary-color); margin-top: 5px; flex-shrink: 0;"></i>
+                            <span data-lang="task_1">Installer et déployer les machines clientes et les périphériques
+                                d’un parc informatique sous l’autorité du responsable.</span>
                         </li>
                         <li style="margin-bottom: 15px; display:flex; gap:10px; align-items: flex-start;">
-                            <i class="fas fa-check-circle" style="color:var(--primary-color); margin-top: 5px; flex-shrink: 0;"></i> 
-                            <span data-lang="task_2">Permettre l’accès aux ressources informatiques et numériques ainsi qu'aux services réseaux.</span>
+                            <i class="fas fa-check-circle"
+                                style="color:var(--primary-color); margin-top: 5px; flex-shrink: 0;"></i>
+                            <span data-lang="task_2">Permettre l’accès aux ressources informatiques et numériques ainsi
+                                qu'aux services réseaux.</span>
                         </li>
                         <li style="margin-bottom: 15px; display:flex; gap:10px; align-items: flex-start;">
-                            <i class="fas fa-check-circle" style="color:var(--primary-color); margin-top: 5px; flex-shrink: 0;"></i> 
-                            <span data-lang="task_3">Assurer la maintenance du parc informatique, téléphonique et numérique de l’entreprise.</span>
+                            <i class="fas fa-check-circle"
+                                style="color:var(--primary-color); margin-top: 5px; flex-shrink: 0;"></i>
+                            <span data-lang="task_3">Assurer la maintenance du parc informatique, téléphonique et
+                                numérique de l’entreprise.</span>
                         </li>
                         <li style="margin-bottom: 15px; display:flex; gap:10px; align-items: flex-start;">
-                            <i class="fas fa-check-circle" style="color:var(--primary-color); margin-top: 5px; flex-shrink: 0;"></i> 
-                            <span data-lang="task_4">Assurer le support technique et accompagner les utilisateurs dans l’utilisation des outils numériques.</span>
+                            <i class="fas fa-check-circle"
+                                style="color:var(--primary-color); margin-top: 5px; flex-shrink: 0;"></i>
+                            <span data-lang="task_4">Assurer le support technique et accompagner les utilisateurs dans
+                                l’utilisation des outils numériques.</span>
                         </li>
                     </ul>
                 </div>
 
                 <div class="card" style="height: auto;">
-                    <h4 style="margin-bottom: 20px;"><i class="fas fa-rocket"></i> <span data-lang="env_real">Environnement & Réalisations</span></h4>
-                    
+                    <h4 style="margin-bottom: 20px;"><i class="fas fa-rocket"></i> <span
+                            data-lang="env_real">Environnement & Réalisations</span></h4>
+
                     <div style="margin-bottom: 25px;">
-                        <span class="tag" style="background: rgba(0, 120, 215, 0.1); color: #0078D7;">Windows 10/11</span>
+                        <span class="tag" style="background: rgba(0, 120, 215, 0.1); color: #0078D7;">Windows
+                            10/11</span>
                         <span class="tag" style="background: rgba(71, 85, 105, 0.1); color: #475569;">Server 2019</span>
                         <span class="tag" style="background: rgba(30, 41, 59, 0.1); color: #1e293b;">PowerShell</span>
                         <span class="tag secu" data-lang="tag_cyber">Cyberdéfense</span>
                     </div>
 
-                    <div style="padding: 15px; background: rgba(59, 130, 246, 0.1); border-radius: 10px; border-left: 4px solid var(--primary-color);">
-                        <strong data-lang="proj_flag">Projet Phare :</strong> <span data-lang="proj_desc">Automatisation de l'onboarding utilisateurs via script PowerShell.</span>
+                    <div
+                        style="padding: 15px; background: rgba(59, 130, 246, 0.1); border-radius: 10px; border-left: 4px solid var(--primary-color);">
+                        <strong data-lang="proj_flag">Projet Phare :</strong> <span data-lang="proj_desc">Automatisation
+                            de l'onboarding utilisateurs via script PowerShell.</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
-<section id="ecole">
+
+    <section id="ecole">
         <div class="container reveal">
             <h2 class="section-title" data-lang="title_ecole">Mon École</h2>
-            
+
             <div class="card">
                 <div class="grid-2" style="align-items: center;">
-                    
+
                     <div>
                         <div style="display:flex; align-items:center; gap:15px; margin-bottom: 20px;">
-                            <img src="https://media.licdn.com/dms/image/v2/D4E0BAQFMzC-QRuzMfQ/company-logo_200_200/B4EZoVbjI1J0AM-/0/1761296135095/cfa_ingetis_logo?e=1766620800&v=beta&t=3GUaA_dKhsfUacCveuZrGGhf6F8DHrkfXrE0JnFBRxg" 
-                                     alt="Logo Ingétis" 
-                                     style="width: 65px; height: 65px; border-radius: 12px; object-fit: cover; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                            
+                            <img src="https://media.licdn.com/dms/image/v2/D4E0BAQFMzC-QRuzMfQ/company-logo_200_200/B4EZoVbjI1J0AM-/0/1761296135095/cfa_ingetis_logo?e=1766620800&v=beta&t=3GUaA_dKhsfUacCveuZrGGhf6F8DHrkfXrE0JnFBRxg"
+                                alt="Logo Ingétis"
+                                style="width: 65px; height: 65px; border-radius: 12px; object-fit: cover; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+
                             <div>
                                 <h3 style="font-size: 2rem; line-height: 1.1;">
-                                    <a href="https://ingetis.com/" target="_blank" style="text-decoration: none; color: inherit; transition: 0.3s;">
-                                        Ingétis <i class="fas fa-external-link-alt" style="font-size: 1rem; opacity: 0.5; vertical-align: middle;"></i>
+                                    <a href="https://ingetis.com/" target="_blank"
+                                        style="text-decoration: none; color: inherit; transition: 0.3s;">
+                                        Ingétis <i class="fas fa-external-link-alt"
+                                            style="font-size: 1rem; opacity: 0.5; vertical-align: middle;"></i>
                                     </a>
                                 </h3>
                                 <span style="font-size: 0.9rem; opacity: 0.8;">Paris 5ème (Quartier Latin)</span>
                             </div>
                         </div>
-                        
+
                         <p style="margin-bottom: 20px; text-align: justify;" data-lang="ecole_desc1">
-                            École d'ingénierie informatique appliquée située au cœur de Paris. 
-                            <strong>Ingétis</strong> se distingue par une approche pédagogique à taille humaine, favorisant un suivi individualisé.
+                            École d'ingénierie informatique appliquée située au cœur de Paris.
+                            <strong>Ingétis</strong> se distingue par une approche pédagogique à taille humaine,
+                            favorisant un suivi individualisé.
                         </p>
-                        
+
                         <p style="margin-bottom: 25px;" data-lang="ecole_desc2">
-                            Membre du <strong>Campus Cyber</strong> et certifiée <strong>Qualiopi</strong>, l'école propose un cursus complet du Bac au Bac+5.
+                            Membre du <strong>Campus Cyber</strong> et certifiée <strong>Qualiopi</strong>, l'école
+                            propose un cursus complet du Bac au Bac+5.
                         </p>
 
                         <div style="display:flex; gap:10px; flex-wrap:wrap;">
@@ -379,22 +736,30 @@
                         </div>
                     </div>
 
-                    <div style="background: rgba(0,0,0,0.03); padding: 25px; border-radius: 15px; border: 1px solid var(--border-color);">
-                        <h4 style="margin-bottom: 15px; color: var(--primary-color);"><i class="fas fa-check-circle"></i> <span data-lang="why_ingetis">Pourquoi Ingétis ?</span></h4>
-                        
+                    <div
+                        style="background: rgba(0,0,0,0.03); padding: 25px; border-radius: 15px; border: 1px solid var(--border-color);">
+                        <h4 style="margin-bottom: 15px; color: var(--primary-color);"><i
+                                class="fas fa-check-circle"></i> <span data-lang="why_ingetis">Pourquoi Ingétis ?</span>
+                        </h4>
+
                         <ul style="list-style: none; padding: 0; margin-bottom: 25px;">
                             <li style="margin-bottom: 10px; display: flex; gap: 10px;">
-                                <i class="fas fa-user-graduate" style="color: var(--secondary-color); margin-top: 4px;"></i>
+                                <i class="fas fa-user-graduate"
+                                    style="color: var(--secondary-color); margin-top: 4px;"></i>
                                 <div>
                                     <strong data-lang="pedago_title">Pédagogie par projet :</strong><br>
-                                    <span style="font-size: 0.9rem; opacity: 0.8;" data-lang="pedago_desc">Apprentissage concret via des infrastructures dédiées et des équipements de dernière génération.</span>
+                                    <span style="font-size: 0.9rem; opacity: 0.8;" data-lang="pedago_desc">Apprentissage
+                                        concret via des infrastructures dédiées et des équipements de dernière
+                                        génération.</span>
                                 </div>
                             </li>
                             <li style="margin-bottom: 10px; display: flex; gap: 10px;">
                                 <i class="fas fa-briefcase" style="color: var(--secondary-color); margin-top: 4px;"></i>
                                 <div>
                                     <strong data-lang="alt_title">L'Alternance au cœur :</strong><br>
-                                    <span style="font-size: 0.9rem; opacity: 0.8;" data-lang="alt_desc">70% des étudiants en alternance dès la 1ère année, avec un fort réseau d'entreprises partenaires.</span>
+                                    <span style="font-size: 0.9rem; opacity: 0.8;" data-lang="alt_desc">70% des
+                                        étudiants en alternance dès la 1ère année, avec un fort réseau d'entreprises
+                                        partenaires.</span>
                                 </div>
                             </li>
                         </ul>
@@ -405,276 +770,375 @@
         </div>
     </section>
 
-<section id="projets">
-    <div class="container reveal">
-        <h2 class="section-title" data-lang="title_projets">Projets E4</h2>
-        <div class="grid-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-            
-            <article class="project-card">
-                <div class="project-header"><i class="fab fa-linux"></i></div>
-                <div class="project-content">
-                    <h3>Serveur GLPI</h3>
-                    <p data-lang="glpi_desc">Mise en place d'une solution de gestion de parc et helpdesk sur Debian.</p>
-                    <div style="margin-top: 15px;"><span class="tag">Linux</span><span class="tag">Apache</span></div>
-                    <a href="#" style="display:block; margin-top:20px; font-weight:bold; color:var(--primary-color);"><span data-lang="see_details">Voir détails</span> →</a>
-                </div>
-            </article>
+    <section id="projets">
+        <div class="container reveal">
+            <h2 class="section-title" data-lang="title_projets">Projets E4 : Architecture Microsoft</h2>
 
-            <article class="project-card">
-                <div class="project-header" style="background: linear-gradient(135deg, #2563eb, #22d3ee);"><i class="fab fa-windows"></i></div>
-                <div class="project-content">
-                    <h3>Active Directory</h3>
-                    <p data-lang="ad_desc">Architecture complète : Forêt, GPO de sécurité et scripts d'automatisation.</p>
-                    <div style="margin-top: 15px;"><span class="tag">Windows Server</span><span class="tag secu" data-lang="tag_secu_short">Securité</span></div>
-                    <a href="#" style="display:block; margin-top:20px; font-weight:bold; color:var(--primary-color);"><span data-lang="see_details">Voir détails</span> →</a>
-                </div>
-            </article>
-            
-            <article class="project-card">
-                <div class="project-header" style="background: linear-gradient(135deg, #38bdf8, #60a5fa);"><i class="fas fa-network-wired"></i></div>
-                <div class="project-content">
-                    <h3>Configuration et administration d'un serveur DHCP</h3>
-                    <p>Mise en place et configuration d'un serveur DHCP pour l'attribution automatique d'adresses IP dans un réseau local.</p>
-                    <div style="margin-top: 15px;">
-                        <span class="tag">Réseau</span>
-                        <span class="tag">Windows Server</span>
-                    </div>
-                    <a href="#" style="display:block; margin-top:20px; font-weight:bold; color:var(--primary-color);"><span data-lang="see_details">Voir détails</span> →</a>
-                </div>
-            </article>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px auto; opacity: 0.9;"
+                data-lang="proj_intro">
+                Choix d'une infrastructure <strong>100% Windows Server</strong>. Une approche standardisée, intuitive et
+                correspondant à la majorité des PME, privilégiant la stabilité et la gestion centralisée.
+            </p>
 
-            <article class="project-card">
-                <div class="project-header" style="background: linear-gradient(135deg, #f97316, #fcd34d);"><i class="fas fa-database"></i></div>
-                <div class="project-content">
-                    <h3>Administration MariaDB</h3>
-                    <p>Installation, configuration et administration d'un serveur de base de données MariaDB.</p>
-                    <div style="margin-top: 15px;">
-                        <span class="tag">Base de données</span>
-                        <span class="tag">Optimisation</span>
+            <div class="grid-2" style="gap: 40px;">
+
+                <article class="project-card">
+                    <div class="project-header" style="background: linear-gradient(135deg, #0078D7, #002050);">
+                        <i class="fab fa-windows"></i>
                     </div>
-                    <a href="#" style="display:block; margin-top:20px; font-weight:bold; color:var(--primary-color);"><span data-lang="see_details">Voir détails</span> →</a>
-                </div>
-            </article>
+                    <div class="project-content">
+                        <h3 data-lang="p1_title">Axe Système : Gestion Centralisée</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--primary-color); font-weight: bold;"
+                            data-lang="p1_scenario">
+                            Scénario : Sécurisation des données d'une PME
+                        </p>
+                        <p data-lang="p1_desc">
+                            Remplacement d'un partage chaotique (clés USB) par un serveur de fichiers sécurisé avec
+                            droits stricts.
+                        </p>
+
+                        <ul style="margin: 15px 0; padding-left: 20px; font-size: 0.9rem; opacity: 0.8;">
+                            <li data-lang="p1_li1">Active Directory : Utilisateurs (Alice, Bob...)</li>
+                            <li data-lang="p1_li2">Droits NTFS : Isolation Compta/Direction</li>
+                            <li data-lang="p1_li3">GPO : Mappage automatique lecteur réseau (Z:)</li>
+                        </ul>
+
+                        <div style="margin-top: auto;">
+                            <span class="tag">Windows Server 2022</span>
+                            <span class="tag">AD DS</span>
+                            <span class="tag secu">NTFS / GPO</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-header" style="background: linear-gradient(135deg, #10b981, #059669);">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 data-lang="p2_title">Axe Réseau : Services DDI</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--primary-color); font-weight: bold;"
+                            data-lang="p2_scenario">
+                            Scénario : Automatisation de l'adressage IP
+                        </p>
+                        <p data-lang="p2_desc">
+                            Passage d'une config manuelle (source de conflits IP) à une distribution automatique et
+                            résiliente.
+                        </p>
+
+                        <ul style="margin: 15px 0; padding-left: 20px; font-size: 0.9rem; opacity: 0.8;">
+                            <li data-lang="p2_li1">DHCP : Étendue 192.168.1.20 à .50</li>
+                            <li data-lang="p2_li2">Réservation : IP fixe pour postes critiques</li>
+                            <li data-lang="p2_li3">DNS : Résolution de noms locale</li>
+                        </ul>
+
+                        <div style="margin-top: auto;">
+                            <span class="tag">DHCP</span>
+                            <span class="tag">DNS</span>
+                            <span class="tag">IPv4</span>
+                        </div>
+                    </div>
+                </article>
             </div>
-    </div>
-</section>
 
-<section id="veille">
-    <div class="container reveal">
-        <h2 class="section-title" data-lang="title_veille">Veille technologique</h2>
-        
-        <div style="display: flex; justify-content: center;">
-            <div class="card" style="max-width: 1000px; width: 100%; border-left: 3px solid var(--secondary-color);">
-                
-                <div style="text-align: center; margin-bottom: 30px;">
-                    <h3 style="color:var(--secondary-color); font-size: 1.8rem; margin-bottom:10px;">
-                        <i class="fas fa-fingerprint"></i> Passwordless & FIDO2
-                    </h3>
-                    <p style="max-width: 700px; margin: 0 auto; opacity: 0.8;" data-lang="veille_intro">
-                        Analyse de la transition mondiale vers l'authentification sans mot de passe, l'impact de la biométrie et les enjeux spécifiques au secteur bancaire.
-                    </p>
-                </div>
-                
-                <h4 style="border-bottom: 2px solid var(--secondary-color); padding-bottom: 10px; margin-bottom: 25px; color: var(--text-main); text-align: center;">
-                    <i class="fas fa-newspaper" style="color: var(--secondary-color);"></i> Actualités : Septembre 2024 – Décembre 2025
+            <div
+                style="margin-top: 50px; background: rgba(255, 165, 0, 0.1); border: 1px solid orange; border-radius: 15px; padding: 25px;">
+                <h4 style="color: orange; margin-bottom: 15px;">
+                    <i class="fas fa-lightbulb"></i> <span data-lang="jury_title">Maîtrise technique (Préparation
+                        Oral)</span>
                 </h4>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                    
-                    <article class="article-case" style="border: 1px solid #444; padding: 15px; border-radius: 8px; transition: 0.2s;">
-                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
-                            <i class="fas fa-chart-line"></i> Adoption Massive des Passkeys
-                        </h5>
-                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 10px;">
-                            Gartner prévoit que plus de 25% des transactions MFA utiliseront FIDO d'ici 2025. Les Passkeys sont la forme d'implémentation la plus visible.
-                        </p>
-                        <div style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between;">
-                            <span><span class="tag">Prévisions</span> <span class="tag">FIDO</span></span>
-                            <span>Déc. 2025</span>
-                        </div>
-                    </article>
-
-                    <article class="article-case" style="border: 1px solid #444; padding: 15px; border-radius: 8px; transition: 0.2s;">
-                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
-                            <i class="fas fa-shield-alt"></i> Immunité contre le Phishing
-                        </h5>
-                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 10px;">
-                            Le Passwordless basé sur FIDO2 élimine le mot de passe comme vecteur d'attaque. Ceci renforce la stratégie Zero Trust de l'entreprise.
-                        </p>
-                        <div style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between;">
-                            <span><span class="tag">Sécurité</span> <span class="tag">Zero Trust</span></span>
-                            <span>Oct. 2025</span>
-                        </div>
-                    </article>
-
-                    <article class="article-case" style="border: 1px solid #444; padding: 15px; border-radius: 8px; transition: 0.2s;">
-                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
-                            <i class="fas fa-desktop"></i> Microsoft Entra ID et FIDO2
-                        </h5>
-                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 10px;">
-                            Les solutions d'entreprise comme Entra ID intègrent nativement FIDO2, simplifiant le déploiement de l'authentification sans mot de passe à grande échelle.
-                        </p>
-                        <div style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between;">
-                            <span><span class="tag">Cloud</span> <span class="tag">Déploiement</span></span>
-                            <span>Sept. 2024</span>
-                        </div>
-                    </article>
-
-                    <article class="article-case" style="border: 1px solid #444; padding: 15px; border-radius: 8px; transition: 0.2s;">
-                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
-                            <i class="fas fa-user-check"></i> UX et Réduction des Coûts
-                        </h5>
-                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 10px;">
-                            L'utilisation des Passkeys améliore le taux de réussite de connexion de 20% et réduit les tickets de support liés aux mots de passe oubliés.
-                        </p>
-                        <div style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between;">
-                            <span><span class="tag">ROI</span> <span class="tag">Support IT</span></span>
-                            <span>Nov. 2025</span>
-                        </div>
-                    </article>
-
-                    <article class="article-case" style="border: 1px solid #444; padding: 15px; border-radius: 8px; transition: 0.2s;">
-                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
-                            <i class="fas fa-university"></i> Enjeux du secteur Bancaire
-                        </h5>
-                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 10px;">
-                            Focus sur l'application de la vérification intelligente (Smart Verification) pour la prévention de la fraude dans le secteur de la finance.
-                        </p>
-                        <div style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between;">
-                            <span><span class="tag">Réglementation</span> <span class="tag">Finance</span></span>
-                            <span>Juil. 2025</span>
-                        </div>
-                    </article>
-
-                    <article class="article-case" style="border: 1px solid #444; padding: 15px; border-radius: 8px; transition: 0.2s;">
-                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
-                            <i class="fas fa-cloud-upload-alt"></i> Stockage et Synchronisation
-                        </h5>
-                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 10px;">
-                            L'évolution du stockage des Passkeys : passage des clés physiques aux clés synchronisées dans le cloud pour la gestion inter-appareils.
-                        </p>
-                        <div style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between;">
-                            <span><span class="tag">Cloud</span> <span class="tag">Mobile</span></span>
-                            <span>Avril 2025</span>
-                        </div>
-                    </article>
-
-                    <article class="article-case" style="border: 1px solid #444; padding: 15px; border-radius: 8px; transition: 0.2s;">
-                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
-                            <i class="fas fa-hand-pointer"></i> Biométrie : Est-ce vraiment plus sûr ?
-                        </h5>
-                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 10px;">
-                            Analyse critique des technologies biométriques utilisées avec les Passkeys et leur sécurité face aux fausses détections et aux menaces avancées.
-                        </p>
-                        <div style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between;">
-                            <span><span class="tag">Biométrie</span> <span class="tag">Sécurité</span></span>
-                            <span>Mars 2025</span>
-                        </div>
-                    </article>
-                    
-                    <article class="article-case" style="border: 1px solid #444; padding: 15px; border-radius: 8px; transition: 0.2s;">
-                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
-                            <i class="fas fa-lock-open"></i> Le Passwordless, pas seulement pour l'externe
-                        </h5>
-                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 10px;">
-                            Analyse de l'application du Passwordless pour l'authentification des employés et l'accès aux ressources internes de l'entreprise.
-                        </p>
-                        <div style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between;">
-                            <span><span class="tag">Corporate</span> <span class="tag">MFA</span></span>
-                            <span>Janv. 2025</span>
-                        </div>
-                    </article>
-
-                </div>
-                <div style="text-align: center; margin-top: 40px; border-top: 1px solid #444; padding-top: 20px;">
-                    <a href="URL_DU_FLUX_RSS_COMPLET" target="_blank" style="font-weight: bold; color: var(--secondary-color);">
-                         <i class="fas fa-external-link-alt"></i> Voir toutes les sources et articles de veille →
-                     </a>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="certifs">
-    <div class="container reveal">
-        <h2 class="section-title" data-lang="title_certifs">🏆 Certifications</h2>
-        <div class="grid-2" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px;">
-
-            <div class="card">
-                <div style="display:flex; justify-content:space-between; align-items:start; margin-bottom: 20px;">
-                    <img src="https://www.auditsi.eu/wp-content/uploads/2018/06/anssi_visuel_square500.png" alt="Logo ANSSI Officiel" style="height: 55px; width: auto;">
-                    <img src="./documents/secnum.png" alt="Badge SecNum" class="zoomable" style="height: 40px; opacity: 0.8;">
-                </div>
-                <h3>🔒 SecNum Académie</h3>
-                <p style="font-weight: 600; opacity: 0.7; margin-bottom: 15px;">ANSSI | <span style="color: #2ecc71;" data-lang="valid_mars">Validé (Mars 2025)</span></p>
-                <ul style="list-style: none; margin-top: 10px;">
-                    <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #2ecc71;"></i> 🧼 <span data-lang="secnum_1">Hygiène informatique</span></li>
-                    <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #2ecc71;"></i> 🛡️ <span data-lang="secnum_2">Sécurisation des postes</span></li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <div style="display:flex; justify-content:space-between; align-items:start; margin-bottom: 20px;">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Cisco_academy_logo.svg/1200px-Cisco_academy_logo.svg.png" alt="Logo Cisco NetAcad Officiel" style="height: 50px; width: auto;">
-                    <img src="./documents/cisco_cyber.jpg" alt="Badge Cisco" class="zoomable" style="height: 40px; opacity: 0.8; border-radius: 5px;">
-                </div>
-                <h3 data-lang="cisco_title">💻 Introduction à la cybersécurité</h3>
-                <p style="font-weight: 600; opacity: 0.7; margin-bottom: 15px;">Cisco Academy | <span style="color: #00b4db;" data-lang="valid_oct">Validé (Oct 2025)</span></p>
-                <ul style="list-style: none; margin-top: 10px;">
-                    <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #00b4db;"></i> 💡 Concepts de base en sécurité</li>
-                    <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #00b4db;"></i> 💾 Protection des données</li>
-                </ul>
-            </div>
-            
-            <div class="card">
-                <div style="display:flex; justify-content:space-between; align-items:start; margin-bottom: 20px;">
-                    <img src="https://www.afralti.org/wp-content/uploads/2022/06/LinuxEssentials-Medium.png" alt="Logo LPI" style="height: 50px; width: auto;">
+                <p style="font-size: 0.95rem; margin-bottom: 15px;" data-lang="jury_intro">
+                    Ces projets "simples" nécessitent une compréhension parfaite des concepts sous-jacents :
+                </p>
+                <div class="grid-3" style="gap: 15px;">
+                    <div style="background: var(--card-bg); padding: 15px; border-radius: 8px; font-size: 0.85rem;">
+                        <strong>❓ DNS</strong><br>
+                        <span style="opacity:0.7">L'annuaire qui traduit les noms (www) en IP.</span>
                     </div>
-                
-                <h3 style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
-                    🐧 Linux Essentials
-                </h3>
-                
-                <p style="font-weight: 600; opacity: 0.7; margin-bottom: 15px;">LPI (Linux Professional Institute) | <span style="color: #f39c12;">En cours...</span></p>
-                <ul style="list-style: none; margin-top: 10px;">
-                    <li style="margin-bottom: 8px;"><i class="fas fa-terminal" style="color: #f39c12;"></i> Introduction au monde Linux</li>
-                    <li style="margin-bottom: 8px;"><i class="fas fa-user-friends" style="color: #f39c12;"></i> Compétences de base en ligne de commande</li>
-                    <li style="margin-bottom: 8px;"><i class="fas fa-info-circle" style="color: #f39c12;"></i> Bon point de départ pour débutants</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <div style="display:flex; justify-content:space-between; align-items:start; margin-bottom: 20px;">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Cisco_academy_logo.svg/1200px-Cisco_academy_logo.svg.png" alt="Logo Cisco NetAcad Officiel" style="height: 50px; width: auto;">
+                    <div style="background: var(--card-bg); padding: 15px; border-radius: 8px; font-size: 0.85rem;">
+                        <strong>❓ GPO</strong><br>
+                        <span style="opacity:0.7">Règles appliquées automatiquement aux objets (PC/Users) du
+                            domaine.</span>
+                    </div>
+                    <div style="background: var(--card-bg); padding: 15px; border-radius: 8px; font-size: 0.85rem;">
+                        <strong>❓ Réservation DHCP</strong><br>
+                        <span style="opacity:0.7">Garantir qu'une imprimante/serveur garde toujours la même IP via son
+                            adresse MAC.</span>
+                    </div>
                 </div>
-                <h3>🌐 Switching, Routing and Wireless Essentials</h3>
-                <p style="font-weight: 600; opacity: 0.7; margin-bottom: 15px;">Cisco Academy | <span style="color: #00b4db;">En Cours...</span></p>
-                <ul style="list-style: none; margin-top: 10px;">
-                    <li style="margin-bottom: 8px;"><i class="fas fa-network-wired" style="color: #00b4db;"></i> Compréhension des LAN et WAN</li>
-                    <li style="margin-bottom: 8px;"><i class="fas fa-route" style="color: #00b4db;"></i> Configuration de commutateurs et routeurs</li>
-                    <li style="margin-bottom: 8px;"><i class="fas fa-wifi" style="color: #00b4db;"></i> Concepts de réseau sans fil (Wireless)</li>
-                </ul>
             </div>
-            
-        </div>
-    </div>
-</section>
 
-<section id="contact">
+        </div>
+    </section>
+
+    <section id="veille">
+        <div class="container reveal">
+            <h2 class="section-title" data-lang="title_veille">Veille technologique</h2>
+
+            <div style="display: flex; justify-content: center;">
+                <div class="card"
+                    style="max-width: 1000px; width: 100%; border-left: 3px solid var(--secondary-color);">
+
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <h3 style="color:var(--secondary-color); font-size: 1.8rem; margin-bottom:10px;">
+                            <i class="fas fa-fingerprint"></i> Passwordless & FIDO2
+                        </h3>
+                        <p style="max-width: 700px; margin: 0 auto; opacity: 0.8;" data-lang="veille_intro">
+                            Analyse de la transition mondiale vers l'authentification sans mot de passe, l'impact de la
+                            biométrie et les enjeux spécifiques au secteur bancaire.
+                        </p>
+                    </div>
+
+                    <h4
+                        style="border-bottom: 2px solid var(--secondary-color); padding-bottom: 10px; margin-bottom: 25px; color: var(--text-main); text-align: center;">
+                        <i class="fas fa-newspaper" style="color: var(--secondary-color);"></i> Actualités : Septembre
+                        2024 – Décembre 2025
+                    </h4>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+
+                        <article class="article-case"
+                            style="border: 1px solid #444; padding: 15px; border-radius: 8px; transition: 0.2s;">
+                            <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
+                                <i class="fas fa-chart-line"></i> Adoption Massive des Passkeys
+                            </h5>
+                            <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 10px;">
+                                Gartner prévoit que plus de 25% des transactions MFA utiliseront FIDO d'ici 2025. Les
+                                Passkeys sont la forme d'implémentation la plus visible.
+                            </p>
+                            <div
+                                style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between;">
+                                <span><span class="tag">Prévisions</span> <span class="tag">FIDO</span></span>
+                                <span>Déc. 2025</span>
+                            </div>
+                        </article>
+
+                        <article class="article-case"
+                            style="border: 1px solid #444; padding: 15px; border-radius: 8px; transition: 0.2s;">
+                            <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
+                                <i class="fas fa-shield-alt"></i> Immunité contre le Phishing
+                            </h5>
+                            <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 10px;">
+                                Le Passwordless basé sur FIDO2 élimine le mot de passe comme vecteur d'attaque. Ceci
+                                renforce la stratégie Zero Trust de l'entreprise.
+                            </p>
+                            <div
+                                style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between;">
+                                <span><span class="tag">Sécurité</span> <span class="tag">Zero Trust</span></span>
+                                <span>Oct. 2025</span>
+                            </div>
+                        </article>
+
+                        <article class="article-case"
+                            style="border: 1px solid #444; padding: 15px; border-radius: 8px; transition: 0.2s;">
+                            <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
+                                <i class="fas fa-desktop"></i> Microsoft Entra ID et FIDO2
+                            </h5>
+                            <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 10px;">
+                                Les solutions d'entreprise comme Entra ID intègrent nativement FIDO2, simplifiant le
+                                déploiement de l'authentification sans mot de passe à grande échelle.
+                            </p>
+                            <div
+                                style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between;">
+                                <span><span class="tag">Cloud</span> <span class="tag">Déploiement</span></span>
+                                <span>Sept. 2024</span>
+                            </div>
+                        </article>
+
+                        <article class="article-case"
+                            style="border: 1px solid #444; padding: 15px; border-radius: 8px; transition: 0.2s;">
+                            <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
+                                <i class="fas fa-user-check"></i> UX et Réduction des Coûts
+                            </h5>
+                            <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 10px;">
+                                L'utilisation des Passkeys améliore le taux de réussite de connexion de 20% et réduit
+                                les tickets de support liés aux mots de passe oubliés.
+                            </p>
+                            <div
+                                style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between;">
+                                <span><span class="tag">ROI</span> <span class="tag">Support IT</span></span>
+                                <span>Nov. 2025</span>
+                            </div>
+                        </article>
+
+                        <article class="article-case"
+                            style="border: 1px solid #444; padding: 15px; border-radius: 8px; transition: 0.2s;">
+                            <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
+                                <i class="fas fa-university"></i> Enjeux du secteur Bancaire
+                            </h5>
+                            <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 10px;">
+                                Focus sur l'application de la vérification intelligente (Smart Verification) pour la
+                                prévention de la fraude dans le secteur de la finance.
+                            </p>
+                            <div
+                                style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between;">
+                                <span><span class="tag">Réglementation</span> <span class="tag">Finance</span></span>
+                                <span>Juil. 2025</span>
+                            </div>
+                        </article>
+
+                        <article class="article-case"
+                            style="border: 1px solid #444; padding: 15px; border-radius: 8px; transition: 0.2s;">
+                            <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
+                                <i class="fas fa-cloud-upload-alt"></i> Stockage et Synchronisation
+                            </h5>
+                            <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 10px;">
+                                L'évolution du stockage des Passkeys : passage des clés physiques aux clés synchronisées
+                                dans le cloud pour la gestion inter-appareils.
+                            </p>
+                            <div
+                                style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between;">
+                                <span><span class="tag">Cloud</span> <span class="tag">Mobile</span></span>
+                                <span>Avril 2025</span>
+                            </div>
+                        </article>
+
+                        <article class="article-case"
+                            style="border: 1px solid #444; padding: 15px; border-radius: 8px; transition: 0.2s;">
+                            <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
+                                <i class="fas fa-hand-pointer"></i> Biométrie : Est-ce vraiment plus sûr ?
+                            </h5>
+                            <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 10px;">
+                                Analyse critique des technologies biométriques utilisées avec les Passkeys et leur
+                                sécurité face aux fausses détections et aux menaces avancées.
+                            </p>
+                            <div
+                                style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between;">
+                                <span><span class="tag">Biométrie</span> <span class="tag">Sécurité</span></span>
+                                <span>Mars 2025</span>
+                            </div>
+                        </article>
+
+                        <article class="article-case"
+                            style="border: 1px solid #444; padding: 15px; border-radius: 8px; transition: 0.2s;">
+                            <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px;">
+                                <i class="fas fa-lock-open"></i> Le Passwordless, pas seulement pour l'externe
+                            </h5>
+                            <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 10px;">
+                                Analyse de l'application du Passwordless pour l'authentification des employés et l'accès
+                                aux ressources internes de l'entreprise.
+                            </p>
+                            <div
+                                style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between;">
+                                <span><span class="tag">Corporate</span> <span class="tag">MFA</span></span>
+                                <span>Janv. 2025</span>
+                            </div>
+                        </article>
+
+                    </div>
+                    <div style="text-align: center; margin-top: 40px; border-top: 1px solid #444; padding-top: 20px;">
+                        <a href="URL_DU_FLUX_RSS_COMPLET" target="_blank"
+                            style="font-weight: bold; color: var(--secondary-color);">
+                            <i class="fas fa-external-link-alt"></i> Voir toutes les sources et articles de veille →
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifs">
+        <div class="container reveal">
+            <h2 class="section-title" data-lang="title_certifs">🏆 Certifications</h2>
+            <div class="grid-2"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px;">
+
+                <div class="card">
+                    <div style="display:flex; justify-content:space-between; align-items:start; margin-bottom: 20px;">
+                        <img src="https://www.auditsi.eu/wp-content/uploads/2018/06/anssi_visuel_square500.png"
+                            alt="Logo ANSSI Officiel" style="height: 55px; width: auto;">
+                        <img src="./documents/secnum.png" alt="Badge SecNum" class="zoomable"
+                            style="height: 40px; opacity: 0.8;">
+                    </div>
+                    <h3>🔒 SecNum Académie</h3>
+                    <p style="font-weight: 600; opacity: 0.7; margin-bottom: 15px;">ANSSI | <span
+                            style="color: #2ecc71;" data-lang="valid_mars">Validé (Mars 2025)</span></p>
+                    <ul style="list-style: none; margin-top: 10px;">
+                        <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #2ecc71;"></i> 🧼 <span
+                                data-lang="secnum_1">Hygiène informatique</span></li>
+                        <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #2ecc71;"></i> 🛡️ <span
+                                data-lang="secnum_2">Sécurisation des postes</span></li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div style="display:flex; justify-content:space-between; align-items:start; margin-bottom: 20px;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Cisco_academy_logo.svg/1200px-Cisco_academy_logo.svg.png"
+                            alt="Logo Cisco NetAcad Officiel" style="height: 50px; width: auto;">
+                        <img src="./documents/cisco_cyber.jpg" alt="Badge Cisco" class="zoomable"
+                            style="height: 40px; opacity: 0.8; border-radius: 5px;">
+                    </div>
+                    <h3 data-lang="cisco_title">💻 Introduction à la cybersécurité</h3>
+                    <p style="font-weight: 600; opacity: 0.7; margin-bottom: 15px;">Cisco Academy | <span
+                            style="color: #00b4db;" data-lang="valid_oct">Validé (Oct 2025)</span></p>
+                    <ul style="list-style: none; margin-top: 10px;">
+                        <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #00b4db;"></i> 💡 Concepts
+                            de base en sécurité</li>
+                        <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #00b4db;"></i> 💾
+                            Protection des données</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div style="display:flex; justify-content:space-between; align-items:start; margin-bottom: 20px;">
+                        <img src="https://www.afralti.org/wp-content/uploads/2022/06/LinuxEssentials-Medium.png"
+                            alt="Logo LPI" style="height: 50px; width: auto;">
+                    </div>
+
+                    <h3 style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                        🐧 Linux Essentials
+                    </h3>
+
+                    <p style="font-weight: 600; opacity: 0.7; margin-bottom: 15px;">LPI (Linux Professional Institute) |
+                        <span style="color: #f39c12;">En cours...</span></p>
+                    <ul style="list-style: none; margin-top: 10px;">
+                        <li style="margin-bottom: 8px;"><i class="fas fa-terminal" style="color: #f39c12;"></i>
+                            Introduction au monde Linux</li>
+                        <li style="margin-bottom: 8px;"><i class="fas fa-user-friends" style="color: #f39c12;"></i>
+                            Compétences de base en ligne de commande</li>
+                        <li style="margin-bottom: 8px;"><i class="fas fa-info-circle" style="color: #f39c12;"></i> Bon
+                            point de départ pour débutants</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div style="display:flex; justify-content:space-between; align-items:start; margin-bottom: 20px;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Cisco_academy_logo.svg/1200px-Cisco_academy_logo.svg.png"
+                            alt="Logo Cisco NetAcad Officiel" style="height: 50px; width: auto;">
+                    </div>
+                    <h3>🌐 Switching, Routing and Wireless Essentials</h3>
+                    <p style="font-weight: 600; opacity: 0.7; margin-bottom: 15px;">Cisco Academy | <span
+                            style="color: #00b4db;">En Cours...</span></p>
+                    <ul style="list-style: none; margin-top: 10px;">
+                        <li style="margin-bottom: 8px;"><i class="fas fa-network-wired" style="color: #00b4db;"></i>
+                            Compréhension des LAN et WAN</li>
+                        <li style="margin-bottom: 8px;"><i class="fas fa-route" style="color: #00b4db;"></i>
+                            Configuration de commutateurs et routeurs</li>
+                        <li style="margin-bottom: 8px;"><i class="fas fa-wifi" style="color: #00b4db;"></i> Concepts de
+                            réseau sans fil (Wireless)</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
         <div class="container reveal">
             <h2 class="section-title">Contact</h2>
             <div class="card">
                 <div class="contact-grid">
                     <div class="contact-info">
                         <h3 data-lang="contact_title">Restons en contact</h3>
-                        <p data-lang="contact_desc1">Une question sur mon parcours, une opportunité d'alternance ou simplement envie d'échanger sur la cybersécurité ?</p>
+                        <p data-lang="contact_desc1">Une question sur mon parcours, une opportunité d'alternance ou
+                            simplement envie d'échanger sur la cybersécurité ?</p>
                         <p data-lang="contact_desc2">N'hésitez pas à m'envoyer un message.</p>
-                        
+
                         <div style="margin-top: 40px;">
                             <div style="display:flex; align-items:center; gap:15px; margin-bottom: 15px;">
-                                <i class="fas fa-map-marker-alt" style="color:var(--primary-color); font-size: 1.2rem;"></i>
+                                <i class="fas fa-map-marker-alt"
+                                    style="color:var(--primary-color); font-size: 1.2rem;"></i>
                                 <span>Paris, France</span>
                             </div>
                             <div style="display:flex; align-items:center; gap:15px;">
@@ -684,29 +1148,27 @@
                         </div>
 
                         <div class="contact-socials">
-                            <a href="https://www.linkedin.com/in/soufianezghpro/" target="_blank" class="contact-social-btn">
-                                <img 
-                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/960px-LinkedIn_logo_initials.png" 
-                                    alt="Logo LinkedIn" 
-                                    style="width: 24px; height: 24px; border-radius: 4px;"
-                                >
+                            <a href="https://www.linkedin.com/in/soufianezghpro/" target="_blank"
+                                class="contact-social-btn">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/960px-LinkedIn_logo_initials.png"
+                                    alt="Logo LinkedIn" style="width: 24px; height: 24px; border-radius: 4px;">
                             </a>
                             <a href="https://www.github.com/zsoufiane" target="_blank" class="contact-social-btn">
-                                <img 
-                                    src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" 
-                                    alt="Logo GitHub" 
-                                    style="width: 24px; height: 24px; border-radius: 50%;"
-                                >
+                                <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
+                                    alt="Logo GitHub" style="width: 24px; height: 24px; border-radius: 50%;">
                             </a>
                         </div>
-                        </div>
+                    </div>
 
                     <div class="contact-form">
                         <form action="https://formspree.io/f/VOTRE_ID_ICI" method="POST">
-                            <input type="text" name="name" class="form-input" data-placeholder="ph_name" placeholder="Votre nom" required>
-                            <input type="email" name="email" class="form-input" data-placeholder="ph_email" placeholder="Votre adresse email" required>
-                            <textarea name="message" class="form-textarea" data-placeholder="ph_msg" placeholder="Votre message..." required></textarea>
-                            
+                            <input type="text" name="name" class="form-input" data-placeholder="ph_name"
+                                placeholder="Votre nom" required>
+                            <input type="email" name="email" class="form-input" data-placeholder="ph_email"
+                                placeholder="Votre adresse email" required>
+                            <textarea name="message" class="form-textarea" data-placeholder="ph_msg"
+                                placeholder="Votre message..." required></textarea>
+
                             <button type="submit" class="btn-submit" style="
                                 background: var(--gradient-main); 
                                 color: white; 
@@ -720,8 +1182,8 @@
                                 transition: 0.3s; 
                                 width: 100%;
                                 box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-                            " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(139, 92, 246, 0.4)'; this.style.filter='brightness(1.1)'" 
-                              onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(59, 130, 246, 0.3)'; this.style.filter='brightness(1)'">
+                            " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(139, 92, 246, 0.4)'; this.style.filter='brightness(1.1)'"
+                                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(59, 130, 246, 0.3)'; this.style.filter='brightness(1)'">
                                 <span data-lang="btn_send">Envoyer le message</span>
                             </button>
                         </form>
@@ -730,10 +1192,11 @@
             </div>
         </div>
     </section>
-        
-        <div class="copyright-footer">
-            &copy; 2024 Soufiane ZOUGAGH - <span data-lang="footer_rights">Portfolio BTS SIO SISR. Tous droits réservés.</span>
-        </div>
+
+    <div class="copyright-footer">
+        &copy; 2024 Soufiane ZOUGAGH - <span data-lang="footer_rights">Portfolio BTS SIO SISR. Tous droits
+            réservés.</span>
+    </div>
 
     <div id="imageModal" class="modal">
         <span class="close">&times;</span>
@@ -747,10 +1210,10 @@
         const icon = toggleBtn.querySelector('i');
         const html = document.documentElement;
         const savedTheme = localStorage.getItem('theme');
-        
+
         if (savedTheme) { html.setAttribute('data-theme', savedTheme); updateIcon(savedTheme); }
         function updateIcon(theme) { icon.classList.toggle('fa-sun', theme === 'dark'); icon.classList.toggle('fa-moon', theme !== 'dark'); }
-        
+
         toggleBtn.addEventListener('click', () => {
             const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             html.setAttribute('data-theme', newTheme);
@@ -801,26 +1264,35 @@
                 pedago_desc: "Apprentissage concret via des infrastructures dédiées et des équipements de dernière génération.",
                 alt_title: "L'Alternance au cœur :",
                 alt_desc: "70% des étudiants en alternance dès la 1ère année, avec un fort réseau d'entreprises partenaires.",
-                title_projets: "Projets E4",
-                glpi_desc: "Mise en place d'une solution de gestion de parc et helpdesk sur Debian.",
-                see_details: "Voir détails",
-                ad_desc: "Architecture complète : Forêt, GPO de sécurité et scripts d'automatisation.",
+
+                // NOUVELLES TRADUCTIONS PROJETS
+                title_projets: "Projets E4 : Architecture Microsoft",
+                proj_intro: "Choix d'une infrastructure <strong>100% Windows Server</strong>. Une approche standardisée, intuitive et correspondant à la majorité des PME.",
+                p1_title: "Axe Système : Gestion Centralisée",
+                p1_scenario: "Scénario : Sécurisation des données d'une PME",
+                p1_desc: "Remplacement d'un partage chaotique (clés USB) par un serveur de fichiers sécurisé avec droits stricts.",
+                p1_li1: "Active Directory : Utilisateurs (Alice, Bob...)",
+                p1_li2: "Droits NTFS : Isolation Compta/Direction",
+                p1_li3: "GPO : Mappage automatique lecteur réseau (Z:)",
+
+                p2_title: "Axe Réseau : Services DDI",
+                p2_scenario: "Scénario : Automatisation de l'adressage IP",
+                p2_desc: "Passage d'une config manuelle (source de conflits IP) à une distribution automatique et résiliente.",
+                p2_li1: "DHCP : Étendue 192.168.1.20 à .50",
+                p2_li2: "Réservation : IP fixe pour postes critiques",
+                p2_li3: "DNS : Résolution de noms locale",
+
+                jury_title: "Maîtrise technique (Focus Oral)",
+                jury_intro: "Ces projets fondamentaux nécessitent une compréhension parfaite des concepts sous-jacents :",
+
                 title_veille: "Veille technologique",
                 veille_intro: "Analyse de la transition mondiale vers l'authentification sans mot de passe, l'impact de la biométrie et les enjeux spécifiques au secteur bancaire.",
-                src_fr: "Sources Francophones",
-                src_solnum: "Dossier complet pour un futur sans mot de passe.",
-                src_jdn: "Clés FIDO2, une sécurité Made in France.",
-                src_zdnet: "Préparer son entreprise à la transition.",
-                src_silicon: "Approche innovante des accès sécurisés.",
-                src_intl: "Sources internationales",
                 title_certifs: "Certifications",
                 valid_mars: "Validé (Mars 2025)",
                 secnum_1: "Hygiène informatique",
                 secnum_2: "Sécurisation des postes",
                 cisco_title: "Introduction à la cybersécurité",
                 valid_oct: "Validé (Oct 2025)",
-                cisco_1: "Basic Security Concepts",
-                cisco_2: "Data Protection",
                 contact_title: "Restons en contact",
                 contact_desc1: "Une question sur mon parcours, une opportunité d'alternance ou simplement envie d'échanger sur la cybersécurité ?",
                 contact_desc2: "N'hésitez pas à m'envoyer un message.",
@@ -871,26 +1343,35 @@
                 pedago_desc: "Concrete learning via dedicated infrastructures and latest generation equipment.",
                 alt_title: "Work-study at the core:",
                 alt_desc: "70% of students in apprenticeship from the 1st year, with a strong network of partner companies.",
-                title_projets: "E4 Projects",
-                glpi_desc: "Implementation of an IT asset management and helpdesk solution on Debian.",
-                see_details: "See details",
-                ad_desc: "Complete architecture: Forest, security GPOs, and automation scripts.",
+
+                // NEW PROJECT TRANSLATIONS
+                title_projets: "E4 Projects: Microsoft Architecture",
+                proj_intro: "Choosing a <strong>100% Windows Server</strong> infrastructure. A standardized approach, intuitive and suitable for most SMBs.",
+                p1_title: "System Focus: Centralized Management",
+                p1_scenario: "Scenario: Securing SMB Data",
+                p1_desc: "Replacing chaotic sharing (USB keys) with a secure file server and strict rights.",
+                p1_li1: "Active Directory: Users (Alice, Bob...)",
+                p1_li2: "NTFS Rights: Accounting/Management Isolation",
+                p1_li3: "GPO: Automatic network drive mapping (Z:)",
+
+                p2_title: "Network Focus: DDI Services",
+                p2_scenario: "Scenario: IP Addressing Automation",
+                p2_desc: "Switching from manual config (IP conflicts) to automatic and resilient distribution.",
+                p2_li1: "DHCP: Scope 192.168.1.20 to .50",
+                p2_li2: "Reservation: Static IP for critical workstations",
+                p2_li3: "DNS: Local name resolution",
+
+                jury_title: "Technical Mastery (Oral Focus)",
+                jury_intro: "These fundamental projects require a perfect understanding of underlying concepts:",
+
                 title_veille: "Tech Watch",
                 veille_intro: "Analysis of the global transition to passwordless authentication, the impact of biometrics, and banking sector specifics.",
-                src_fr: "French Sources",
-                src_solnum: "Complete dossier for a passwordless future.",
-                src_jdn: "FIDO2 keys, Made in France security.",
-                src_zdnet: "Preparing your company for the transition.",
-                src_silicon: "Innovative approach to secure access.",
-                src_intl: "International Sources",
                 title_certifs: "Certifications",
                 valid_mars: "Validated (March 2025)",
                 secnum_1: "IT Hygiene",
                 secnum_2: "Workstation Security",
                 cisco_title: "Introduction to Cybersecurity",
                 valid_oct: "Validated (Oct 2025)",
-                cisco_1: "Basic Security Concepts",
-                cisco_2: "Data Protection",
                 contact_title: "Let's keep in touch",
                 contact_desc1: "A question about my path, a work-study opportunity, or just want to discuss cybersecurity?",
                 contact_desc2: "Feel free to send me a message.",
@@ -911,7 +1392,7 @@
             document.querySelectorAll('[data-lang]').forEach(element => {
                 const key = element.getAttribute('data-lang');
                 if (translations[lang][key]) {
-                    element.innerHTML = translations[lang][key]; 
+                    element.innerHTML = translations[lang][key];
                 }
             });
 
@@ -951,7 +1432,7 @@
         // --- SCROLL ANIMATION ---
         window.addEventListener('scroll', () => {
             document.querySelectorAll('.reveal').forEach(reveal => {
-                if(reveal.getBoundingClientRect().top < window.innerHeight - 150) reveal.classList.add('active');
+                if (reveal.getBoundingClientRect().top < window.innerHeight - 150) reveal.classList.add('active');
             });
         });
 
@@ -959,13 +1440,14 @@
         const modal = document.getElementById("imageModal");
         const modalImg = document.getElementById("img01");
         document.querySelectorAll(".zoomable").forEach(img => {
-            img.addEventListener("click", function() {
+            img.addEventListener("click", function () {
                 modal.style.display = "block";
                 modalImg.src = this.src;
             });
         });
         document.querySelector(".close").onclick = () => modal.style.display = "none";
-        modal.onclick = (e) => { if(e.target === modal) modal.style.display = "none"; };
+        modal.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
     </script>
 </body>
+
 </html>
