@@ -371,6 +371,60 @@
             color: #ef4444;
         }
 
+        /* --- CAROUSEL VEILLE TECH (NOUVEAU) --- */
+        .carousel-wrapper {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            padding: 20px 0;
+            /* Effet de fondu à gauche et à droite */
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 25px;
+            width: max-content;
+            /* Animation continue */
+            animation: scroll-left 40s linear infinite;
+        }
+
+        /* Pause l'animation quand on passe la souris dessus pour lire */
+        .carousel-track:hover {
+            animation-play-state: paused;
+        }
+
+        .carousel-card {
+            min-width: 320px;
+            max-width: 320px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: var(--shadow-card);
+            transition: 0.3s;
+            flex-shrink: 0;
+            white-space: normal;
+        }
+
+        .carousel-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-hover);
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+
         /* --- CONTACT SECTION --- */
         .contact-grid {
             display: grid;
@@ -770,83 +824,86 @@
         </div>
     </section>
 
-<section id="projets">
-    <div class="container reveal">
-        <h2 class="section-title" data-lang="title_projets">Projets E4 : Architecture Microsoft</h2>
+    <section id="projets">
+        <div class="container reveal">
+            <h2 class="section-title" data-lang="title_projets">Projets E4 : Architecture Microsoft</h2>
 
-        <p style="text-align: center; max-width: 800px; margin: 0 auto 40px auto; opacity: 0.9;" data-lang="proj_intro">
-            Déploiement d'une infrastructure <strong>Windows Server</strong> visant à standardiser le système
-            d'information. L'objectif est d'assurer la haute disponibilité des services et la centralisation de
-            l'administration.
-        </p>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px auto; opacity: 0.9;"
+                data-lang="proj_intro">
+                Déploiement d'une infrastructure <strong>Windows Server</strong> visant à standardiser le système
+                d'information. L'objectif est d'assurer la haute disponibilité des services et la centralisation de
+                l'administration.
+            </p>
 
-        <div class="grid-2" style="gap: 40px;">
+            <div class="grid-2" style="gap: 40px;">
 
-            <article class="project-card">
-                <div class="project-header" style="background: linear-gradient(135deg, #0078D7, #002050);">
-                    <i class="fab fa-windows"></i>
-                </div>
-                <div class="project-content">
-                    <h3 data-lang="p1_title">Administration Système & Sécurité</h3>
-                    <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--primary-color); font-weight: bold;"
-                        data-lang="p1_scenario">
-                        Objectif : Centralisation des identités
-                    </p>
-                    <p data-lang="p1_desc">
-                        Mise en place d'un domaine Active Directory pour sécuriser les authentifications et structurer
-                        le parc informatique.
-                    </p>
-
-                    <ul style="margin: 15px 0; padding-left: 20px; font-size: 0.9rem; opacity: 0.8;">
-                        <li data-lang="p1_li1">Gestion des utilisateurs et des groupes (AD DS)</li>
-                        <li data-lang="p1_li2">Sécurisation des données via droits NTFS/ACLs</li>
-                        <li data-lang="p1_li3">Automatisation de l'environnement utilisateur (GPO)</li>
-                    </ul>
-
-                    <div style="margin-top: auto;">
-                        <span class="tag">Windows Server</span>
-                        <span class="tag">Active Directory</span>
-                        <span class="tag secu">Sécurité</span>
+                <article class="project-card">
+                    <div class="project-header" style="background: linear-gradient(135deg, #0078D7, #002050);">
+                        <i class="fab fa-windows"></i>
                     </div>
-                </div>
-            </article>
+                    <div class="project-content">
+                        <h3 data-lang="p1_title">Administration Système & Sécurité</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--primary-color); font-weight: bold;"
+                            data-lang="p1_scenario">
+                            Objectif : Centralisation des identités
+                        </p>
+                        <p data-lang="p1_desc">
+                            Mise en place d'un domaine Active Directory pour sécuriser les authentifications et
+                            structurer
+                            le parc informatique.
+                        </p>
 
-            <article class="project-card">
-                <div class="project-header" style="background: linear-gradient(135deg, #10b981, #059669);">
-                    <i class="fas fa-network-wired"></i>
-                </div>
-                <div class="project-content">
-                    <h3 data-lang="p2_title">Services d'Infrastructure</h3>
-                    <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--primary-color); font-weight: bold;"
-                        data-lang="p2_scenario">
-                        Objectif : Gestion du plan d'adressage
-                    </p>
-                    <p data-lang="p2_desc">
-                        Déploiement des services réseaux fondamentaux pour garantir la connectivité et la résolution de
-                        noms au sein du LAN.
-                    </p>
+                        <ul style="margin: 15px 0; padding-left: 20px; font-size: 0.9rem; opacity: 0.8;">
+                            <li data-lang="p1_li1">Gestion des utilisateurs et des groupes (AD DS)</li>
+                            <li data-lang="p1_li2">Sécurisation des données via droits NTFS/ACLs</li>
+                            <li data-lang="p1_li3">Automatisation de l'environnement utilisateur (GPO)</li>
+                        </ul>
 
-                    <ul style="margin: 15px 0; padding-left: 20px; font-size: 0.9rem; opacity: 0.8;">
-                        <li data-lang="p2_li1">Configuration et distribution dynamique d'IP (DHCP)</li>
-                        <li data-lang="p2_li2">Gestion des baux et réservations pour serveurs</li>
-                        <li data-lang="p2_li3">Mise en œuvre de la résolution DNS interne</li>
-                    </ul>
-
-                    <div style="margin-top: auto;">
-                        <span class="tag">DHCP</span>
-                        <span class="tag">DNS</span>
-                        <span class="tag">IPv4</span>
+                        <div style="margin-top: auto;">
+                            <span class="tag">Windows Server</span>
+                            <span class="tag">Active Directory</span>
+                            <span class="tag secu">Sécurité</span>
+                        </div>
                     </div>
-                </div>
-            </article>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-header" style="background: linear-gradient(135deg, #10b981, #059669);">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 data-lang="p2_title">Services d'Infrastructure</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--primary-color); font-weight: bold;"
+                            data-lang="p2_scenario">
+                            Objectif : Gestion du plan d'adressage
+                        </p>
+                        <p data-lang="p2_desc">
+                            Déploiement des services réseaux fondamentaux pour garantir la connectivité et la résolution
+                            de
+                            noms au sein du LAN.
+                        </p>
+
+                        <ul style="margin: 15px 0; padding-left: 20px; font-size: 0.9rem; opacity: 0.8;">
+                            <li data-lang="p2_li1">Configuration et distribution dynamique d'IP (DHCP)</li>
+                            <li data-lang="p2_li2">Gestion des baux et réservations pour serveurs</li>
+                            <li data-lang="p2_li3">Mise en œuvre de la résolution DNS interne</li>
+                        </ul>
+
+                        <div style="margin-top: auto;">
+                            <span class="tag">DHCP</span>
+                            <span class="tag">DNS</span>
+                            <span class="tag">IPv4</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <section id="veille">
         <div class="container reveal">
             <h2 class="section-title" data-lang="title_veille">Veille technologique</h2>
-    
+
             <div style="text-align: center; margin-bottom: 40px;">
                 <h3 style="color:var(--secondary-color); font-size: 1.8rem; margin-bottom:10px;">
                     <i class="fas fa-fingerprint"></i> Passwordless & FIDO2
@@ -856,17 +913,17 @@
                     biométrie et les enjeux spécifiques au secteur bancaire.
                 </p>
             </div>
-    
+
             <div class="carousel-wrapper">
                 <div class="carousel-track">
-    
+
                     <article class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-chart-line"></i> Adoption Massive
                         </h5>
                         <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
-                            Gartner prévoit que plus de 25% des transactions MFA utiliseront FIDO d'ici 2025. Les Passkeys
-                            dominent le marché.
+                            Gartner prévoit que plus de 25% des transactions MFA utiliseront FIDO d'ici 2025. Les
+                            Passkeys dominent le marché.
                         </p>
                         <div
                             style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
@@ -874,14 +931,14 @@
                             <span>Déc. 2025</span>
                         </div>
                     </article>
-    
+
                     <article class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-shield-alt"></i> Anti-Phishing
                         </h5>
                         <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
-                            Le Passwordless basé sur FIDO2 élimine le mot de passe comme vecteur d'attaque. Renforce le Zero
-                            Trust.
+                            Le Passwordless basé sur FIDO2 élimine le mot de passe comme vecteur d'attaque. Renforce le
+                            Zero Trust.
                         </p>
                         <div
                             style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
@@ -889,7 +946,7 @@
                             <span>Oct. 2025</span>
                         </div>
                     </article>
-    
+
                     <article class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-desktop"></i> Microsoft Entra ID
@@ -904,7 +961,7 @@
                             <span>Sept. 2024</span>
                         </div>
                     </article>
-    
+
                     <article class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-user-check"></i> UX & ROI
@@ -919,7 +976,7 @@
                             <span>Nov. 2025</span>
                         </div>
                     </article>
-    
+
                     <article class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-university"></i> Secteur Bancaire
@@ -934,7 +991,7 @@
                             <span>Juil. 2025</span>
                         </div>
                     </article>
-    
+
                     <article class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-cloud-upload-alt"></i> Synchro Cloud
@@ -949,14 +1006,14 @@
                             <span>Avril 2025</span>
                         </div>
                     </article>
-    
+
                     <article class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-hand-pointer"></i> Biométrie
                         </h5>
                         <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
-                            Analyse critique des failles potentielles (Deepfakes) face à l'authentification biométrique des
-                            Passkeys.
+                            Analyse critique des failles potentielles (Deepfakes) face à l'authentification biométrique
+                            des Passkeys.
                         </p>
                         <div
                             style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
@@ -964,15 +1021,15 @@
                             <span>Mars 2025</span>
                         </div>
                     </article>
-    
-    
+
+
                     <article class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-chart-line"></i> Adoption Massive
                         </h5>
                         <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
-                            Gartner prévoit que plus de 25% des transactions MFA utiliseront FIDO d'ici 2025. Les Passkeys
-                            dominent le marché.
+                            Gartner prévoit que plus de 25% des transactions MFA utiliseront FIDO d'ici 2025. Les
+                            Passkeys dominent le marché.
                         </p>
                         <div
                             style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
@@ -980,14 +1037,14 @@
                             <span>Déc. 2025</span>
                         </div>
                     </article>
-    
+
                     <article class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-shield-alt"></i> Anti-Phishing
                         </h5>
                         <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
-                            Le Passwordless basé sur FIDO2 élimine le mot de passe comme vecteur d'attaque. Renforce le Zero
-                            Trust.
+                            Le Passwordless basé sur FIDO2 élimine le mot de passe comme vecteur d'attaque. Renforce le
+                            Zero Trust.
                         </p>
                         <div
                             style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
@@ -995,7 +1052,7 @@
                             <span>Oct. 2025</span>
                         </div>
                     </article>
-    
+
                     <article class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-desktop"></i> Microsoft Entra ID
@@ -1010,7 +1067,7 @@
                             <span>Sept. 2024</span>
                         </div>
                     </article>
-    
+
                     <article class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-user-check"></i> UX & ROI
@@ -1025,7 +1082,7 @@
                             <span>Nov. 2025</span>
                         </div>
                     </article>
-    
+
                     <article class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-university"></i> Secteur Bancaire
@@ -1040,7 +1097,7 @@
                             <span>Juil. 2025</span>
                         </div>
                     </article>
-    
+
                     <article class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-cloud-upload-alt"></i> Synchro Cloud
@@ -1055,14 +1112,14 @@
                             <span>Avril 2025</span>
                         </div>
                     </article>
-    
+
                     <article class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-hand-pointer"></i> Biométrie
                         </h5>
                         <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
-                            Analyse critique des failles potentielles (Deepfakes) face à l'authentification biométrique des
-                            Passkeys.
+                            Analyse critique des failles potentielles (Deepfakes) face à l'authentification biométrique
+                            des Passkeys.
                         </p>
                         <div
                             style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
@@ -1070,10 +1127,10 @@
                             <span>Mars 2025</span>
                         </div>
                     </article>
-    
+
                 </div>
             </div>
-    
+
             <div style="text-align: center; margin-top: 10px;">
                 <a href="#" style="font-weight: bold; color: var(--secondary-color); font-size: 0.9rem;">
                     <i class="fas fa-rss"></i> Voir toutes les sources RSS
@@ -1135,7 +1192,8 @@
                     </h3>
 
                     <p style="font-weight: 600; opacity: 0.7; margin-bottom: 15px;">LPI (Linux Professional Institute) |
-                        <span style="color: #f39c12;">En cours...</span></p>
+                        <span style="color: #f39c12;">En cours...</span>
+                    </p>
                     <ul style="list-style: none; margin-top: 10px;">
                         <li style="margin-bottom: 8px;"><i class="fas fa-terminal" style="color: #f39c12;"></i>
                             Introduction au monde Linux</li>
@@ -1266,171 +1324,164 @@
         });
 
         // --- GESTION DE LA LANGUE (TRADUCTIONS) ---
-    const translations = {
-        fr: {
-            // ... (Garde tes anciennes traductions du menu/hero/bts/entreprise) ...
-            nav_accueil: "Accueil",
-            nav_bts: "BTS SIO",
-            nav_ent: "Entreprise",
-            nav_ecole: "École",
-            nav_projets: "Projets",
-            nav_veille: "Veille",
-            nav_certifs: "Certifications",
-            nav_contact: "Contact",
-            hero_desc: "Étudiant en deuxième année de BTS SIO SISR à Ingétis.<br>En alternance à la Banque de France en tant que Correspondant Informatique.",
-            btn_about: "À propos de moi",
-            btn_synthese: "Fiche synthèse",
-            title_bts: "Parcours BTS SIO",
-            bts_dip_title: "Le Diplôme",
-            bts_dip_desc: "Le BTS Services Informatiques aux Organisations est un diplôme d'État formant aux métiers du numérique. Un socle solide pour l'avenir.",
-            bts_slam_desc: "Développement d'applications, bases de données, et solutions logicielles. Comprendre le code pour mieux gérer l'infra.",
-            bts_sisr_title: "Option SISR (Ma spécialisation)",
-            bts_sisr_desc: "Administration systèmes et réseaux, cybersécurité, virtualisation. La colonne vertébrale du SI.",
-            ent_desc: "La Banque de France est la banque centrale nationale française. Elle contribue à la stabilité monétaire, à la supervision du système financier et au service de l’économie.",
-            tag_public: "Secteur Public",
-            tag_secu: "Haute Sécurité",
-            tag_secu_short: "Sécurité",
-            tag_cyber: "Cyberdéfense",
-            job_title: "Correspondant Informatique",
-            job_period: "2024 - 2026 | Alternance",
-            task_1: "Installer et déployer les machines clientes et les périphériques d’un parc informatique sous l’autorité du responsable.",
-            task_2: "Permettre l’accès aux ressources informatiques et numériques ainsi qu'aux services réseaux.",
-            task_3: "Assurer la maintenance du parc informatique, téléphonique et numérique de l’entreprise.",
-            task_4: "Assurer le support technique et accompagner les utilisateurs dans l’utilisation des outils numériques.",
-            env_real: "Environnement & Réalisations",
-            proj_flag: "Projet Phare :",
-            proj_desc: "Automatisation de l'onboarding utilisateurs via script PowerShell.",
-            title_ecole: "Mon École",
-            ecole_desc1: "École d'ingénierie informatique appliquée située au cœur de Paris. <strong>Ingétis</strong> se distingue par une approche pédagogique à taille humaine, favorisant un suivi individualisé.",
-            ecole_desc2: "Membre du <strong>Campus Cyber</strong> et certifiée <strong>Qualiopi</strong>, l'école propose un cursus complet du Bac au Bac+5.",
-            tag_alt: "Alternance",
-            why_ingetis: "Pourquoi Ingétis ?",
-            pedago_title: "Pédagogie par projet :",
-            pedago_desc: "Apprentissage concret via des infrastructures dédiées et des équipements de dernière génération.",
-            alt_title: "L'Alternance au cœur :",
-            alt_desc: "70% des étudiants en alternance dès la 1ère année, avec un fort réseau d'entreprises partenaires.",
+        const translations = {
+            fr: {
+                nav_accueil: "Accueil",
+                nav_bts: "BTS SIO",
+                nav_ent: "Entreprise",
+                nav_ecole: "École",
+                nav_projets: "Projets",
+                nav_veille: "Veille",
+                nav_certifs: "Certifications",
+                nav_contact: "Contact",
+                hero_desc: "Étudiant en deuxième année de BTS SIO SISR à Ingétis.<br>En alternance à la Banque de France en tant que Correspondant Informatique.",
+                btn_about: "À propos de moi",
+                btn_synthese: "Fiche synthèse",
+                title_bts: "Parcours BTS SIO",
+                bts_dip_title: "Le Diplôme",
+                bts_dip_desc: "Le BTS Services Informatiques aux Organisations est un diplôme d'État formant aux métiers du numérique. Un socle solide pour l'avenir.",
+                bts_slam_desc: "Développement d'applications, bases de données, et solutions logicielles. Comprendre le code pour mieux gérer l'infra.",
+                bts_sisr_title: "Option SISR (Ma spécialisation)",
+                bts_sisr_desc: "Administration systèmes et réseaux, cybersécurité, virtualisation. La colonne vertébrale du SI.",
+                ent_desc: "La Banque de France est la banque centrale nationale française. Elle contribue à la stabilité monétaire, à la supervision du système financier et au service de l’économie.",
+                tag_public: "Secteur Public",
+                tag_secu: "Haute Sécurité",
+                tag_secu_short: "Sécurité",
+                tag_cyber: "Cyberdéfense",
+                job_title: "Correspondant Informatique",
+                job_period: "2024 - 2026 | Alternance",
+                task_1: "Installer et déployer les machines clientes et les périphériques d’un parc informatique sous l’autorité du responsable.",
+                task_2: "Permettre l’accès aux ressources informatiques et numériques ainsi qu'aux services réseaux.",
+                task_3: "Assurer la maintenance du parc informatique, téléphonique et numérique de l’entreprise.",
+                task_4: "Assurer le support technique et accompagner les utilisateurs dans l’utilisation des outils numériques.",
+                env_real: "Environnement & Réalisations",
+                proj_flag: "Projet Phare :",
+                proj_desc: "Automatisation de l'onboarding utilisateurs via script PowerShell.",
+                title_ecole: "Mon École",
+                ecole_desc1: "École d'ingénierie informatique appliquée située au cœur de Paris. <strong>Ingétis</strong> se distingue par une approche pédagogique à taille humaine, favorisant un suivi individualisé.",
+                ecole_desc2: "Membre du <strong>Campus Cyber</strong> et certifiée <strong>Qualiopi</strong>, l'école propose un cursus complet du Bac au Bac+5.",
+                tag_alt: "Alternance",
+                why_ingetis: "Pourquoi Ingétis ?",
+                pedago_title: "Pédagogie par projet :",
+                pedago_desc: "Apprentissage concret via des infrastructures dédiées et des équipements de dernière génération.",
+                alt_title: "L'Alternance au cœur :",
+                alt_desc: "70% des étudiants en alternance dès la 1ère année, avec un fort réseau d'entreprises partenaires.",
 
-            // --- NOUVELLES TRADUCTIONS PROJETS (VERSION PRO/VAGUE) ---
-            title_projets: "Projets E4 : Architecture Microsoft",
-            proj_intro: "Déploiement d'une infrastructure <strong>Windows Server</strong> visant à standardiser le système d'information. L'objectif est d'assurer la haute disponibilité des services et la centralisation de l'administration.",
+                // --- TRADUCTIONS PROJETS ---
+                title_projets: "Projets E4 : Architecture Microsoft",
+                proj_intro: "Déploiement d'une infrastructure <strong>Windows Server</strong> visant à standardiser le système d'information. L'objectif est d'assurer la haute disponibilité des services et la centralisation de l'administration.",
 
-            p1_title: "Administration Système & Sécurité",
-            p1_scenario: "Objectif : Centralisation des identités",
-            p1_desc: "Mise en place d'un domaine Active Directory pour sécuriser les authentifications et structurer le parc informatique.",
-            p1_li1: "Gestion des utilisateurs et des groupes (AD DS)",
-            p1_li2: "Sécurisation des données via droits NTFS/ACLs",
-            p1_li3: "Automatisation de l'environnement utilisateur (GPO)",
+                p1_title: "Administration Système & Sécurité",
+                p1_scenario: "Objectif : Centralisation des identités",
+                p1_desc: "Mise en place d'un domaine Active Directory pour sécuriser les authentifications et structurer le parc informatique.",
+                p1_li1: "Gestion des utilisateurs et des groupes (AD DS)",
+                p1_li2: "Sécurisation des données via droits NTFS/ACLs",
+                p1_li3: "Automatisation de l'environnement utilisateur (GPO)",
 
-            p2_title: "Services d'Infrastructure",
-            p2_scenario: "Objectif : Gestion du plan d'adressage",
-            p2_desc: "Déploiement des services réseaux fondamentaux pour garantir la connectivité et la résolution de noms au sein du LAN.",
-            p2_li1: "Configuration et distribution dynamique d'IP (DHCP)",
-            p2_li2: "Gestion des baux et réservations pour serveurs",
-            p2_li3: "Mise en œuvre de la résolution DNS interne",
+                p2_title: "Services d'Infrastructure",
+                p2_scenario: "Objectif : Gestion du plan d'adressage",
+                p2_desc: "Déploiement des services réseaux fondamentaux pour garantir la connectivité et la résolution de noms au sein du LAN.",
+                p2_li1: "Configuration et distribution dynamique d'IP (DHCP)",
+                p2_li2: "Gestion des baux et réservations pour serveurs",
+                p2_li3: "Mise en œuvre de la résolution DNS interne",
 
-            jury_title: "Compétences acquises",
-            jury_intro: "Ce socle technique permet de valider la maîtrise des concepts d'administration réseau en environnement Windows :",
-            // ---------------------------------------------------------
 
-            title_veille: "Veille technologique",
-            veille_intro: "Analyse de la transition mondiale vers l'authentification sans mot de passe, l'impact de la biométrie et les enjeux spécifiques au secteur bancaire.",
-            title_certifs: "Certifications",
-            valid_mars: "Validé (Mars 2025)",
-            secnum_1: "Hygiène informatique",
-            secnum_2: "Sécurisation des postes",
-            cisco_title: "Introduction à la cybersécurité",
-            valid_oct: "Validé (Oct 2025)",
-            contact_title: "Restons en contact",
-            contact_desc1: "Une question sur mon parcours, une opportunité d'alternance ou simplement envie d'échanger sur la cybersécurité ?",
-            contact_desc2: "N'hésitez pas à m'envoyer un message.",
-            ph_name: "Votre nom",
-            ph_email: "Votre adresse email",
-            ph_msg: "Votre message...",
-            btn_send: "Envoyer le message",
-            footer_rights: "Portfolio BTS SIO SISR. Tous droits réservés."
-        },
-        en: {
-            nav_accueil: "Home",
-            nav_bts: "BTS SIO",
-            nav_ent: "Company",
-            nav_ecole: "School",
-            nav_projets: "Projects",
-            nav_veille: "Tech Watch",
-            nav_certifs: "Certifications",
-            nav_contact: "Contact",
-            hero_desc: "2nd year student in BTS SIO SISR at Ingétis.<br>Work-study at Banque de France as an IT Support Specialist.",
-            btn_about: "About me",
-            btn_synthese: "Summary Sheet",
-            title_bts: "BTS SIO Path",
-            bts_dip_title: "The Diploma",
-            bts_dip_desc: "The BTS SIO is a State Diploma training for digital professions. A solid foundation for the future.",
-            bts_slam_desc: "App development, databases, and software solutions. Understanding code to better manage infrastructure.",
-            bts_sisr_title: "SISR Option (My Specialization)",
-            bts_sisr_desc: "System & network administration, cybersecurity, virtualization. The backbone of IT systems.",
-            ent_desc: "The Banque de France is the French national central bank. It contributes to monetary stability, financial system supervision, and service to the economy.",
-            tag_public: "Public Sector",
-            tag_secu: "High Security",
-            tag_secu_short: "Security",
-            tag_cyber: "Cyberdefense",
-            job_title: "IT Support Specialist",
-            job_period: "2024 - 2026 | Apprenticeship",
-            task_1: "Install and deploy client machines and peripherals within an IT fleet under supervision.",
-            task_2: "Enable access to IT/digital resources and network services.",
-            task_3: "Ensure maintenance of the company's computer, telephone, and digital equipment.",
-            task_4: "Provide technical support and guide users in using digital tools.",
-            env_real: "Environment & Achievements",
-            proj_flag: "Flagship Project:",
-            proj_desc: "Automation of user onboarding via PowerShell script.",
-            title_ecole: "My School",
-            ecole_desc1: "Applied computer engineering school located in the heart of Paris. <strong>Ingétis</strong> stands out for its human-sized pedagogical approach, favoring individualized follow-up.",
-            ecole_desc2: "Member of <strong>Campus Cyber</strong> and <strong>Qualiopi</strong> certified, the school offers a complete curriculum from Bachelor to Master's degree.",
-            tag_alt: "Work-study",
-            why_ingetis: "Why Ingétis?",
-            pedago_title: "Project-based learning:",
-            pedago_desc: "Concrete learning via dedicated infrastructures and latest generation equipment.",
-            alt_title: "Work-study at the core:",
-            alt_desc: "70% of students in apprenticeship from the 1st year, with a strong network of partner companies.",
+                title_veille: "Veille technologique",
+                veille_intro: "Analyse de la transition mondiale vers l'authentification sans mot de passe, l'impact de la biométrie et les enjeux spécifiques au secteur bancaire.",
+                title_certifs: "Certifications",
+                valid_mars: "Validé (Mars 2025)",
+                secnum_1: "Hygiène informatique",
+                secnum_2: "Sécurisation des postes",
+                cisco_title: "Introduction à la cybersécurité",
+                valid_oct: "Validé (Oct 2025)",
+                contact_title: "Restons en contact",
+                contact_desc1: "Une question sur mon parcours, une opportunité d'alternance ou simplement envie d'échanger sur la cybersécurité ?",
+                contact_desc2: "N'hésitez pas à m'envoyer un message.",
+                ph_name: "Votre nom",
+                ph_email: "Votre adresse email",
+                ph_msg: "Votre message...",
+                btn_send: "Envoyer le message",
+                footer_rights: "Portfolio BTS SIO SISR. Tous droits réservés."
+            },
+            en: {
+                nav_accueil: "Home",
+                nav_bts: "BTS SIO",
+                nav_ent: "Company",
+                nav_ecole: "School",
+                nav_projets: "Projects",
+                nav_veille: "Tech Watch",
+                nav_certifs: "Certifications",
+                nav_contact: "Contact",
+                hero_desc: "2nd year student in BTS SIO SISR at Ingétis.<br>Work-study at Banque de France as an IT Support Specialist.",
+                btn_about: "About me",
+                btn_synthese: "Summary Sheet",
+                title_bts: "BTS SIO Path",
+                bts_dip_title: "The Diploma",
+                bts_dip_desc: "The BTS SIO is a State Diploma training for digital professions. A solid foundation for the future.",
+                bts_slam_desc: "App development, databases, and software solutions. Understanding code to better manage infrastructure.",
+                bts_sisr_title: "SISR Option (My Specialization)",
+                bts_sisr_desc: "System & network administration, cybersecurity, virtualization. The backbone of IT systems.",
+                ent_desc: "The Banque de France is the French national central bank. It contributes to monetary stability, financial system supervision, and service to the economy.",
+                tag_public: "Public Sector",
+                tag_secu: "High Security",
+                tag_secu_short: "Security",
+                tag_cyber: "Cyberdefense",
+                job_title: "IT Support Specialist",
+                job_period: "2024 - 2026 | Apprenticeship",
+                task_1: "Install and deploy client machines and peripherals within an IT fleet under supervision.",
+                task_2: "Enable access to IT/digital resources and network services.",
+                task_3: "Ensure maintenance of the company's computer, telephone, and digital equipment.",
+                task_4: "Provide technical support and guide users in using digital tools.",
+                env_real: "Environment & Achievements",
+                proj_flag: "Flagship Project:",
+                proj_desc: "Automation of user onboarding via PowerShell script.",
+                title_ecole: "My School",
+                ecole_desc1: "Applied computer engineering school located in the heart of Paris. <strong>Ingétis</strong> stands out for its human-sized pedagogical approach, favoring individualized follow-up.",
+                ecole_desc2: "Member of <strong>Campus Cyber</strong> and <strong>Qualiopi</strong> certified, the school offers a complete curriculum from Bachelor to Master's degree.",
+                tag_alt: "Work-study",
+                why_ingetis: "Why Ingétis?",
+                pedago_title: "Project-based learning:",
+                pedago_desc: "Concrete learning via dedicated infrastructures and latest generation equipment.",
+                alt_title: "Work-study at the core:",
+                alt_desc: "70% of students in apprenticeship from the 1st year, with a strong network of partner companies.",
 
-            // --- NEW TRANSLATIONS (PRO/VAGUE VERSION) ---
-            title_projets: "E4 Projects: Microsoft Architecture",
-            proj_intro: "Deployment of a <strong>Windows Server</strong> infrastructure aiming to standardize the information system. The goal is to ensure service high availability and centralized administration.",
+                // --- NEW TRANSLATIONS (PRO/VAGUE VERSION) ---
+                title_projets: "E4 Projects: Microsoft Architecture",
+                proj_intro: "Deployment of a <strong>Windows Server</strong> infrastructure aiming to standardize the information system. The goal is to ensure service high availability and centralized administration.",
 
-            p1_title: "System Administration & Security",
-            p1_scenario: "Goal: Identity Centralization",
-            p1_desc: "Implementation of an Active Directory domain to secure authentications and structure the IT fleet.",
-            p1_li1: "User and Group Management (AD DS)",
-            p1_li2: "Data security via NTFS rights/ACLs",
-            p1_li3: "User environment automation (GPO)",
+                p1_title: "System Administration & Security",
+                p1_scenario: "Goal: Identity Centralization",
+                p1_desc: "Implementation of an Active Directory domain to secure authentications and structure the IT fleet.",
+                p1_li1: "User and Group Management (AD DS)",
+                p1_li2: "Data security via NTFS rights/ACLs",
+                p1_li3: "User environment automation (GPO)",
 
-            p2_title: "Infrastructure Services",
-            p2_scenario: "Goal: Addressing Plan Management",
-            p2_desc: "Deployment of fundamental network services to ensure connectivity and name resolution within the LAN.",
-            p2_li1: "Configuration and dynamic IP distribution (DHCP)",
-            p2_li2: "Lease management and server reservations",
-            p2_li3: "Internal DNS resolution implementation",
+                p2_title: "Infrastructure Services",
+                p2_scenario: "Goal: Addressing Plan Management",
+                p2_desc: "Deployment of fundamental network services to ensure connectivity and name resolution within the LAN.",
+                p2_li1: "Configuration and dynamic IP distribution (DHCP)",
+                p2_li2: "Lease management and server reservations",
+                p2_li3: "Internal DNS resolution implementation",
 
-            jury_title: "Acquired Skills",
-            jury_intro: "This technical foundation validates the mastery of network administration concepts in a Windows environment:",
-            // ---------------------------------------------------------
 
-            title_veille: "Tech Watch",
-            veille_intro: "Analysis of the global transition to passwordless authentication, the impact of biometrics, and banking sector specifics.",
-            title_certifs: "Certifications",
-            valid_mars: "Validated (March 2025)",
-            secnum_1: "IT Hygiene",
-            secnum_2: "Workstation Security",
-            cisco_title: "Introduction to Cybersecurity",
-            valid_oct: "Validated (Oct 2025)",
-            contact_title: "Let's keep in touch",
-            contact_desc1: "A question about my path, a work-study opportunity, or just want to discuss cybersecurity?",
-            contact_desc2: "Feel free to send me a message.",
-            ph_name: "Your name",
-            ph_email: "Your email address",
-            ph_msg: "Your message...",
-            btn_send: "Send message",
-            footer_rights: "BTS SIO SISR Portfolio. All rights reserved."
-        }
-    };
+                title_veille: "Tech Watch",
+                veille_intro: "Analysis of the global transition to passwordless authentication, the impact of biometrics, and banking sector specifics.",
+                title_certifs: "Certifications",
+                valid_mars: "Validated (March 2025)",
+                secnum_1: "IT Hygiene",
+                secnum_2: "Workstation Security",
+                cisco_title: "Introduction to Cybersecurity",
+                valid_oct: "Validated (Oct 2025)",
+                contact_title: "Let's keep in touch",
+                contact_desc1: "A question about my path, a work-study opportunity, or just want to discuss cybersecurity?",
+                contact_desc2: "Feel free to send me a message.",
+                ph_name: "Your name",
+                ph_email: "Your email address",
+                ph_msg: "Your message...",
+                btn_send: "Send message",
+                footer_rights: "BTS SIO SISR Portfolio. All rights reserved."
+            }
+        };
 
         const langFlag = document.getElementById('lang-flag');
         const langToggle = document.getElementById('lang-toggle');
