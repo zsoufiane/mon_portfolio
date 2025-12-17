@@ -371,13 +371,12 @@
             color: #ef4444;
         }
 
-        /* --- CAROUSEL VEILLE TECH (NOUVEAU) --- */
+        /* --- CAROUSEL VEILLE TECH (CARDS CLIQUABLES) --- */
         .carousel-wrapper {
             overflow: hidden;
             width: 100%;
             position: relative;
             padding: 20px 0;
-            /* Effet de fondu à gauche et à droite */
             mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
             -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
         }
@@ -386,11 +385,9 @@
             display: flex;
             gap: 25px;
             width: max-content;
-            /* Animation continue */
             animation: scroll-left 40s linear infinite;
         }
 
-        /* Pause l'animation quand on passe la souris dessus pour lire */
         .carousel-track:hover {
             animation-play-state: paused;
         }
@@ -406,6 +403,11 @@
             transition: 0.3s;
             flex-shrink: 0;
             white-space: normal;
+            /* Propriétés pour rendre la balise <a> propre */
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            cursor: pointer;
         }
 
         .carousel-card:hover {
@@ -917,7 +919,7 @@
             <div class="carousel-wrapper">
                 <div class="carousel-track">
 
-                    <article class="carousel-card">
+                    <a href="#" target="_blank" class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-chart-line"></i> Adoption Massive
                         </h5>
@@ -930,9 +932,9 @@
                             <span><span class="tag">Prévisions</span> <span class="tag">FIDO</span></span>
                             <span>Déc. 2025</span>
                         </div>
-                    </article>
+                    </a>
 
-                    <article class="carousel-card">
+                    <a href="#" target="_blank" class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-shield-alt"></i> Anti-Phishing
                         </h5>
@@ -945,9 +947,9 @@
                             <span><span class="tag">Sécurité</span> <span class="tag">Zero Trust</span></span>
                             <span>Oct. 2025</span>
                         </div>
-                    </article>
+                    </a>
 
-                    <article class="carousel-card">
+                    <a href="#" target="_blank" class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-desktop"></i> Microsoft Entra ID
                         </h5>
@@ -960,9 +962,9 @@
                             <span><span class="tag">Cloud</span> <span class="tag">Azure</span></span>
                             <span>Sept. 2024</span>
                         </div>
-                    </article>
+                    </a>
 
-                    <article class="carousel-card">
+                    <a href="#" target="_blank" class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-user-check"></i> UX & ROI
                         </h5>
@@ -975,9 +977,9 @@
                             <span><span class="tag">ROI</span> <span class="tag">Support</span></span>
                             <span>Nov. 2025</span>
                         </div>
-                    </article>
+                    </a>
 
-                    <article class="carousel-card">
+                    <a href="#" target="_blank" class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-university"></i> Secteur Bancaire
                         </h5>
@@ -990,9 +992,9 @@
                             <span><span class="tag">Finance</span> <span class="tag">DSP2</span></span>
                             <span>Juil. 2025</span>
                         </div>
-                    </article>
+                    </a>
 
-                    <article class="carousel-card">
+                    <a href="#" target="_blank" class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-cloud-upload-alt"></i> Synchro Cloud
                         </h5>
@@ -1005,9 +1007,9 @@
                             <span><span class="tag">Mobile</span> <span class="tag">Cloud</span></span>
                             <span>Avril 2025</span>
                         </div>
-                    </article>
+                    </a>
 
-                    <article class="carousel-card">
+                    <a href="#" target="_blank" class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-hand-pointer"></i> Biométrie
                         </h5>
@@ -1020,10 +1022,10 @@
                             <span><span class="tag">IA</span> <span class="tag">Biométrie</span></span>
                             <span>Mars 2025</span>
                         </div>
-                    </article>
+                    </a>
 
 
-                    <article class="carousel-card">
+                    <a href="#" target="_blank" class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-chart-line"></i> Adoption Massive
                         </h5>
@@ -1036,9 +1038,9 @@
                             <span><span class="tag">Prévisions</span> <span class="tag">FIDO</span></span>
                             <span>Déc. 2025</span>
                         </div>
-                    </article>
+                    </a>
 
-                    <article class="carousel-card">
+                    <a href="#" target="_blank" class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-shield-alt"></i> Anti-Phishing
                         </h5>
@@ -1051,9 +1053,9 @@
                             <span><span class="tag">Sécurité</span> <span class="tag">Zero Trust</span></span>
                             <span>Oct. 2025</span>
                         </div>
-                    </article>
+                    </a>
 
-                    <article class="carousel-card">
+                    <a href="#" target="_blank" class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-desktop"></i> Microsoft Entra ID
                         </h5>
@@ -1066,9 +1068,9 @@
                             <span><span class="tag">Cloud</span> <span class="tag">Azure</span></span>
                             <span>Sept. 2024</span>
                         </div>
-                    </article>
+                    </a>
 
-                    <article class="carousel-card">
+                    <a href="#" target="_blank" class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-user-check"></i> UX & ROI
                         </h5>
@@ -1081,9 +1083,9 @@
                             <span><span class="tag">ROI</span> <span class="tag">Support</span></span>
                             <span>Nov. 2025</span>
                         </div>
-                    </article>
+                    </a>
 
-                    <article class="carousel-card">
+                    <a href="#" target="_blank" class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-university"></i> Secteur Bancaire
                         </h5>
@@ -1096,9 +1098,9 @@
                             <span><span class="tag">Finance</span> <span class="tag">DSP2</span></span>
                             <span>Juil. 2025</span>
                         </div>
-                    </article>
+                    </a>
 
-                    <article class="carousel-card">
+                    <a href="#" target="_blank" class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-cloud-upload-alt"></i> Synchro Cloud
                         </h5>
@@ -1111,9 +1113,9 @@
                             <span><span class="tag">Mobile</span> <span class="tag">Cloud</span></span>
                             <span>Avril 2025</span>
                         </div>
-                    </article>
+                    </a>
 
-                    <article class="carousel-card">
+                    <a href="#" target="_blank" class="carousel-card">
                         <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
                             <i class="fas fa-hand-pointer"></i> Biométrie
                         </h5>
@@ -1126,7 +1128,7 @@
                             <span><span class="tag">IA</span> <span class="tag">Biométrie</span></span>
                             <span>Mars 2025</span>
                         </div>
-                    </article>
+                    </a>
 
                 </div>
             </div>
@@ -1477,7 +1479,7 @@
                 contact_desc2: "Feel free to send me a message.",
                 ph_name: "Your name",
                 ph_email: "Your email address",
-                ph_msg: "Your message...",
+                ph_msg: "Votre message...",
                 btn_send: "Send message",
                 footer_rights: "BTS SIO SISR Portfolio. All rights reserved."
             }
