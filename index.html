@@ -13,45 +13,37 @@
     <style>
         /* --- 1. COULEURS & VARIABLES --- */
         :root {
-            /* --- THEME CLAIR --- */
             --bg-body: #f0f4f8;
             --text-main: #1a202c;
             --text-secondary: #4a5568;
             --card-bg: rgba(255, 255, 255, 0.85);
             --input-bg: rgba(255, 255, 255, 0.5);
-
-            /* Couleurs */
             --primary-color: #3b82f6;
             --secondary-color: #8b5cf6;
             --gradient-main: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
             --gradient-text: linear-gradient(to right, #2563eb, #9333ea);
-
             --border-color: rgba(0, 0, 0, 0.08);
             --shadow-card: 0 10px 30px -5px rgba(59, 130, 246, 0.15);
             --shadow-hover: 0 20px 40px -5px rgba(139, 92, 246, 0.25);
             --white: #ffffff;
         }
 
-        /* --- THEME SOMBRE --- */
         [data-theme="dark"] {
             --bg-body: #0f172a;
             --text-main: #f1f5f9;
             --text-secondary: #94a3b8;
             --card-bg: rgba(30, 41, 59, 0.7);
             --input-bg: rgba(15, 23, 42, 0.6);
-
             --primary-color: #38bdf8;
             --secondary-color: #c084fc;
             --gradient-main: linear-gradient(135deg, #0ea5e9 0%, #d946ef 100%);
             --gradient-text: linear-gradient(to right, #38bdf8, #e879f9);
-
             --border-color: rgba(255, 255, 255, 0.1);
             --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
             --shadow-hover: 0 0 25px rgba(56, 189, 248, 0.3);
             --white: #1e293b;
         }
 
-        /* --- Animation de mélange doux (Logo) --- */
         @keyframes gentle-mix {
             0% {
                 background-position: 0% 50%;
@@ -81,7 +73,6 @@
             transition: background-color 0.5s ease;
         }
 
-        /* ORBS ANIMATION */
         .bg-orb {
             position: fixed;
             border-radius: 50%;
@@ -128,7 +119,6 @@
             list-style: none;
         }
 
-        /* --- HEADER --- */
         header {
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(12px);
@@ -209,7 +199,6 @@
             color: var(--primary-color);
         }
 
-        /* --- HERO --- */
         .hero {
             min-height: 90vh;
             display: flex;
@@ -261,7 +250,6 @@
             color: white;
         }
 
-        /* --- SECTIONS GENERAL --- */
         section {
             padding: 100px 20px;
         }
@@ -289,7 +277,6 @@
             transform: translateY(0);
         }
 
-        /* --- CARDS --- */
         .grid-2 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
@@ -371,7 +358,6 @@
             color: #ef4444;
         }
 
-        /* --- CAROUSEL VEILLE TECH (CARDS CLIQUABLES) --- */
         .carousel-wrapper {
             overflow: hidden;
             width: 100%;
@@ -403,7 +389,6 @@
             transition: 0.3s;
             flex-shrink: 0;
             white-space: normal;
-            /* Propriétés pour rendre la balise <a> propre */
             text-decoration: none;
             color: inherit;
             display: block;
@@ -426,8 +411,6 @@
             }
         }
 
-
-        /* --- CONTACT SECTION --- */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
@@ -508,14 +491,6 @@
             margin-top: 50px;
         }
 
-        @media (max-width: 900px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-        }
-
-        /* --- MODAL --- */
         .modal {
             display: none;
             position: fixed;
@@ -580,12 +555,16 @@
             .grid-3 {
                 grid-template-columns: 1fr;
             }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
         }
     </style>
 </head>
 
 <body>
-
     <div class="bg-orb orb-1"></div>
     <div class="bg-orb orb-2"></div>
 
@@ -604,7 +583,6 @@
                 <li><a href="#veille" data-lang="nav_veille">Veille</a></li>
                 <li><a href="#certifs" data-lang="nav_certifs">Certifications</a></li>
                 <li><a href="#contact" data-lang="nav_contact">Contact</a></li>
-
                 <li>
                     <button id="lang-toggle" class="lang-toggle" aria-label="Changer de langue">
                         <img id="lang-flag" src="https://flagcdn.com/w80/gb.png" alt="Drapeau"
@@ -618,7 +596,6 @@
 
     <section id="accueil" class="hero">
         <div class="hero-content">
-
             <h1>Soufiane ZOUGAGH</h1>
             <h2 style="font-size: 1.5rem; line-height: 1.6; color: rgba(255,255,255,0.9);" data-lang="hero_desc">
                 Étudiant en deuxième année de BTS SIO SISR à Ingétis.<br>
@@ -626,11 +603,11 @@
             </h2>
             <div class="hero-btns">
                 <a href="#bts" class="btn" data-lang="btn_about">Découvrez moi</a>
-                <a href="./documents/cv_soufiane_zougagh_portfolio.pdf" class="btn btn-outline" target="_blank"
-                    rel="noopener noreferrer">CV <i class="fas fa-eye"></i></a>
-                <a href="./documents/synthese_soufiane_zougagh.pdf" class="btn btn-outline" target="_blank"
-                    rel="noopener noreferrer"><span data-lang="btn_synthese">Fiche synthèse</span> <i
-                        class="fas fa-table"></i></a>
+                <a href="./documents/cv_soufiane_zougagh_portfolio.pdf" class="btn btn-outline" target="_blank">CV <i
+                        class="fas fa-eye"></i></a>
+                <a href="./documents/synthese_soufiane_zougagh.pdf" class="btn btn-outline" target="_blank">
+                    <span data-lang="btn_synthese">Fiche synthèse</span> <i class="fas fa-table"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -647,7 +624,7 @@
                 </div>
                 <div class="card">
                     <div class="icon-box"><i class="fas fa-code"></i></div>
-                    <h3>Option SLAM</h3>
+                    <h3 data-lang="bts_slam_title">Option SLAM</h3>
                     <p data-lang="bts_slam_desc">Développement d'applications, bases de données, et solutions
                         logicielles. Comprendre le code pour mieux gérer l'infra.</p>
                 </div>
@@ -665,29 +642,25 @@
     <section id="entreprise">
         <div class="container reveal">
             <div style="text-align: center; margin-bottom: 50px;">
-
                 <h3 style="display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap;">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Banque_de_France_2022_logo.svg"
-                        alt="Logo Banque de France" style="max-height: 150px; width: auto;">
-
+                        alt="Logo BdF" style="max-height: 150px; width: auto;">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Logo_ACPR.png" alt="Logo ACPR"
                         style="max-height: 100px; width: auto;">
                 </h3>
-
                 <p style="font-size: 1.1rem; opacity: 0.9; margin-top: 25px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.8;"
                     data-lang="ent_desc">
                     La Banque de France est la banque centrale nationale française. Elle contribue à la stabilité
                     monétaire, à la supervision du système financier et au service de l’économie.
                 </p>
-
                 <div style="margin-top: 20px;">
-                    <span class="tag" data-lang="tag_public">Secteur Public</span><span class="tag"
-                        data-lang="tag_secu">Haute Sécurité</span><span class="tag">Finance</span>
+                    <span class="tag" data-lang="tag_public">Secteur Public</span>
+                    <span class="tag" data-lang="tag_secu">Haute Sécurité</span>
+                    <span class="tag">Finance</span>
                 </div>
             </div>
 
             <div class="grid-2" style="align-items: start;">
-
                 <div class="card">
                     <div style="display:flex; align-items:center; gap:15px; margin-bottom:20px;">
                         <i class="fas fa-id-badge" style="font-size: 2.5rem; color: var(--secondary-color);"></i>
@@ -697,7 +670,6 @@
                                 Alternance</span>
                         </div>
                     </div>
-
                     <ul style="list-style: none; padding: 0;">
                         <li style="margin-bottom: 15px; display:flex; gap:10px; align-items: flex-start;">
                             <i class="fas fa-check-circle"
@@ -725,19 +697,15 @@
                         </li>
                     </ul>
                 </div>
-
                 <div class="card" style="height: auto;">
                     <h4 style="margin-bottom: 20px;"><i class="fas fa-rocket"></i> <span
                             data-lang="env_real">Environnement & Réalisations</span></h4>
-
                     <div style="margin-bottom: 25px;">
-                        <span class="tag" style="background: rgba(0, 120, 215, 0.1); color: #0078D7;">Windows
-                            10/11</span>
-                        <span class="tag" style="background: rgba(71, 85, 105, 0.1); color: #475569;">Server 2019</span>
-                        <span class="tag" style="background: rgba(30, 41, 59, 0.1); color: #1e293b;">PowerShell</span>
+                        <span class="tag">Windows 10/11</span>
+                        <span class="tag">Server 2019</span>
+                        <span class="tag">PowerShell</span>
                         <span class="tag secu" data-lang="tag_cyber">Cyberdéfense</span>
                     </div>
-
                     <div
                         style="padding: 15px; background: rgba(59, 130, 246, 0.1); border-radius: 10px; border-left: 4px solid var(--primary-color);">
                         <strong data-lang="proj_flag">Projet Phare :</strong> <span data-lang="proj_desc">Automatisation
@@ -751,39 +719,24 @@
     <section id="ecole">
         <div class="container reveal">
             <h2 class="section-title" data-lang="title_ecole">Mon École</h2>
-
             <div class="card">
                 <div class="grid-2" style="align-items: center;">
-
                     <div>
                         <div style="display:flex; align-items:center; gap:15px; margin-bottom: 20px;">
                             <img src="https://media.licdn.com/dms/image/v2/D4E0BAQFMzC-QRuzMfQ/company-logo_200_200/B4EZoVbjI1J0AM-/0/1761296135095/cfa_ingetis_logo?e=1766620800&v=beta&t=3GUaA_dKhsfUacCveuZrGGhf6F8DHrkfXrE0JnFBRxg"
                                 alt="Logo Ingétis"
-                                style="width: 65px; height: 65px; border-radius: 12px; object-fit: cover; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-
+                                style="width: 65px; height: 65px; border-radius: 12px; object-fit: cover;">
                             <div>
-                                <h3 style="font-size: 2rem; line-height: 1.1;">
-                                    <a href="https://ingetis.com/" target="_blank"
-                                        style="text-decoration: none; color: inherit; transition: 0.3s;">
-                                        Ingétis <i class="fas fa-external-link-alt"
-                                            style="font-size: 1rem; opacity: 0.5; vertical-align: middle;"></i>
-                                    </a>
-                                </h3>
+                                <h3 style="font-size: 2rem; line-height: 1.1;">Ingétis</h3>
                                 <span style="font-size: 0.9rem; opacity: 0.8;">Paris 5ème (Quartier Latin)</span>
                             </div>
                         </div>
-
-                        <p style="margin-bottom: 20px; text-align: justify;" data-lang="ecole_desc1">
-                            École d'ingénierie informatique appliquée située au cœur de Paris.
-                            <strong>Ingétis</strong> se distingue par une approche pédagogique à taille humaine,
-                            favorisant un suivi individualisé.
+                        <p style="margin-bottom: 20px; text-align: justify;" data-lang="ecole_desc1">École d'ingénierie
+                            informatique appliquée située au cœur de Paris. <strong>Ingétis</strong> se distingue par
+                            une approche pédagogique à taille humaine.</p>
+                        <p style="margin-bottom: 25px;" data-lang="ecole_desc2">Membre du <strong>Campus Cyber</strong>
+                            et certifiée <strong>Qualiopi</strong>, l'école propose un cursus complet du Bac au Bac+5.
                         </p>
-
-                        <p style="margin-bottom: 25px;" data-lang="ecole_desc2">
-                            Membre du <strong>Campus Cyber</strong> et certifiée <strong>Qualiopi</strong>, l'école
-                            propose un cursus complet du Bac au Bac+5.
-                        </p>
-
                         <div style="display:flex; gap:10px; flex-wrap:wrap;">
                             <span class="tag">BTS SIO</span>
                             <span class="tag" data-lang="tag_alt">Alternance</span>
@@ -791,36 +744,27 @@
                             <span class="tag" data-lang="tag_secu">Cybersécurité</span>
                         </div>
                     </div>
-
                     <div
                         style="background: rgba(0,0,0,0.03); padding: 25px; border-radius: 15px; border: 1px solid var(--border-color);">
                         <h4 style="margin-bottom: 15px; color: var(--primary-color);"><i
                                 class="fas fa-check-circle"></i> <span data-lang="why_ingetis">Pourquoi Ingétis ?</span>
                         </h4>
-
-                        <ul style="list-style: none; padding: 0; margin-bottom: 25px;">
+                        <ul style="list-style: none; padding: 0;">
                             <li style="margin-bottom: 10px; display: flex; gap: 10px;">
                                 <i class="fas fa-user-graduate"
                                     style="color: var(--secondary-color); margin-top: 4px;"></i>
-                                <div>
-                                    <strong data-lang="pedago_title">Pédagogie par projet :</strong><br>
-                                    <span style="font-size: 0.9rem; opacity: 0.8;" data-lang="pedago_desc">Apprentissage
-                                        concret via des infrastructures dédiées et des équipements de dernière
-                                        génération.</span>
-                                </div>
+                                <div><strong data-lang="pedago_title">Pédagogie par projet :</strong><br><span
+                                        style="font-size: 0.9rem; opacity: 0.8;" data-lang="pedago_desc">Apprentissage
+                                        concret via des infrastructures dédiées.</span></div>
                             </li>
-                            <li style="margin-bottom: 10px; display: flex; gap: 10px;">
+                            <li style="display: flex; gap: 10px;">
                                 <i class="fas fa-briefcase" style="color: var(--secondary-color); margin-top: 4px;"></i>
-                                <div>
-                                    <strong data-lang="alt_title">L'Alternance au cœur :</strong><br>
-                                    <span style="font-size: 0.9rem; opacity: 0.8;" data-lang="alt_desc">70% des
-                                        étudiants en alternance dès la 1ère année, avec un fort réseau d'entreprises
-                                        partenaires.</span>
-                                </div>
+                                <div><strong data-lang="alt_title">L'Alternance au cœur :</strong><br><span
+                                        style="font-size: 0.9rem; opacity: 0.8;" data-lang="alt_desc">Forte proximité
+                                        avec le monde de l'entreprise.</span></div>
                             </li>
                         </ul>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -829,38 +773,22 @@
     <section id="projets">
         <div class="container reveal">
             <h2 class="section-title" data-lang="title_projets">Projets E4 : Architecture Microsoft</h2>
-
             <p style="text-align: center; max-width: 800px; margin: 0 auto 40px auto; opacity: 0.9;"
-                data-lang="proj_intro">
-                Déploiement d'une infrastructure <strong>Windows Server</strong> visant à standardiser le système
-                d'information. L'objectif est d'assurer la haute disponibilité des services et la centralisation de
-                l'administration.
-            </p>
-
+                data-lang="proj_intro">Déploiement d'une infrastructure <strong>Windows Server</strong> visant à
+                standardiser le système d'information.</p>
             <div class="grid-2" style="gap: 40px;">
-
                 <article class="project-card">
-                    <div class="project-header" style="background: linear-gradient(135deg, #0078D7, #002050);">
-                        <i class="fab fa-windows"></i>
-                    </div>
+                    <div class="project-header" style="background: linear-gradient(135deg, #0078D7, #002050);"><i
+                            class="fab fa-windows"></i></div>
                     <div class="project-content">
                         <h3 data-lang="p1_title">Administration Système & Sécurité</h3>
                         <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--primary-color); font-weight: bold;"
-                            data-lang="p1_scenario">
-                            Objectif : Centralisation des identités
-                        </p>
-                        <p data-lang="p1_desc">
-                            Mise en place d'un domaine Active Directory pour sécuriser les authentifications et
-                            structurer
-                            le parc informatique.
-                        </p>
-
+                            data-lang="p1_scenario">Objectif : Centralisation des identités</p>
                         <ul style="margin: 15px 0; padding-left: 20px; font-size: 0.9rem; opacity: 0.8;">
                             <li data-lang="p1_li1">Gestion des utilisateurs et des groupes (AD DS)</li>
                             <li data-lang="p1_li2">Sécurisation des données via droits NTFS/ACLs</li>
                             <li data-lang="p1_li3">Automatisation de l'environnement utilisateur (GPO)</li>
                         </ul>
-
                         <div style="margin-top: auto;">
                             <span class="tag">Windows Server</span>
                             <span class="tag">Active Directory</span>
@@ -868,29 +796,18 @@
                         </div>
                     </div>
                 </article>
-
                 <article class="project-card">
-                    <div class="project-header" style="background: linear-gradient(135deg, #10b981, #059669);">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
+                    <div class="project-header" style="background: linear-gradient(135deg, #10b981, #059669);"><i
+                            class="fas fa-network-wired"></i></div>
                     <div class="project-content">
                         <h3 data-lang="p2_title">Services d'Infrastructure</h3>
                         <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--primary-color); font-weight: bold;"
-                            data-lang="p2_scenario">
-                            Objectif : Gestion du plan d'adressage
-                        </p>
-                        <p data-lang="p2_desc">
-                            Déploiement des services réseaux fondamentaux pour garantir la connectivité et la résolution
-                            de
-                            noms au sein du LAN.
-                        </p>
-
+                            data-lang="p2_scenario">Objectif : Gestion du plan d'adressage</p>
                         <ul style="margin: 15px 0; padding-left: 20px; font-size: 0.9rem; opacity: 0.8;">
                             <li data-lang="p2_li1">Configuration et distribution dynamique d'IP (DHCP)</li>
                             <li data-lang="p2_li2">Gestion des baux et réservations pour serveurs</li>
                             <li data-lang="p2_li3">Mise en œuvre de la résolution DNS interne</li>
                         </ul>
-
                         <div style="margin-top: auto;">
                             <span class="tag">DHCP</span>
                             <span class="tag">DNS</span>
@@ -905,245 +822,46 @@
     <section id="veille">
         <div class="container reveal">
             <h2 class="section-title" data-lang="title_veille">Veille technologique</h2>
-
             <div style="text-align: center; margin-bottom: 40px;">
-                <h3 style="color:var(--secondary-color); font-size: 1.8rem; margin-bottom:10px;">
-                    <i class="fas fa-fingerprint"></i> Passwordless & FIDO2
-                </h3>
-                <p style="max-width: 700px; margin: 0 auto; opacity: 0.8;" data-lang="veille_intro">
-                    Analyse de la transition mondiale vers l'authentification sans mot de passe, l'impact de la
-                    biométrie et les enjeux spécifiques au secteur bancaire.
-                </p>
+                <h3 style="color:var(--secondary-color); font-size: 1.8rem; margin-bottom:10px;"><i
+                        class="fas fa-fingerprint"></i> Passwordless & FIDO2</h3>
+                <p style="max-width: 700px; margin: 0 auto; opacity: 0.8;" data-lang="veille_intro">Analyse de la
+                    transition mondiale vers l'authentification sans mot de passe.</p>
             </div>
-
             <div class="carousel-wrapper">
                 <div class="carousel-track">
-
-                    <a href="https://www.fortunebusinessinsights.com/fr/passwordless-authentication-market-109838"
-                        target="_blank" class="carousel-card">
-                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
-                            <i class="fas fa-chart-line"></i> Adoption Massive
-                        </h5>
-                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
-                            Gartner prévoit que plus de 25% des transactions MFA utiliseront FIDO d'ici 2025. Les
-                            Passkeys dominent le marché.
-                        </p>
-                        <div
-                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
-                            <span><span class="tag">Prévisions</span> <span class="tag">FIDO</span></span>
-                            <span>Déc. 2025</span>
-                        </div>
-                    </a>
-
-                    <a href="https://www.zdnet.fr/pratique/cybersecurite-comment-preparer-votre-entreprise-a-un-avenir-passwordless-484485.htm"
-                        target="_blank" class="carousel-card">
-                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
-                            <i class="fas fa-shield-alt"></i> Anti-Phishing
-                        </h5>
-                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
-                            Le Passwordless basé sur FIDO2 élimine le mot de passe comme vecteur d'attaque. Renforce le
-                            Zero Trust.
-                        </p>
-                        <div
-                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
-                            <span><span class="tag">Sécurité</span> <span class="tag">Zero Trust</span></span>
-                            <span>Oct. 2025</span>
-                        </div>
-                    </a>
-
-                    <a href="https://itsocial.fr/cybersecurite/cybersecurite-actualites/microsoft-renforce-la-securite-dentra-id-avec-des-api-de-provisionnement-fido2/"
-                        target="_blank" class="carousel-card">
-                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
-                            <i class="fas fa-desktop"></i> Microsoft Entra ID
-                        </h5>
-                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
-                            Intégration native de FIDO2 dans Entra ID (Azure AD), simplifiant le déploiement sans mot de
-                            passe à grande échelle.
-                        </p>
-                        <div
-                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
-                            <span><span class="tag">Cloud</span> <span class="tag">Azure</span></span>
-                            <span>Sept. 2024</span>
-                        </div>
-                    </a>
-
-                    <a href="https://www.solutions-numeriques.com/dossiers/passwordless-pour-un-futur-sans-mot-de-passe/"
-                        target="_blank" class="carousel-card">
-                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
-                            <i class="fas fa-user-check"></i> UX & ROI
-                        </h5>
-                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
-                            Les Passkeys améliorent le taux de connexion de 20% et réduisent drastiquement les tickets
-                            support "mot de passe oublié".
-                        </p>
-                        <div
-                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
-                            <span><span class="tag">ROI</span> <span class="tag">Support</span></span>
-                            <span>Nov. 2025</span>
-                        </div>
-                    </a>
-
-                    <a href="https://www.swissbanking.ch/fr/medias-politique/actualites/modification-de-la-norme-fido2-renforcer-la-securite-numerique-pour-les-banques-suisses-et-leurs-clients"
-                        target="_blank" class="carousel-card">
-                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
-                            <i class="fas fa-university"></i> Secteur Bancaire
-                        </h5>
-                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
-                            Application de la "Smart Verification" pour la prévention de la fraude et la conformité DSP2
-                            dans la finance.
-                        </p>
-                        <div
-                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
-                            <span><span class="tag">Finance</span> <span class="tag">DSP2</span></span>
-                            <span>Juil. 2025</span>
-                        </div>
-                    </a>
-
-                    <a href="https://www.macg.co/materiel/2025/12/des-cles-de-securite-fido2-en-promotion-pour-differents-scenarios-et-appareils-305447"
-                        target="_blank" class="carousel-card">
-                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
-                            <i class="fas fa-cloud-upload-alt"></i> Synchro Cloud
-                        </h5>
-                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
-                            Évolution : passage des clés physiques (YubiKey) aux clés synchronisées dans le cloud (Apple
-                            Keychain, Google).
-                        </p>
-                        <div
-                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
-                            <span><span class="tag">Mobile</span> <span class="tag">Cloud</span></span>
-                            <span>Avril 2025</span>
-                        </div>
-                    </a>
-
-                    <a href="https://www.silicon.fr/Thematique/cybersecurite-1371/Breves/Passwordless-une-approche-innovante-pour-securiser-les-acces-459294.htm"
-                        target="_blank" class="carousel-card">
-                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
-                            <i class="fas fa-hand-pointer"></i> Biométrie
-                        </h5>
-                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
-                            Analyse critique des failles potentielles (Deepfakes) face à l'authentification biométrique
-                            des Passkeys.
-                        </p>
-                        <div
-                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
-                            <span><span class="tag">IA</span> <span class="tag">Biométrie</span></span>
-                            <span>Mars 2025</span>
-                        </div>
-                    </a>
-
-
-                    <a href="https://www.fortunebusinessinsights.com/fr/passwordless-authentication-market-109838"
-                        target="_blank" class="carousel-card">
-                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
-                            <i class="fas fa-chart-line"></i> Adoption Massive
-                        </h5>
-                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
-                            Gartner prévoit que plus de 25% des transactions MFA utiliseront FIDO d'ici 2025. Les
-                            Passkeys dominent le marché.
-                        </p>
-                        <div
-                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
-                            <span><span class="tag">Prévisions</span> <span class="tag">FIDO</span></span>
-                            <span>Déc. 2025</span>
-                        </div>
-                    </a>
-
-                    <a href="https://www.zdnet.fr/pratique/cybersecurite-comment-preparer-votre-entreprise-a-un-avenir-passwordless-484485.htm"
-                        target="_blank" class="carousel-card">
-                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
-                            <i class="fas fa-shield-alt"></i> Anti-Phishing
-                        </h5>
-                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
-                            Le Passwordless basé sur FIDO2 élimine le mot de passe comme vecteur d'attaque. Renforce le
-                            Zero Trust.
-                        </p>
-                        <div
-                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
-                            <span><span class="tag">Sécurité</span> <span class="tag">Zero Trust</span></span>
-                            <span>Oct. 2025</span>
-                        </div>
-                    </a>
-
-                    <a href="https://itsocial.fr/cybersecurite/cybersecurite-actualites/microsoft-renforce-la-securite-dentra-id-avec-des-api-de-provisionnement-fido2/"
-                        target="_blank" class="carousel-card">
-                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
-                            <i class="fas fa-desktop"></i> Microsoft Entra ID
-                        </h5>
-                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
-                            Intégration native de FIDO2 dans Entra ID (Azure AD), simplifiant le déploiement sans mot de
-                            passe à grande échelle.
-                        </p>
-                        <div
-                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
-                            <span><span class="tag">Cloud</span> <span class="tag">Azure</span></span>
-                            <span>Sept. 2024</span>
-                        </div>
-                    </a>
-
-                    <a href="https://www.solutions-numeriques.com/dossiers/passwordless-pour-un-futur-sans-mot-de-passe/"
-                        target="_blank" class="carousel-card">
-                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
-                            <i class="fas fa-user-check"></i> UX & ROI
-                        </h5>
-                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
-                            Les Passkeys améliorent le taux de connexion de 20% et réduisent drastiquement les tickets
-                            support "mot de passe oublié".
-                        </p>
-                        <div
-                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
-                            <span><span class="tag">ROI</span> <span class="tag">Support</span></span>
-                            <span>Nov. 2025</span>
-                        </div>
-                    </a>
-
-                    <a href="https://www.swissbanking.ch/fr/medias-politique/actualites/modification-de-la-norme-fido2-renforcer-la-securite-numerique-pour-les-banques-suisses-et-leurs-clients"
-                        target="_blank" class="carousel-card">
-                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
-                            <i class="fas fa-university"></i> Secteur Bancaire
-                        </h5>
-                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
-                            Application de la "Smart Verification" pour la prévention de la fraude et la conformité DSP2
-                            dans la finance.
-                        </p>
-                        <div
-                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
-                            <span><span class="tag">Finance</span> <span class="tag">DSP2</span></span>
-                            <span>Juil. 2025</span>
-                        </div>
-                    </a>
-
-                    <a href="https://www.macg.co/materiel/2025/12/des-cles-de-securite-fido2-en-promotion-pour-differents-scenarios-et-appareils-305447"
-                        target="_blank" class="carousel-card">
-                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
-                            <i class="fas fa-cloud-upload-alt"></i> Synchro Cloud
-                        </h5>
-                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
-                            Évolution : passage des clés physiques (YubiKey) aux clés synchronisées dans le cloud (Apple
-                            Keychain, Google).
-                        </p>
-                        <div
-                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
-                            <span><span class="tag">Mobile</span> <span class="tag">Cloud</span></span>
-                            <span>Avril 2025</span>
-                        </div>
-                    </a>
-
-                    <a href="https://www.silicon.fr/Thematique/cybersecurite-1371/Breves/Passwordless-une-approche-innovante-pour-securiser-les-acces-459294.htm"
-                        target="_blank" class="carousel-card">
-                        <h5 style="color: var(--primary-color); margin-top: 0; margin-bottom: 10px; font-size: 1.1rem;">
-                            <i class="fas fa-hand-pointer"></i> Biométrie
-                        </h5>
-                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 15px;">
-                            Analyse critique des failles potentielles (Deepfakes) face à l'authentification biométrique
-                            des Passkeys.
-                        </p>
-                        <div
-                            style="font-size: 0.75rem; opacity: 0.6; display: flex; justify-content: space-between; align-items: flex-end;">
-                            <span><span class="tag">IA</span> <span class="tag">Biométrie</span></span>
-                            <span>Mars 2025</span>
-                        </div>
-                    </a>
-
+                    <div class="carousel-card">
+                        <h5 style="color: var(--primary-color);" data-lang="v1_title"><i class="fas fa-chart-line"></i>
+                            Adoption Massive</h5>
+                        <p style="font-size: 0.9rem;" data-lang="v1_desc">Gartner prévoit que plus de 25% des
+                            transactions MFA utiliseront FIDO d'ici 2025.</p>
+                        <div style="font-size: 0.75rem; opacity: 0.6; margin-top:10px;"><span>#FIDO2</span> <span>Déc.
+                                2025</span></div>
+                    </div>
+                    <div class="carousel-card">
+                        <h5 style="color: var(--primary-color);" data-lang="v2_title"><i class="fas fa-shield-alt"></i>
+                            Anti-Phishing</h5>
+                        <p style="font-size: 0.9rem;" data-lang="v2_desc">FIDO2 élimine le mot de passe comme vecteur
+                            d'attaque principal, renforçant le Zero Trust.</p>
+                        <div style="font-size: 0.75rem; opacity: 0.6; margin-top:10px;"><span>#Security</span>
+                            <span>Oct. 2025</span></div>
+                    </div>
+                    <div class="carousel-card">
+                        <h5 style="color: var(--primary-color);" data-lang="v3_title"><i class="fas fa-desktop"></i>
+                            Microsoft Entra ID</h5>
+                        <p style="font-size: 0.9rem;" data-lang="v3_desc">Intégration native de FIDO2 simplifiant le
+                            déploiement sans mot de passe à grande échelle.</p>
+                        <div style="font-size: 0.75rem; opacity: 0.6; margin-top:10px;"><span>#Cloud</span> <span>Sept.
+                                2024</span></div>
+                    </div>
+                    <div class="carousel-card">
+                        <h5 data-lang="v1_title">Adoption Massive</h5>
+                        <p data-lang="v1_desc">...</p>
+                    </div>
+                    <div class="carousel-card">
+                        <h5 data-lang="v2_title">Anti-Phishing</h5>
+                        <p data-lang="v2_desc">...</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1152,411 +870,192 @@
     <section id="certifs">
         <div class="container reveal">
             <h2 class="section-title" data-lang="title_certifs">🏆 Certifications</h2>
-            <div class="grid-2"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px;">
-
+            <div class="grid-2">
                 <div class="card">
-                    <div style="display:flex; justify-content:space-between; align-items:start; margin-bottom: 20px;">
-                        <img src="https://www.auditsi.eu/wp-content/uploads/2018/06/anssi_visuel_square500.png"
-                            alt="Logo ANSSI Officiel" style="height: 55px; width: auto;">
-                        <img src="./documents/secnum.png" alt="Badge SecNum" class="zoomable"
-                            style="height: 40px; opacity: 0.8;">
-                    </div>
                     <h3>🔒 SecNum Académie</h3>
                     <p style="font-weight: 600; opacity: 0.7; margin-bottom: 15px;">ANSSI | <span
                             style="color: #2ecc71;" data-lang="valid_mars">Validé (Mars 2025)</span></p>
-                    <ul style="list-style: none; margin-top: 10px;">
-                        <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #2ecc71;"></i> 🧼 <span
-                                data-lang="secnum_1">Hygiène informatique</span></li>
-                        <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #2ecc71;"></i> 🛡️ <span
-                                data-lang="secnum_2">Sécurisation des postes</span></li>
+                    <ul style="list-style: none;">
+                        <li><i class="fas fa-check" style="color: #2ecc71;"></i> <span data-lang="secnum_1">Hygiène
+                                informatique</span></li>
+                        <li><i class="fas fa-check" style="color: #2ecc71;"></i> <span data-lang="secnum_2">Sécurisation
+                                des postes</span></li>
                     </ul>
                 </div>
-
                 <div class="card">
-                    <div style="display:flex; justify-content:space-between; align-items:start; margin-bottom: 20px;">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Cisco_academy_logo.svg/1200px-Cisco_academy_logo.svg.png"
-                            alt="Logo Cisco NetAcad Officiel" style="height: 50px; width: auto;">
-                        <img src="./documents/cisco_cyber.jpg" alt="Badge Cisco" class="zoomable"
-                            style="height: 40px; opacity: 0.8; border-radius: 5px;">
-                    </div>
                     <h3 data-lang="cisco_title">💻 Introduction à la cybersécurité</h3>
                     <p style="font-weight: 600; opacity: 0.7; margin-bottom: 15px;">Cisco Academy | <span
                             style="color: #00b4db;" data-lang="valid_oct">Validé (Oct 2025)</span></p>
-                    <ul style="list-style: none; margin-top: 10px;">
-                        <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #00b4db;"></i> 💡 Concepts
-                            de base en sécurité</li>
-                        <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: #00b4db;"></i> 💾
-                            Protection des données</li>
+                    <ul style="list-style: none;">
+                        <li><i class="fas fa-check" style="color: #00b4db;"></i> <span data-lang="cisco_1">Concepts de
+                                base</span></li>
+                        <li><i class="fas fa-check" style="color: #00b4db;"></i> <span data-lang="cisco_2">Protection
+                                des données</span></li>
                     </ul>
                 </div>
-
                 <div class="card">
-                    <div style="display:flex; justify-content:space-between; align-items:start; margin-bottom: 20px;">
-                        <img src="https://www.afralti.org/wp-content/uploads/2022/06/LinuxEssentials-Medium.png"
-                            alt="Logo LPI" style="height: 50px; width: auto;">
-                    </div>
-
-                    <h3 style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
-                        🐧 Linux Essentials
-                    </h3>
-
-                    <p style="font-weight: 600; opacity: 0.7; margin-bottom: 15px;">LPI (Linux Professional Institute) |
-                        <span style="color: #f39c12;">En cours...</span>
-                    </p>
-                    <ul style="list-style: none; margin-top: 10px;">
-                        <li style="margin-bottom: 8px;"><i class="fas fa-terminal" style="color: #f39c12;"></i>
-                            Introduction au monde Linux</li>
-                        <li style="margin-bottom: 8px;"><i class="fas fa-user-friends" style="color: #f39c12;"></i>
-                            Compétences de base en ligne de commande</li>
-                        <li style="margin-bottom: 8px;"><i class="fas fa-info-circle" style="color: #f39c12;"></i> Bon
-                            point de départ pour débutants</li>
+                    <h3>🐧 Linux Essentials</h3>
+                    <p style="font-weight: 600; opacity: 0.7; margin-bottom: 15px;">LPI | <span style="color: #f39c12;"
+                            data-lang="status_ongoing">En cours...</span></p>
+                    <ul style="list-style: none;">
+                        <li><i class="fas fa-terminal"></i> <span data-lang="linux_1">Ligne de commande</span></li>
+                        <li><i class="fas fa-info-circle"></i> <span data-lang="linux_2">Monde Linux</span></li>
                     </ul>
                 </div>
-
                 <div class="card">
-                    <div style="display:flex; justify-content:space-between; align-items:start; margin-bottom: 20px;">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Cisco_academy_logo.svg/1200px-Cisco_academy_logo.svg.png"
-                            alt="Logo Cisco NetAcad Officiel" style="height: 50px; width: auto;">
-                    </div>
-                    <h3>🌐 Switching, Routing and Wireless Essentials</h3>
-                    <p style="font-weight: 600; opacity: 0.7; margin-bottom: 15px;">Cisco Academy | <span
-                            style="color: #00b4db;">En Cours...</span></p>
-                    <ul style="list-style: none; margin-top: 10px;">
-                        <li style="margin-bottom: 8px;"><i class="fas fa-network-wired" style="color: #00b4db;"></i>
-                            Compréhension des LAN et WAN</li>
-                        <li style="margin-bottom: 8px;"><i class="fas fa-route" style="color: #00b4db;"></i>
-                            Configuration de commutateurs et routeurs</li>
-                        <li style="margin-bottom: 8px;"><i class="fas fa-wifi" style="color: #00b4db;"></i> Concepts de
-                            réseau sans fil (Wireless)</li>
+                    <h3 data-lang="routing_title">🌐 Switching & Routing</h3>
+                    <p style="font-weight: 600; opacity: 0.7; margin-bottom: 15px;">Cisco | <span
+                            style="color: #00b4db;" data-lang="status_ongoing">En cours...</span></p>
+                    <ul style="list-style: none;">
+                        <li><i class="fas fa-network-wired"></i> <span data-lang="routing_1">Configuration
+                                réseaux</span></li>
                     </ul>
                 </div>
-
             </div>
         </div>
     </section>
 
     <section id="contact">
         <div class="container reveal">
-            <h2 class="section-title">Contact</h2>
+            <h2 class="section-title" data-lang="nav_contact">Contact</h2>
             <div class="card">
                 <div class="contact-grid">
                     <div class="contact-info">
                         <h3 data-lang="contact_title">Restons en contact</h3>
-                        <p data-lang="contact_desc1">Une question sur mon parcours, une opportunité d'alternance ou
-                            simplement envie d'échanger sur la cybersécurité ?</p>
+                        <p data-lang="contact_desc1">Une question sur mon parcours ou la cybersécurité ?</p>
                         <p data-lang="contact_desc2">N'hésitez pas à m'envoyer un message.</p>
-
                         <div style="margin-top: 40px;">
-                            <div style="display:flex; align-items:center; gap:15px; margin-bottom: 15px;">
-                                <i class="fas fa-map-marker-alt"
-                                    style="color:var(--primary-color); font-size: 1.2rem;"></i>
-                                <span>Paris, France</span>
-                            </div>
-                            <div style="display:flex; align-items:center; gap:15px;">
-                                <i class="fas fa-envelope" style="color:var(--primary-color); font-size: 1.2rem;"></i>
-                                <a href="mailto:soufianezougaghpro@gmail.com">soufianezougaghpro@gmail.com</a>
-                            </div>
-                        </div>
-
-                        <div class="contact-socials">
-                            <a href="https://www.linkedin.com/in/soufianezghpro/" target="_blank"
-                                class="contact-social-btn">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/960px-LinkedIn_logo_initials.png"
-                                    alt="Logo LinkedIn" style="width: 24px; height: 24px; border-radius: 4px;">
-                            </a>
-                            <a href="https://www.github.com/zsoufiane" target="_blank" class="contact-social-btn">
-                                <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
-                                    alt="Logo GitHub" style="width: 24px; height: 24px; border-radius: 50%;">
-                            </a>
+                            <p><i class="fas fa-envelope" style="color:var(--primary-color);"></i>
+                                soufianezougaghpro@gmail.com</p>
                         </div>
                     </div>
-
-                    <div class="contact-form">
-                        <form action="https://formspree.io/f/VOTRE_ID_ICI" method="POST">
-                            <input type="text" name="name" class="form-input" data-placeholder="ph_name"
-                                placeholder="Votre nom" required>
-                            <input type="email" name="email" class="form-input" data-placeholder="ph_email"
-                                placeholder="Votre adresse email" required>
-                            <textarea name="message" class="form-textarea" data-placeholder="ph_msg"
-                                placeholder="Votre message..." required></textarea>
-
-                            <button type="submit" class="btn-submit" style="
-                                background: var(--gradient-main); 
-                                color: white; 
-                                border: none; 
-                                padding: 15px 35px;
-                                font-weight: 700; 
-                                font-size: 1rem; 
-                                cursor: pointer; 
-                                border-radius: 8px; 
-                                margin-top: 10px;
-                                transition: 0.3s; 
-                                width: 100%;
-                                box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-                            " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(139, 92, 246, 0.4)'; this.style.filter='brightness(1.1)'"
-                                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(59, 130, 246, 0.3)'; this.style.filter='brightness(1)'">
-                                <span data-lang="btn_send">Envoyer le message</span>
-                            </button>
-                        </form>
-                    </div>
+                    <form class="contact-form">
+                        <input type="text" class="form-input" data-placeholder="ph_name" placeholder="Votre nom">
+                        <input type="email" class="form-input" data-placeholder="ph_email"
+                            placeholder="Votre adresse email">
+                        <textarea class="form-textarea" data-placeholder="ph_msg"
+                            placeholder="Votre message..."></textarea>
+                        <button type="button" class="form-input"
+                            style="background:var(--gradient-main); color:white; border:none; cursor:pointer; font-weight:bold;"
+                            data-lang="btn_send">Envoyer le message</button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="copyright-footer">
+    <footer class="copyright-footer">
         &copy; 2024 Soufiane ZOUGAGH - <span data-lang="footer_rights">Portfolio BTS SIO SISR. Tous droits
             réservés.</span>
-    </div>
+    </footer>
 
     <div id="imageModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="img01">
-        <div id="caption" style="text-align:center; color:#ccc; padding:10px;"></div>
     </div>
 
     <script>
-        // --- GESTION DU THEME ---
-        const toggleBtn = document.getElementById('theme-toggle');
-        const icon = toggleBtn.querySelector('i');
-        const html = document.documentElement;
-        const savedTheme = localStorage.getItem('theme');
-
-        if (savedTheme) { html.setAttribute('data-theme', savedTheme); updateIcon(savedTheme); }
-        function updateIcon(theme) { icon.classList.toggle('fa-sun', theme === 'dark'); icon.classList.toggle('fa-moon', theme !== 'dark'); }
-
-        toggleBtn.addEventListener('click', () => {
-            const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateIcon(newTheme);
-        });
-
-        // --- GESTION DE LA LANGUE (TRADUCTIONS) ---
+        // --- DATA DE TRADUCTION ---
         const translations = {
             fr: {
-                nav_accueil: "Accueil",
-                nav_bts: "BTS SIO",
-                nav_ent: "Entreprise",
-                nav_ecole: "École",
-                nav_projets: "Projets",
-                nav_veille: "Veille",
-                nav_certifs: "Certifications",
-                nav_contact: "Contact",
+                nav_accueil: "Accueil", nav_bts: "BTS SIO", nav_ent: "Entreprise", nav_ecole: "École", nav_projets: "Projets", nav_veille: "Veille", nav_certifs: "Certifications", nav_contact: "Contact",
                 hero_desc: "Étudiant en deuxième année de BTS SIO SISR à Ingétis.<br>En alternance à la Banque de France en tant que Correspondant Informatique.",
-                btn_about: "À propos de moi",
-                btn_synthese: "Fiche synthèse",
-                title_bts: "Parcours BTS SIO",
-                bts_dip_title: "Le Diplôme",
-                bts_dip_desc: "Le BTS Services Informatiques aux Organisations est un diplôme d'État formant aux métiers du numérique. Un socle solide pour l'avenir.",
-                bts_slam_desc: "Développement d'applications, bases de données, et solutions logicielles. Comprendre le code pour mieux gérer l'infra.",
-                bts_sisr_title: "Option SISR (Ma spécialisation)",
-                bts_sisr_desc: "Administration systèmes et réseaux, cybersécurité, virtualisation. La colonne vertébrale du SI.",
-                ent_desc: "La Banque de France est la banque centrale nationale française. Elle contribue à la stabilité monétaire, à la supervision du système financier et au service de l’économie.",
-                tag_public: "Secteur Public",
-                tag_secu: "Haute Sécurité",
-                tag_secu_short: "Sécurité",
-                tag_cyber: "Cyberdéfense",
-                job_title: "Correspondant Informatique",
-                job_period: "2024 - 2026 | Alternance",
-                task_1: "Installer et déployer les machines clientes et les périphériques d’un parc informatique sous l’autorité du responsable.",
-                task_2: "Permettre l’accès aux ressources informatiques et numériques ainsi qu'aux services réseaux.",
-                task_3: "Assurer la maintenance du parc informatique, téléphonique et numérique de l’entreprise.",
-                task_4: "Assurer le support technique et accompagner les utilisateurs dans l’utilisation des outils numériques.",
-                env_real: "Environnement & Réalisations",
-                proj_flag: "Projet Phare :",
-                proj_desc: "Automatisation de l'onboarding utilisateurs via script PowerShell.",
-                title_ecole: "Mon École",
-                ecole_desc1: "École d'ingénierie informatique appliquée située au cœur de Paris. <strong>Ingétis</strong> se distingue par une approche pédagogique à taille humaine, favorisant un suivi individualisé.",
-                ecole_desc2: "Membre du <strong>Campus Cyber</strong> et certifiée <strong>Qualiopi</strong>, l'école propose un cursus complet du Bac au Bac+5.",
-                tag_alt: "Alternance",
-                why_ingetis: "Pourquoi Ingétis ?",
-                pedago_title: "Pédagogie par projet :",
-                pedago_desc: "Apprentissage concret via des infrastructures dédiées et des équipements de dernière génération.",
-                alt_title: "L'Alternance au cœur :",
-                alt_desc: "70% des étudiants en alternance dès la 1ère année, avec un fort réseau d'entreprises partenaires.",
-
-                // --- TRADUCTIONS PROJETS ---
-                title_projets: "Projets E4 : Architecture Microsoft",
-                proj_intro: "Déploiement d'une infrastructure <strong>Windows Server</strong> visant à standardiser le système d'information. L'objectif est d'assurer la haute disponibilité des services et la centralisation de l'administration.",
-
-                p1_title: "Administration Système & Sécurité",
-                p1_scenario: "Objectif : Centralisation des identités",
-                p1_desc: "Mise en place d'un domaine Active Directory pour sécuriser les authentifications et structurer le parc informatique.",
-                p1_li1: "Gestion des utilisateurs et des groupes (AD DS)",
-                p1_li2: "Sécurisation des données via droits NTFS/ACLs",
-                p1_li3: "Automatisation de l'environnement utilisateur (GPO)",
-
-                p2_title: "Services d'Infrastructure",
-                p2_scenario: "Objectif : Gestion du plan d'adressage",
-                p2_desc: "Déploiement des services réseaux fondamentaux pour garantir la connectivité et la résolution de noms au sein du LAN.",
-                p2_li1: "Configuration et distribution dynamique d'IP (DHCP)",
-                p2_li2: "Gestion des baux et réservations pour serveurs",
-                p2_li3: "Mise en œuvre de la résolution DNS interne",
-
-
-                title_veille: "Veille technologique",
-                veille_intro: "Analyse de la transition mondiale vers l'authentification sans mot de passe, l'impact de la biométrie et les enjeux spécifiques au secteur bancaire.",
-                title_certifs: "Certifications",
-                valid_mars: "Validé (Mars 2025)",
-                secnum_1: "Hygiène informatique",
-                secnum_2: "Sécurisation des postes",
-                cisco_title: "Introduction à la cybersécurité",
-                valid_oct: "Validé (Oct 2025)",
-                contact_title: "Restons en contact",
-                contact_desc1: "Une question sur mon parcours, une opportunité d'alternance ou simplement envie d'échanger sur la cybersécurité ?",
-                contact_desc2: "N'hésitez pas à m'envoyer un message.",
-                ph_name: "Votre nom",
-                ph_email: "Votre adresse email",
-                ph_msg: "Votre message...",
-                btn_send: "Envoyer le message",
-                footer_rights: "Portfolio BTS SIO SISR. Tous droits réservés."
+                btn_about: "Découvrez moi", btn_synthese: "Fiche synthèse",
+                title_bts: "Parcours BTS SIO", bts_dip_title: "Le Diplôme", bts_dip_desc: "Le BTS SIO est un diplôme d'État formant aux métiers du numérique.",
+                bts_slam_title: "Option SLAM", bts_slam_desc: "Applications et code.",
+                bts_sisr_title: "Option SISR (Spécialisation)", bts_sisr_desc: "Systèmes, réseaux et sécurité.",
+                ent_desc: "La Banque de France est la banque centrale nationale française. Elle contribue à la stabilité monétaire.",
+                tag_public: "Secteur Public", tag_secu: "Haute Sécurité", job_title: "Correspondant Informatique", job_period: "2024 - 2026 | Alternance",
+                task_1: "Installer et déployer les machines clients.", task_2: "Accès aux ressources et services réseaux.", task_3: "Maintenance informatique et téléphonique.", task_4: "Support technique utilisateurs.",
+                env_real: "Environnement & Réalisations", tag_cyber: "Cyberdéfense", proj_flag: "Projet Phare :", proj_desc: "Automatisation via script PowerShell.",
+                title_ecole: "Mon École", ecole_desc1: "École d'ingénierie située à Paris. <strong>Ingétis</strong> favorise un suivi individualisé.",
+                ecole_desc2: "Membre du <strong>Campus Cyber</strong>, l'école propose un cursus complet.",
+                tag_alt: "Alternance", why_ingetis: "Pourquoi Ingétis ?", pedago_title: "Pédagogie :", pedago_desc: "Apprentissage concret sur infrastructures dédiées.",
+                alt_title: "Alternance :", alt_desc: "Forte proximité avec le monde de l'entreprise.",
+                title_projets: "Projets E4 : Architecture Microsoft", proj_intro: "Déploiement Windows Server standardisé.",
+                p1_title: "Administration & Sécurité", p1_scenario: "Goal: Centralisation des identités", p1_li1: "Gestion AD DS", p1_li2: "Droits NTFS/ACLs", p1_li3: "GPO Utilisateurs",
+                p2_title: "Infrastructure", p2_scenario: "Goal: Plan d'adressage", p2_li1: "DHCP Dynamique", p2_li2: "Gestion des baux", p2_li3: "DNS Interne",
+                title_veille: "Veille technologique", veille_intro: "Transition mondiale vers le Passwordless.",
+                v1_title: "Adoption Massive", v1_desc: "Gartner prévoit l'essor de FIDO d'ici 2025.",
+                v2_title: "Anti-Phishing", v2_desc: "FIDO2 élimine les vecteurs d'attaque classiques.",
+                v3_title: "Microsoft Entra ID", v3_desc: "Simplification du déploiement à grande échelle.",
+                title_certifs: "🏆 Certifications", valid_mars: "Validé (Mars 2025)", valid_oct: "Validé (Oct 2025)", status_ongoing: "En cours...",
+                secnum_1: "Hygiène informatique", secnum_2: "Sécurisation postes", cisco_title: "Intro Cyber", cisco_1: "Concepts", cisco_2: "Protection données",
+                linux_1: "Ligne de commande", linux_2: "Monde Linux", routing_title: "Switching & Routing", routing_1: "Config réseaux",
+                contact_title: "Restons en contact", contact_desc1: "Une question ?", contact_desc2: "Écrivez-moi.",
+                ph_name: "Votre nom", ph_email: "Votre email", ph_msg: "Votre message...", btn_send: "Envoyer le message", footer_rights: "Portfolio BTS SIO SISR. Tous droits réservés."
             },
             en: {
-                nav_accueil: "Home",
-                nav_bts: "BTS SIO",
-                nav_ent: "Company",
-                nav_ecole: "School",
-                nav_projets: "Projects",
-                nav_veille: "Tech Watch",
-                nav_certifs: "Certifications",
-                nav_contact: "Contact",
-                hero_desc: "2nd year student in BTS SIO SISR at Ingétis.<br>Work-study at Banque de France as an IT Support Specialist.",
-                btn_about: "About me",
-                btn_synthese: "Summary Sheet",
-                title_bts: "BTS SIO Path",
-                bts_dip_title: "The Diploma",
-                bts_dip_desc: "The BTS SIO is a State Diploma training for digital professions. A solid foundation for the future.",
-                bts_slam_desc: "App development, databases, and software solutions. Understanding code to better manage infrastructure.",
-                bts_sisr_title: "SISR Option (My Specialization)",
-                bts_sisr_desc: "System & network administration, cybersecurity, virtualization. The backbone of IT systems.",
-                ent_desc: "The Banque de France is the French national central bank. It contributes to monetary stability, financial system supervision, and service to the economy.",
-                tag_public: "Public Sector",
-                tag_secu: "High Security",
-                tag_secu_short: "Security",
-                tag_cyber: "Cyberdefense",
-                job_title: "IT Support Specialist",
-                job_period: "2024 - 2026 | Apprenticeship",
-                task_1: "Install and deploy client machines and peripherals within an IT fleet under supervision.",
-                task_2: "Enable access to IT/digital resources and network services.",
-                task_3: "Ensure maintenance of the company's computer, telephone, and digital equipment.",
-                task_4: "Provide technical support and guide users in using digital tools.",
-                env_real: "Environment & Achievements",
-                proj_flag: "Flagship Project:",
-                proj_desc: "Automation of user onboarding via PowerShell script.",
-                title_ecole: "My School",
-                ecole_desc1: "Applied computer engineering school located in the heart of Paris. <strong>Ingétis</strong> stands out for its human-sized pedagogical approach, favoring individualized follow-up.",
-                ecole_desc2: "Member of <strong>Campus Cyber</strong> and <strong>Qualiopi</strong> certified, the school offers a complete curriculum from Bachelor to Master's degree.",
-                tag_alt: "Work-study",
-                why_ingetis: "Why Ingétis?",
-                pedago_title: "Project-based learning:",
-                pedago_desc: "Concrete learning via dedicated infrastructures and latest generation equipment.",
-                alt_title: "Work-study at the core:",
-                alt_desc: "70% of students in apprenticeship from the 1st year, with a strong network of partner companies.",
-
-                // --- NEW TRANSLATIONS (PRO/VAGUE VERSION) ---
-                title_projets: "E4 Projects: Microsoft Architecture",
-                proj_intro: "Deployment of a <strong>Windows Server</strong> infrastructure aiming to standardize the information system. The goal is to ensure service high availability and centralized administration.",
-
-                p1_title: "System Administration & Security",
-                p1_scenario: "Goal: Identity Centralization",
-                p1_desc: "Implementation of an Active Directory domain to secure authentications and structure the IT fleet.",
-                p1_li1: "User and Group Management (AD DS)",
-                p1_li2: "Data security via NTFS rights/ACLs",
-                p1_li3: "User environment automation (GPO)",
-
-                p2_title: "Infrastructure Services",
-                p2_scenario: "Goal: Addressing Plan Management",
-                p2_desc: "Deployment of fundamental network services to ensure connectivity and name resolution within the LAN.",
-                p2_li1: "Configuration and dynamic IP distribution (DHCP)",
-                p2_li2: "Lease management and server reservations",
-                p2_li3: "Internal DNS resolution implementation",
-
-
-                title_veille: "Tech Watch",
-                veille_intro: "Analysis of the global transition to passwordless authentication, the impact of biometrics, and banking sector specifics.",
-                title_certifs: "Certifications",
-                valid_mars: "Validated (March 2025)",
-                secnum_1: "IT Hygiene",
-                secnum_2: "Workstation Security",
-                cisco_title: "Introduction to Cybersecurity",
-                valid_oct: "Validated (Oct 2025)",
-                contact_title: "Let's keep in touch",
-                contact_desc1: "A question about my path, a work-study opportunity, or just want to discuss cybersecurity?",
-                contact_desc2: "Feel free to send me a message.",
-                ph_name: "Your name",
-                ph_email: "Your email address",
-                ph_msg: "Your message...",
-                btn_send: "Send message",
-                footer_rights: "BTS SIO SISR Portfolio. All rights reserved."
+                nav_accueil: "Home", nav_bts: "BTS SIO", nav_ent: "Company", nav_ecole: "School", nav_projets: "Projects", nav_veille: "Watch", nav_certifs: "Certs", nav_contact: "Contact",
+                hero_desc: "2nd year student in BTS SIO SISR at Ingetis.<br>Work-study at Bank of France as IT Correspondent.",
+                btn_about: "About Me", btn_synthese: "Summary",
+                title_bts: "BTS SIO Journey", bts_dip_title: "The Degree", bts_dip_desc: "BTS SIO is a state degree for digital professions.",
+                bts_slam_title: "SLAM Option", bts_slam_desc: "Apps and code.",
+                bts_sisr_title: "SISR Option (Major)", bts_sisr_desc: "Systems, networks and security.",
+                ent_desc: "Bank of France is the French national central bank. It ensures monetary stability.",
+                tag_public: "Public Sector", tag_secu: "High Security", job_title: "IT Correspondent", job_period: "2024 - 2026 | Work-study",
+                task_1: "Install and deploy client machines.", task_2: "Enable network resource access.", task_3: "IT and phone maintenance.", task_4: "User tech support.",
+                env_real: "Environment & Achievements", tag_cyber: "Cyberdefense", proj_flag: "Flagship Project:", proj_desc: "Automation via PowerShell script.",
+                title_ecole: "My School", ecole_desc1: "Paris engineering school. <strong>Ingétis</strong> focuses on individualized tracking.",
+                ecole_desc2: "Member of <strong>Campus Cyber</strong>, offering full degree paths.",
+                tag_alt: "Work-study", why_ingetis: "Why Ingétis?", pedago_title: "Pedagogy:", pedago_desc: "Concrete learning on dedicated lab setups.",
+                alt_title: "Work-study:", alt_desc: "Strong ties with companies.",
+                title_projets: "E4 Projects: Microsoft Architecture", proj_intro: "Standardized Windows Server deployment.",
+                p1_title: "Admin & Security", p1_scenario: "Goal: Identity Centralization", p1_li1: "AD DS Management", p1_li2: "NTFS/ACLs Security", p1_li3: "User GPOs",
+                p2_title: "Infrastructure", p2_scenario: "Goal: Addressing Plan", p2_li1: "Dynamic DHCP", p2_li2: "Lease Management", p2_li3: "Internal DNS",
+                title_veille: "Tech Watch", veille_intro: "Global shift towards Passwordless.",
+                v1_title: "Mass Adoption", v1_desc: "Gartner predicts FIDO surge by 2025.",
+                v2_title: "Anti-Phishing", v2_desc: "FIDO2 eliminates classic attack vectors.",
+                v3_title: "Microsoft Entra ID", v3_desc: "Scaling up passwordless deployment.",
+                title_certifs: "🏆 Certifications", valid_mars: "Validated (March 2025)", valid_oct: "Validated (Oct 2025)", status_ongoing: "In progress...",
+                secnum_1: "IT Hygiene", secnum_2: "System hardening", cisco_title: "Intro Cyber", cisco_1: "Core concepts", cisco_2: "Data protection",
+                linux_1: "Command line", linux_2: "Linux world", routing_title: "Switching & Routing", routing_1: "Network config",
+                contact_title: "Get in touch", contact_desc1: "Questions?", contact_desc2: "Message me.",
+                ph_name: "Your name", ph_email: "Your email", ph_msg: "Your message...", btn_send: "Send message", footer_rights: "BTS SIO SISR Portfolio. All rights reserved."
             }
         };
 
-        const langFlag = document.getElementById('lang-flag');
+        // --- GESTION DES FONCTIONS ---
+        const html = document.documentElement;
         const langToggle = document.getElementById('lang-toggle');
-        let currentLang = localStorage.getItem('lang') || 'fr';
+        const langFlag = document.getElementById('lang-flag');
+        const themeToggle = document.getElementById('theme-toggle');
+        let currentLang = 'fr';
 
         function updateLanguage(lang) {
-            // 1. Mise à jour des textes
-            document.querySelectorAll('[data-lang]').forEach(element => {
-                const key = element.getAttribute('data-lang');
-                if (translations[lang][key]) {
-                    element.innerHTML = translations[lang][key];
-                }
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                const key = el.getAttribute('data-lang');
+                if (translations[lang][key]) el.innerHTML = translations[lang][key];
             });
-
-            // 2. Mise à jour des placeholders
-            document.querySelectorAll('[data-placeholder]').forEach(element => {
-                const key = element.getAttribute('data-placeholder');
-                if (translations[lang][key]) {
-                    element.setAttribute('placeholder', translations[lang][key]);
-                }
+            document.querySelectorAll('[data-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-placeholder');
+                if (translations[lang][key]) el.setAttribute('placeholder', translations[lang][key]);
             });
-
-            // 3. Mise à jour du DRAPEAU
-            // Si on est en FR, on affiche le drapeau UK (pour passer en anglais)
-            // Si on est en EN, on affiche le drapeau FR (pour passer en français)
-            if (lang === 'fr') {
-                langFlag.src = "https://flagcdn.com/w80/gb.png"; // Drapeau Royaume-Uni
-                langFlag.alt = "Switch to English";
-            } else {
-                langFlag.src = "https://flagcdn.com/w80/fr.png"; // Drapeau France
-                langFlag.alt = "Passer en Français";
-            }
-
-            document.documentElement.lang = lang;
-            localStorage.setItem('lang', lang);
+            langFlag.src = lang === 'fr' ? "https://flagcdn.com/w80/gb.png" : "https://flagcdn.com/w80/fr.png";
+            html.lang = lang;
             currentLang = lang;
         }
 
-        // Initialisation
-        updateLanguage(currentLang);
+        langToggle.addEventListener('click', () => updateLanguage(currentLang === 'fr' ? 'en' : 'fr'));
 
-        // Click event
-        langToggle.addEventListener('click', () => {
-            const newLang = currentLang === 'fr' ? 'en' : 'fr';
-            updateLanguage(newLang);
+        themeToggle.addEventListener('click', () => {
+            const isDark = html.getAttribute('data-theme') === 'dark';
+            html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            themeToggle.innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
         });
 
-        // --- SCROLL ANIMATION ---
         window.addEventListener('scroll', () => {
-            document.querySelectorAll('.reveal').forEach(reveal => {
-                if (reveal.getBoundingClientRect().top < window.innerHeight - 150) reveal.classList.add('active');
+            document.querySelectorAll('.reveal').forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('active');
             });
         });
 
-        // --- LIGHTBOX ---
         const modal = document.getElementById("imageModal");
         const modalImg = document.getElementById("img01");
         document.querySelectorAll(".zoomable").forEach(img => {
-            img.addEventListener("click", function () {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-            });
+            img.onclick = () => { modal.style.display = "block"; modalImg.src = img.src; }
         });
         document.querySelector(".close").onclick = () => modal.style.display = "none";
-        modal.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
     </script>
 </body>
 
