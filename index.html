@@ -839,6 +839,15 @@
 
         <div class="grid-2" style="gap: 40px;">
 
+            <!-- ── Séparateur Projets Personnels ── -->
+            <div style="grid-column: 1 / -1; display: flex; align-items: center; gap: 16px; margin-bottom: -10px;">
+                <div style="flex: 1; height: 1px; background: linear-gradient(to right, transparent, var(--border-color, #334155));"></div>
+                <span style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.55; white-space: nowrap;">
+                    Projets Personnels & Scolaires
+                </span>
+                <div style="flex: 1; height: 1px; background: linear-gradient(to left, transparent, var(--border-color, #334155));"></div>
+            </div>
+
             <!-- Projet perso — 01 -->
             <article class="project-card">
                 <div class="project-header" style="background: linear-gradient(135deg, #7c3aed, #4c1d95);">
@@ -855,13 +864,11 @@
                         les services DNS et DHCP ; le routeur gérait la <strong>traduction NAT</strong> pour
                         l'accès Internet.
                     </p>
-
                     <ul style="margin: 15px 0; padding-left: 20px; font-size: 0.9rem; opacity: 0.8;">
                         <li>Configuration d'un routeur central et adressage IP cohérent entre les deux sites</li>
                         <li>Déploiement des services DHCP et DNS sur un serveur dédié (Site A)</li>
                         <li>Mise en place du NAT/PAT pour l'accès Internet depuis les deux LAN</li>
                     </ul>
-
                     <div style="margin-top: auto;">
                         <span class="tag">Routage inter-réseaux</span>
                         <span class="tag">DHCP</span>
@@ -887,13 +894,11 @@
                         avec délégation de zones, mécanisme de relais DHCP inter-VLAN, basculement
                         (<em>failover</em>) pour la haute disponibilité, et redirection Internet conditionnelle.
                     </p>
-
                     <ul style="margin: 15px 0; padding-left: 20px; font-size: 0.9rem; opacity: 0.8;">
                         <li>Mise en place d'une résolution DNS hiérarchique avec délégation de zones</li>
                         <li>Configuration du relais DHCP pour la distribution inter-VLAN</li>
                         <li>Implémentation du failover DHCP pour la haute disponibilité</li>
                     </ul>
-
                     <div style="margin-top: auto;">
                         <span class="tag">DNS hiérarchique</span>
                         <span class="tag">Délégation de zones</span>
@@ -920,13 +925,11 @@
                         <strong>ITSM</strong> (gestion de parc + ticketing), avec synchronisation automatique
                         des identités entre les deux plateformes via LDAP.
                     </p>
-
                     <ul style="margin: 15px 0; padding-left: 20px; font-size: 0.9rem; opacity: 0.8;">
                         <li>Déploiement Active Directory avec gestion des GPO par service</li>
                         <li>Intégration d'une solution ITSM pour le suivi de parc et le ticketing</li>
                         <li>Synchronisation LDAP automatique entre l'annuaire et la plateforme ITSM</li>
                     </ul>
-
                     <div style="margin-top: auto;">
                         <span class="tag">Active Directory</span>
                         <span class="tag secu">GPO</span>
@@ -937,6 +940,15 @@
                     </div>
                 </div>
             </article>
+
+            <!-- ── Séparateur Projets E5 ── -->
+            <div style="grid-column: 1 / -1; display: flex; align-items: center; gap: 16px; margin-bottom: -10px;">
+                <div style="flex: 1; height: 1px; background: linear-gradient(to right, transparent, var(--border-color, #334155));"></div>
+                <span style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.55; white-space: nowrap;">
+                    Projets E5 — Épreuves Professionnelles BTS SIO
+                </span>
+                <div style="flex: 1; height: 1px; background: linear-gradient(to left, transparent, var(--border-color, #334155));"></div>
+            </div>
 
             <!-- Réalisation E5 — 1 : Système -->
             <article class="project-card">
@@ -954,20 +966,17 @@
                         (40 collaborateurs, 4 pôles) afin de remplacer un Workgroup non sécurisé par une
                         infrastructure centralisée avec gestion fine des droits et des stratégies.
                     </p>
-
                     <ul style="margin: 15px 0; padding-left: 20px; font-size: 0.9rem; opacity: 0.8;">
                         <li data-lang="p1_li1">Déploiement du rôle AD DS sur Windows Server 2022 (DC01)</li>
                         <li data-lang="p1_li2">Sécurisation des accès aux dossiers sensibles via droits NTFS / ACLs</li>
                         <li data-lang="p1_li3">Application de GPO par service (IT, Direction, Comptabilité, Employés)</li>
                     </ul>
-
                     <div style="margin-top: auto;">
                         <span class="tag">Windows Server 2022</span>
                         <span class="tag">Active Directory</span>
                         <span class="tag">DNS / DHCP</span>
                         <span class="tag secu">GPO</span>
                     </div>
-
                     <div style="margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
                         <a href="./documents/soufiane_zougagh_epreuve_système.pdf" target="_blank" rel="noopener noreferrer"
                             style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px;
@@ -1010,13 +1019,11 @@
                         son agence à Paris (Site B) via un protocole de routage dynamique RIPv2 et un
                         adressage VLSM, simulé sous Cisco Packet Tracer.
                     </p>
-
                     <ul style="margin: 15px 0; padding-left: 20px; font-size: 0.9rem; opacity: 0.8;">
                         <li data-lang="p2_li1">Configuration du routage dynamique RIPv2 sur routeurs Cisco 2621XM</li>
                         <li data-lang="p2_li2">Plan d'adressage VLSM (/26 et /27) avec liaison WAN série (/30)</li>
                         <li data-lang="p2_li3">Déploiement DHCP centralisé pour les deux segments LAN</li>
                     </ul>
-
                     <div style="margin-top: auto;">
                         <span class="tag">Cisco Packet Tracer</span>
                         <span class="tag">RIPv2</span>
@@ -1024,7 +1031,6 @@
                         <span class="tag">VLSM</span>
                         <span class="tag secu">Routage</span>
                     </div>
-
                     <div style="margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
                         <a href="./documents/soufiane_zougagh_epreuve_reseaux.pdf" target="_blank" rel="noopener noreferrer"
                             style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px;
